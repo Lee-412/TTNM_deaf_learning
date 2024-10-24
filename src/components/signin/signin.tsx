@@ -10,11 +10,39 @@ import {
     Container,
     Group,
     Button,
+    Center,
+    Box,
+    rem,
 } from '@mantine/core';
 import classes from './sigin.module.css';
+import { useState } from 'react';
+import ForgotPassword from '../password/forgot.password';
 
+interface dataSignIn {
+    email: string;
+    password: string;
+}
 
 const SigninBox = () => {
+    const [opened, setOpen] = useState(false);
+    const [formData, setFormData] = useState<dataSignIn>({
+        email: '',
+        password: ''
+    });
+
+    const handleClickSignIn = (e: any) => {
+        e.preventDefault();
+        console.log(formData);
+
+    }
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
     return (
         <Container size={420} my={40}>
             <Title ta="center" className={classes.title}>
@@ -28,19 +56,43 @@ const SigninBox = () => {
             </Text>
 
             <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-                <TextInput label="Email" placeholder="you@mantine.dev" required />
-                <PasswordInput label="Password" placeholder="Your password" required mt="md" />
+                <TextInput
+                    label="Email"
+                    placeholder="you@mantine.dev"
+                    required value={formData.email}
+                    onChange={handleChange}
+                    name='email'
+                />
+                <PasswordInput
+                    label="Password"
+                    name='password'
+                    placeholder="Your password"
+                    required mt="md"
+                    value={formData.password}
+                    onChange={handleChange}
+                />
                 <Group justify="space-between" mt="lg">
                     <Checkbox label="Remember me" />
-                    <Anchor component="button" size="sm">
+                    <Anchor component="button" size="sm" onClick={() => {
+                        setOpen(true);
+                    }}>
                         Forgot password?
                     </Anchor>
                 </Group>
-                <Button fullWidth mt="xl">
+                <Button fullWidth mt="xl" onClick={(e) => { handleClickSignIn(e) }}>
                     Sign in
                 </Button>
             </Paper>
+
+            <ForgotPassword
+                opened={opened}
+                setOpen={setOpen}
+                email={formData.email}
+            />
+
+
         </Container>
+
     );
 }
 export default SigninBox;
