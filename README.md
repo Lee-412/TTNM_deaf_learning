@@ -6,14 +6,14 @@
   Để bắt đầu, hãy thực hiện các bước sau:
 
 #### 1. Cài Đặt Các Gói Cần Thiết
-  npm i
+    npm i
 #### 2. Chạy Máy Chủ Phát Triển
-  npm run dev
-  # hoặc
-  yarn dev
-  # hoặc
-  pnpm dev
-  # hoặc
-  bun dev
+    npm run dev
+    # hoặc
+    yarn dev
+    # hoặc
+    pnpm dev
+    # hoặc
+    bun dev
 #### 3. Mở Ứng Dụng Trong Trình Duyệt
 Mở http://localhost:3000 trong trình duyệt của bạn để xem kết quả.
