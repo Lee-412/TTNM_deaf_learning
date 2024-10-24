@@ -15,8 +15,12 @@
     "@mantine/form": "^7.13.4",
     "@mantine/hooks": "^7.13.4",
     "@mantine/notifications": "^7.13.4",
+    "@mantinex/mantine-logo": "^1.0.1",
+    "@tabler/icons-react": "^3.20.0",
     "dayjs": "^1.11.13",
-    "next": "15.0.1",
+    "next": "14.2.16",
+    "postcss-functions": "^4.0.2",
+    "postcss-mixins": "^11.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "recharts": "^2.13.0"

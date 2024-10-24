@@ -10,5 +10,13 @@ module.exports = {
                 'mantine-breakpoint-xl': '88em',
             },
         },
+        'postcss-mixins': {},  // Thêm plugin mixin
+        'postcss-functions': {
+            functions: {
+                'light-dark': (lightValue, darkValue) => {
+                    return `var(--mantine-color-mode) === 'dark' ? ${darkValue} : ${lightValue}`;
+                },
+            },
+        },
     },
 };
