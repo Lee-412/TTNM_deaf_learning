@@ -9,7 +9,7 @@ const data = [
     {
         title: 'About',
         links: [
-            { label: 'Thư viện', link: '/libpage' },
+            { label: 'Thư viện', link: '/library' },
             { label: 'FAQ', link: '/FAQ' },
             { label: 'Đóng góp', link: '/contribution' },
 
