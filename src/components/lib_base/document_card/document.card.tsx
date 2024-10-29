@@ -43,11 +43,11 @@ const Card_Base = (props: Data_card) => {
                     {props.content}
                 </Text>
 
-                <Button color="blue" fullWidth mt="md" radius="md" onClick={() => {
+                {/* <Button color="blue" fullWidth mt="md" radius="md" onClick={() => {
                     handleClickContent()
                 }}>
                     Read more
-                </Button>
+                </Button> */}
             </Card>
         </>
     )
