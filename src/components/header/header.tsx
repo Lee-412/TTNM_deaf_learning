@@ -35,7 +35,7 @@ export function Header() {
                         <a href="/courses" className={classes.link}>
                             Khoá học
                         </a>
-                        <a href="/libpage" className={classes.link}>
+                        <a href="/library" className={classes.link}>
                             Thư viện
                         </a>
                         <a href="/FAQ" className={classes.link}>
