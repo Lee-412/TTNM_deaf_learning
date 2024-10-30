@@ -1,4 +1,3 @@
-import { Divider } from "@mantine/core";
 import Category from "../category/Category";
 
 interface CourseProps {
@@ -6,7 +5,7 @@ interface CourseProps {
     id?: number;
 }
 
-const CourseContent = () => {
+const ReviewCourse = () => {
     const courses: CourseProps[] = [
         {name: "Colors", id: 1},
         {name: "Fruits", id: 2},
@@ -14,7 +13,6 @@ const CourseContent = () => {
         {name: "Animals", id: 4},
         {name: "Family", id: 5},
     ]
-
 
     const courseListLearning = courses.map((course) => {
         return (
@@ -34,4 +32,4 @@ const CourseContent = () => {
   );
 }
 
-export default CourseContent;
+export default ReviewCourse;

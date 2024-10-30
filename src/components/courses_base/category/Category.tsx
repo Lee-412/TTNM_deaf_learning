@@ -6,8 +6,9 @@ interface CategoryProps {
     data?: number;
     }
 
-const Category = (props: CategoryProps) => {
+const Category = (props: CategoryProps, btn_name: string) => {
     
+  
 
   return (
     <Paper shadow="md" p="xl" radius="md" className={classes.card}>

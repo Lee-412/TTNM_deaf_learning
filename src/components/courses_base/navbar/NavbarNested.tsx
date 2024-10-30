@@ -11,7 +11,6 @@ import {
 } from "@tabler/icons-react";
 import { LinksGroup } from "./NavbarLinksGroup/NavbarLinksGroup";
 import classes from "./NavbarNested.module.css";
-import Link   from 'next/link';
 
 
 const mockdata = [
