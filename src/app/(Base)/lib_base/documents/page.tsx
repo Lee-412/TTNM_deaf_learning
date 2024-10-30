@@ -1,38 +1,7 @@
-import { Container } from "@mantine/core";
-import styles from './document.module.css';
-import { Divider, Text } from '@mantine/core';
-import Card_Base from "@/components/lib_base/document_card/document.card";
 
-const documentBase = () => {
+import DocumentBase from "@/components/lib_base/document_base/document.base";
 
-    // const data_document_base = [
-    //     {
-    //         title: 'Tài liệu',
-    //         data: [
-    //             {
-    //                 title: 'Hướng dẫn học thủ ngữ khi tiếp xúc với người khiếm thính',
-    //                 url: 'http://me.phununet.com/WikiPhununet/ChiTietWiKi.aspx?m=0&StoreID=26631',
-    //                 imgUrl: 'https://news.columbia.edu/sites/default/files/styles/cu_crop/public/content/2022/deaf-hard-hearing-education-tc-columbia.jpg?itok=TLCDamF2',
-    //                 content: '',
-    //             },
-    //             {
-    //                 title: 'Cách học ngôn ngữ ký hiệu',
-    //                 url: 'https://vi.recursosdeautoayuda.com/c%c3%a1ch-h%e1%bb%8dc-ng%c3%b4n-ng%e1%bb%af-k%c3%bd-hi%e1%bb%87u/',
-    //                 imgUrl: 'https://www.vietnamworks.com/hrinsider/wp-content/uploads/2024/04/giao-tiep-phi-ngon-ngu-hieu-qua.jpg',
-    //                 content: '',
-    //             },
-    //             {
-    //                 title: 'Một số phương thức hình thành kí hiệu của người điếc Việt Nam',
-    //                 url: 'http://vjes.vnies.edu.vn/sites/default/files/baivietso6_0.pdf',
-    //                 imgUrl: 'https://vuanem.com/blog/wp-content/uploads/2023/06/phan-mem-hoc-ngon-ngu-ky-hieu-tay.jpg',
-    //                 content: ''
-    //             }
-
-    //         ],
-    //     },
-    //     {},
-    //     {}
-    // ]
+const documentPage = () => {
 
 
     const data_document_base = [
@@ -145,32 +114,10 @@ const documentBase = () => {
     ];
 
     return (
-        <Container>
-
-            {data_document_base.map((data: any, index: any) => (
-                <div key={index} className={styles.container}>
-                    <div className={styles.title}>
-                        <Divider my="md" className={styles.divider} />
-                        {data.title}
-                        <Divider size="lg" color="blue" />
-                    </div>
-                    <div className={styles.cardContainer}>
-                        {data.content.map((dt: { title: string; url: string; imgUrl: string; content: string; }, dtIndex: any) => (
-                            <Card_Base
-                                key={dtIndex}
-                                title={dt.title}
-                                url={dt.url}
-                                imgUrl={dt.imgUrl}
-                                content={dt.content}
-                            />
-                        ))}
-                    </div>
-                </div>
-            ))}
-
-
-        </Container >
+        <>
+            <DocumentBase />
+        </>
     );
 };
 
-export default documentBase;
+export default documentPage;

@@ -51,7 +51,7 @@ const Contribution = () => {
             {/* https://www.canva.com/design/DAGUpar_3P4/TdOMgVDbGSZG1fiNQ7p4fg/view?embed */}
             <Image
                 radius="md"
-                src="/contribution.png"
+                src="/contribution/contribution.png"
             />
         </>
     )
