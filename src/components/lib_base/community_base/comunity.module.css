@@ -4,10 +4,10 @@
     align-items: center;
 }
 
+
 .cardContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 5vw 1vw;
     padding: 2vh 0;
     margin-top: 5vh;
@@ -16,15 +16,40 @@
 }
 
 .cardItem {
+    transition: transform 0.3s ease;
+}
+
+.cardItem:hover {
+    transform: scale(1.05);
+}
+
+
+.cardItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     flex: 1 1 calc(31% - 1vw);
     max-width: calc(31% - 1vw);
-
+    min-height: 350px;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 .title {
     font-weight: bolder;
     font-size: xx-large;
 }
+
+.buttonContainer {
+    display: flex;
+    gap: 1vw;
+    margin-top: auto
+}
+
+
+
+
 
 .divider {}
 

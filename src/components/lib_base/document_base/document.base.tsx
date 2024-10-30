@@ -1,7 +1,12 @@
+'use client'
+import { Container } from "@mantine/core";
+import styles from './document.module.css';
+import { Divider, Text } from '@mantine/core';
+import Card_Base from "@/components/lib_base/document_card/document.card";
+import { useEffect, useRef } from "react";
 
-import DocumentBase from "@/components/lib_base/document_base/document.base";
+const DocumentBase = () => {
 
-const documentPage = () => {
 
 
     const data_document_base = [
@@ -35,13 +40,13 @@ const documentPage = () => {
                 {
                     title: 'Nơi ấy con tìm về',
                     url: 'https://youtu.be/59oywtLlcRU',
-                    imgUrl: 'https://vuanem.com/blog/wp-content/uploads/2023/06/phan-mem-hoc-ngon-ngu-ky-hieu-tay.jpg',
+                    imgUrl: 'https://tse1.mm.bing.net/th?&id=OVP.qtReKq1DLVUJduU488pCWwEsDh&w=528&h=298&c=7&pid=1.7&rs=1',
                     content: '',
                 },
                 {
                     title: 'Sống như những đóa hoa',
                     url: 'https://youtu.be/DYmQwqdGIWI',
-                    imgUrl: 'https://vuanem.com/blog/wp-content/uploads/2023/06/phan-mem-hoc-ngon-ngu-ky-hieu-tay.jpg',
+                    imgUrl: 'https://tse1.mm.bing.net/th?&id=OVP.HCPKhZaDvVhe_v9cCLOR1gEsDh&w=528&h=298&c=7&pid=1.7&rs=1',
                     content: '',
                 },
                 {
@@ -113,11 +118,37 @@ const documentPage = () => {
         }
     ];
 
+
+
     return (
-        <>
-            <DocumentBase />
-        </>
+        <Container size={"lg"}>
+
+            {data_document_base.map((data: any, index: any) => (
+                <div key={index} className={styles.container}>
+                    <div className={styles.title}>
+                        <Divider my="md" className={styles.divider} />
+                        {data.title}
+                        <Divider size="lg" color="blue" />
+                    </div>
+                    <div className={styles.cardContainer}>
+                        {data.content.map((dt: { title: string; url: string; imgUrl: string; content: string; }, dtIndex: any) => (
+
+                            <Card_Base
+                                key={dtIndex}
+                                title={dt.title}
+                                url={dt.url}
+                                imgUrl={dt.imgUrl}
+                                content={dt.content}
+                            />
+
+                        ))}
+                    </div>
+                </div>
+            ))}
+
+
+        </Container >
     );
 };
 
-export default documentPage;
+export default DocumentBase;

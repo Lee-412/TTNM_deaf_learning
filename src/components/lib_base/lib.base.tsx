@@ -23,7 +23,7 @@ const LibraryBase = () => {
             title: 'Cộng đồng trực tuyến',
             imgUrl: 'https://th.bing.com/th/id/OIP.KheH7TyVVOlgb0S1HLZFdwHaHa?rs=1&pid=ImgDetMain',
             content: 'Danh sách các cộng đồng trực tuyến về ngôn ngữ ký hiệu',
-            target: 'comunities'
+            target: 'communities'
         }
     ]
     const router = useRouter()
