@@ -14,32 +14,18 @@ import classes from "./NavbarNested.module.css";
 
 
 const mockdata = [
-  { label: "Khóa học", icon: IconGauge,  },
+  { label: "Khóa học", icon: IconGauge, links: "courses" },
   {
     label: "Ôn tập",
-    icon: IconNotes
+    icon: IconNotes,
+    links: "course_review"
   },
-  {
-    label: "Ngôn ngữ",
-    icon: IconCalendarStats,
-    links: [
-      { label: "Việt Nam", link: "/" },
-      { label: "Previous releases", link: "/" },
-      { label: "Releases schedule", link: "/" },
-    ],
-  },
-  { label: "Bảng xếp hạng", icon: IconPresentationAnalytics },
-  { label: "Thống kê", icon: IconFileAnalytics },
-  { label: "Kiểm tra kí hiệu", icon: IconAdjustments },
-  {
-    label: "Khác",
-    icon: IconLock,
-    links: [
-      { label: "Hồ sơ", link: "/" },
-      { label: "Nâng cấp", link: "/" },
-      { label: "Đăng nhập", link: "/" },
-    ],
-  },
+  { label: "Bảng xếp hạng", icon: IconPresentationAnalytics, links: "" },
+  { label: "Thống kê", icon: IconFileAnalytics, links: "" },
+  { label: "Kiểm tra kí hiệu", icon: IconAdjustments, links: "" },
+  { label: "Hồ sơ", icon: IconLock, links: "" },
+  { label: "Nâng cấp", icon: IconAdjustments, links: "" },
+  { label: "Đăng nhập", icon: IconAdjustments, links: "" },
 ];
 
 export function NavbarNested() {

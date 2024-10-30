@@ -4,7 +4,7 @@
   width: 100%;
   padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
   color: var(--mantine-color-text);
-  font-size: var(--mantine-font-size-sm);
+  font-size: var(--mantine-font-size-s);
 
   @mixin hover {
     background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-7));

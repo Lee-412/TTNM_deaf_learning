@@ -1,5 +1,8 @@
+'use client'
+
 import { Paper, Text, Title, Button } from '@mantine/core';
 import classes from './Category.module.css';
+import { useRouter } from 'next/navigation';
 
 interface CategoryProps {
     title: string;
@@ -8,6 +11,12 @@ interface CategoryProps {
 
 const Category = (props: CategoryProps, btn_name: string) => {
     
+  const router = useRouter();
+
+    const handleClickButton = (link: string) => {
+        console.log(link);
+        router.push(`/course_base/${link}`);
+    }
   
 
   return (
@@ -18,7 +27,8 @@ const Category = (props: CategoryProps, btn_name: string) => {
             {props.title}
         </Title>
       </div>
-      <Button variant="white" color="dark">
+      <Button variant="white" color="dark"
+      onClick={() => handleClickButton("learning")}>
         Study Now
       </Button>
     </Paper>

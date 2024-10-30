@@ -10,12 +10,13 @@ import {
 } from "@mantine/core";
 import { IconCalendarStats, IconChevronRight } from "@tabler/icons-react";
 import classes from "./NavbarLinksGroup.module.css";
+import { useRouter } from "next/navigation";
 
 interface LinksGroupProps {
   icon: React.FC<any>;
   label: string;
   initiallyOpened?: boolean;
-  links?: { label: string; link: string }[];
+  links: string; 
 }
 
 export function LinksGroup({
@@ -24,24 +25,19 @@ export function LinksGroup({
   initiallyOpened,
   links,
 }: LinksGroupProps) {
-  const hasLinks = Array.isArray(links);
   const [opened, setOpened] = useState(initiallyOpened || false);
-  const items = (hasLinks ? links : []).map((link) => (
-    <Text<"a">
-      component="a"
-      className={classes.link}
-      href={link.link}
-      key={link.label}
-      onClick={(event) => event.preventDefault()}
-    >
-      {link.label}
-    </Text>
-  ));
+
+  const router = useRouter();
+
+    const handleClickButton = (link: string) => {
+        console.log(link);
+        router.push(`/course_base/${link}`);
+    }
 
   return (
     <>
       <UnstyledButton
-        onClick={() => setOpened((o) => !o)}
+        onClick={() => handleClickButton(links)}
         className={classes.control}
       >
         <Group justify="space-between" gap={0}>
@@ -51,20 +47,10 @@ export function LinksGroup({
             </ThemeIcon>
             <Box ml="md">{label}</Box>
           </Box>
-          {hasLinks && (
-            <IconChevronRight
-              className={classes.chevron}
-              stroke={1.5}
-              style={{
-                width: rem(16),
-                height: rem(16),
-                transform: opened ? "rotate(-90deg)" : "none",
-              }}
-            />
-          )}
+          
         </Group>
       </UnstyledButton>
-      {hasLinks ? <Collapse in={opened}>{items}</Collapse> : null}
+      
     </>
   );
 }
@@ -72,11 +58,7 @@ export function LinksGroup({
 const mockdata = {
   label: "Releases",
   icon: IconCalendarStats,
-  links: [
-    { label: "Upcoming releases", link: "/" },
-    { label: "Previous releases", link: "/" },
-    { label: "Releases schedule", link: "/" },
-  ],
+  links: "/"
 };
 
 export function NavbarLinksGroup() {

@@ -3,7 +3,6 @@
     height: rem(800px);
     width: rem(300px);
     padding: var(--mantine-spacing-md);
-    
     padding-bottom: 0;
     display: flex;
     flex-direction: column;
