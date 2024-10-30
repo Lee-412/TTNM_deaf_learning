@@ -62,7 +62,7 @@ const Footer = () => {
     }
 
     return (
-        <footer className={classes.footer}>
+        <footer className={classes.footer} style={{marginTop: '0px !important'}}>
             <Container className={classes.inner}>
                 <div className={classes.logo}>
                     <MantineLogo size={30} />

@@ -1,7 +1,9 @@
+import CourseBase from "@/components/courses_base/course_base";
+
 const Courses = () => {
     return (
         <>
-            Course page
+            <CourseBase />
         </>
     )
 }
