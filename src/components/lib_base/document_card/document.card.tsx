@@ -34,11 +34,12 @@ const Card_Base = (props: Data_card) => {
                     <Image
                         style={{
                             padding: '5px',
-                            borderRadius: '15px'
+                            borderRadius: '15px',
+                            objectFit: 'fill'
                         }}
 
                         src={props.imgUrl}
-                        height={180}
+                        height={200}
                         alt="Norway"
                     />
                 </Card.Section>
