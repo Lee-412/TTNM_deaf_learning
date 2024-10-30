@@ -1,48 +1,48 @@
 .learning-container {
   display: block;
-  width:90%;
+  width:98%;
 }
 
 .learning-title {
-  font-size: 2rem;
-  font-weight: 600;
-  background-color: aqua;
-  color:white;
-  width: 100%;
-  height: 70px;
-  
-  padding-left: 10px;
-  border-radius: 10px;
+  background: linear-gradient(#6ea6f3, #6ea6f3), rgb(110, 166, 243);
+  border-radius: 15px;
+  padding-top: 5px;
+  padding-left: 50px;
+  font-weight: 700;
+  margin-bottom: 1px;
+  height: 63px;
+  align-items: center;
 }
 
-h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  
-  color:white;
-  width: 100%;
+.learning-title span{
+  font-family: 'Alfa Slab One', serif;
+    font-size: 33px;
+    color: rgb(255, 255, 255);
 }
+
 
 .learning-definition{
+  flex: 1 1 auto;
   font-size: 1.3rem;
   font-weight: 500;
-  color:white;
-  width: 85%;
-  background-color: cadetblue;
+  color:black;
+  width: 80%;
+  background-color: white;
   padding-left: 50px;
-  border-radius: 10px;
+  
+  align-items: center;
 }
 
 .learning-video{
   height: rem(500);
-  background-color: bisque;
-  width: 85%;
-  border-radius: 10px;
+  background-color: white;
+  width: 80%;
+  border: 1px solid #ccc;
+  
 }
 
 .btn-next {
-  background-color: #4CAF50;
+  background-color: #0d97d6;
   color: white;
   padding: 16px 20px;
   margin: 8px 0;

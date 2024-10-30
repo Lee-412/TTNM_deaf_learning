@@ -1,18 +1,15 @@
-'use client'
-import CourseContent from "./content/Course_content";
+"use client";
+import CourseContent from "./course_content/Course_content";
 import LearningContent from "./learning_content/LearningContent";
 import { NavbarNested } from "./navbar/NavbarNested";
-import ReviewCourse from "./review_course/ReviewCourse";
+import ReviewCourse from "./revise_course/ReviseCourse";
 import { useState } from "react";
 
 const CourseBase = () => {
-
-    
-    return (
-        <>
-            <CourseContent />
-        </>
-        
-    );
-    };
+  return (
+    <>
+      <CourseContent />
+    </>
+  );
+};
 export default CourseBase;

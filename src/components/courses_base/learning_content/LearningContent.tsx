@@ -1,18 +1,19 @@
 import './LearningContent.css'
 
+// Đây là nội dung của phần học
+
 const LearningContent = () => {
     return (
         <div className="learning-container">
-            <h1>Learning Content</h1>
 
             <div className="learning-content">
                 <div className="learning-title">
-                    Color
+                    <span>Màu sắc</span>
                 </div>
 
                 <div className="learning-definition">
-                    <p>Mau xanh da troi</p>
-                    <p>Loai tu: danh tu</p>
+                    <p style={{textAlign: "center"}}>Mau xanh da troi</p>
+                    <p style={{textAlign: "center"}}>Loai tu: danh tu</p>
                 </div>
 
                 <div className="learning-video">

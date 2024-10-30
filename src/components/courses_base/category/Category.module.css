@@ -1,13 +1,14 @@
 .card {
-    height: rem(200px);
-    min-width: rem(200px);
+    height: rem(180px);
+    min-width: rem(330px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     background-size: cover;
     background-position: center;
-    background-color: aqua !important;
+    background-color:rgb(247, 249, 252);
+    box-shadow: 5px 5px rgba(66, 152, 244, 0.5);
   }
   
   .title {
@@ -15,7 +16,7 @@
       Greycliff CF,
       var(--mantine-font-family);
     font-weight: 900;
-    color: var(--mantine-color-white);
+    color:rgb(31, 109, 226);
     line-height: 1.2;
     font-size: rem(32px);
     margin-top: var(--mantine-spacing-xs);
@@ -27,4 +28,8 @@
     opacity: 0.7;
     font-weight: 700;
     text-transform: uppercase;
+  }
+
+  .button {
+    border: 1px solid black;
   }

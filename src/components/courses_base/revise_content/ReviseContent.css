@@ -1,0 +1,57 @@
+.revise-container {
+    display: block;
+    width:98%;
+  }
+  
+  .revise-title {
+    background: linear-gradient(#6ea6f3, #6ea6f3), rgb(110, 166, 243);
+    border-radius: 15px;
+    padding-top: 5px;
+    padding-left: 50px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    height: 63px;
+    align-items: center;
+
+  }
+  
+  .revise-title span{
+    font-family: 'Alfa Slab One', serif;
+      font-size: 33px;
+      color: rgb(255, 255, 255);
+  }
+  
+  
+  .revise-question{
+    flex: 1 1 auto;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color:black;
+    width: 80%;
+    background-color: white;
+    padding-left: 50px;
+    
+    align-items: center;
+  }
+  
+  .revise-video{
+    height: rem(500);
+    background-color: white;
+    width: 80%;
+    border: 1px solid #ccc;
+    
+  }
+  
+  .btn-next {
+    background-color: #0d97d6;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius:10px;
+  }
+  
+  
+  

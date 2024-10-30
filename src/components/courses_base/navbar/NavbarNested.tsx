@@ -18,7 +18,7 @@ const mockdata = [
   {
     label: "Ôn tập",
     icon: IconNotes,
-    links: "course_review"
+    links: "course_revise"
   },
   { label: "Bảng xếp hạng", icon: IconPresentationAnalytics, links: "" },
   { label: "Thống kê", icon: IconFileAnalytics, links: "" },

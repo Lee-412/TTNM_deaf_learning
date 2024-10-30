@@ -8,9 +8,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
         
             <div className="course-content" style={{paddingLeft: "20px", paddingTop: "20px", width: "100%"}}>
-                <div style={{textAlign: "center", color: "white"}}>
-                    <h1> Khóa học </h1>
-                </div>
+                
                 
                 {children}
             
