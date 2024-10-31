@@ -1,0 +1,50 @@
+.homepage6 {
+    height: 700px;
+    /* background-color: beige; */
+    margin-top: 10px;
+    min-height: fit-content;
+    padding: 2%;
+
+}
+
+.homepage6-h {
+    padding-top: 0px;
+    text-align: center;
+    font-family: serif;
+    font-size: 50px;
+    padding-top: 0px;
+    margin-top: 5px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.homepage6-b {
+    margin-top: 3%;
+}
+
+.homepage6-b-q {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px
+}
+
+.homepage6-b-a {
+    width: 90%;
+    text-align: left;
+    font-size: 20px;
+}
+
+.homepage3-hr-1 {
+    height: 5px;
+    background-color: #0000CD;
+    width: 5%;
+    margin-bottom: 0px;
+}
+
+.homepage3-hr-2 {
+    height: 5px;
+    background-color: #FF4500;
+    width: 5%;
+    margin-top: 0px;
+
+}

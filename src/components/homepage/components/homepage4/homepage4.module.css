@@ -1,0 +1,78 @@
+.homepage4 {
+    display: flex;
+    min-height: 700px;
+    height: fit-content;
+    /* background-color: beige; */
+    margin-top: 10px;
+}
+
+.homepage4-1 {
+    width: 35%;
+
+    margin-left: 10%;
+    background-image: url('./3.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0%;
+}
+
+.homepage4-2 {
+    width: 50%;
+    margin-right: 5%;
+}
+
+.homepage4-2-h {
+    text-align: center;
+    font-size: 30px;
+    font-family: Text;
+}
+
+.homepage4-2-b {
+    display: flex;
+}
+
+.homepage4-2-b-1 {
+    text-align: center;
+    background-color: #6495ED;
+    width: 50%;
+    margin: 2%;
+    height: 350px;
+    min-height: fit-content;
+    padding: 20px;
+    border-radius: 5cap;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.homepage4-2-b-1:hover {
+    border-bottom: 10px solid #FF4500;
+    background-color: rgb(157, 202, 219);
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.homepage4-2-b-1 h3 {
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+
+.homepage3-hr-1 {
+    height: 5px;
+    background-color: #0000CD;
+    width: 5%;
+    margin-bottom: 0px;
+}
+
+.homepage3-hr-2 {
+    height: 5px;
+    background-color: #FF4500;
+    width: 5%;
+    margin-top: 0px;
+
+}

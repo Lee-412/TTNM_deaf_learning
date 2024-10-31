@@ -1,0 +1,62 @@
+.homepage7 {
+
+    height: 200px;
+    /* background-color: beige; */
+    margin-top: 10px;
+    min-height: fit-content;
+    padding: 2%;
+
+}
+
+
+.homepage7-h {
+    padding-top: 0px;
+    text-align: center;
+    font-family: serif;
+    font-size: 50px;
+    padding-top: 0px;
+    margin-top: 5px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.homepage7-b {
+    display: flex;
+}
+
+.homepage7-b-1 {
+    width: 50%;
+    padding-left: 20%;
+    font-size: 20px;
+}
+
+.homepage7-b-2 {
+    width: 50%;
+    margin-left: 5%;
+    font-size: 20px;
+
+}
+
+.homepage7-b-2 ul {
+    list-style: none;
+}
+
+.homepage7-b-2 img {
+    width: 5%;
+    height: 5%;
+    margin-top: 3%;
+}
+
+.homepage7-b-2-text {
+    margin-left: 1%;
+}
+
+.homepage7-b-2-text h5 {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.homepage7-b-2-text p {
+    margin-top: 0px;
+    padding-top: 0px;
+}
