@@ -1,5 +1,4 @@
 "use client";
-
 import { Paper, Text, Title, Button } from "@mantine/core";
 import classes from "./Category.module.css";
 import { useRouter } from "next/navigation";

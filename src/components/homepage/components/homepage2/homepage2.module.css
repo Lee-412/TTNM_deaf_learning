@@ -1,0 +1,50 @@
+.homepage2 {
+    display: flex;
+    height: fit-content;
+    min-height: 900px;
+    /* background-color: beige; */
+    margin-top: 20px;
+
+}
+
+.homepage2-1 {
+    width: 50%;
+    text-align: left;
+    padding: 10px;
+    padding-left: 10%;
+
+
+}
+
+.h1-homepage2-1 {
+    text-align: center;
+    font-size: 50px;
+    padding-left: 60px;
+
+    margin-top: 10%;
+    color: #00008B;
+}
+
+.button-homepage2-1 {
+    margin-top: 10%;
+    text-align: center;
+    font-weight: 900;
+}
+
+.homepage2-2 {
+    width: 50%;
+    background-image: url('./2.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+    border-radius: 10px;
+}
+
+.homepage2 li {
+    margin: 10%;
+    font-size: 20px;
+}
+
+.button-1:hover {
+    background-color: lightblue;
+}

@@ -1,0 +1,71 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.resultBox {
+    background: rgb(218, 236, 253);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 5vh;
+    max-width: 600px;
+}
+
+.resultText {
+    font-size: large;
+    font-weight: bolder;
+}
+
+
+.cameraContainer {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.video {
+    width: 100%;
+    height: auto;
+    background: #000;
+    display: block;
+}
+
+.button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.button:hover {
+    background: #0056b3;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 95vw;
+    }
+
+    .resultBox {
+        max-width: 95%;
+    }
+
+    .button {
+        font-size: 0.9rem;
+    }
+}
