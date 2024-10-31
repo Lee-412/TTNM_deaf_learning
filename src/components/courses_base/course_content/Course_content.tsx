@@ -9,13 +9,56 @@ interface CourseProps {
   target: string;
 }
 
+// data fake
+interface LearningData {
+  name: string;
+  id?: number;
+  target: string;
+  data: [   // số lượng từ sẽ là data.length
+    // trong data thì mỗi object sẽ là 1 từ,           
+    {
+      id: number;
+      word: string;
+      type: string;
+      urlVideo: string;
+    },
+  ];
+}
+
+interface ReviseData {
+  name: string;
+  id?: number;
+  target: string;
+  data: [   // số lượng từ sẽ là data.length
+    // trong data thì mỗi object sẽ là 1 từ,           
+    {
+      id: number;
+      word: string;
+      type: string;
+      urlVideo: string;
+      question: string;
+      answer: {
+        answerA: string,
+        answerB: string,
+        answerC: string,
+        answerD: string,
+      },
+      correctAnswer: string
+    },
+  ];
+}
+
 const CourseContent = () => {
   const courses: CourseProps[] = [
-    { name: "Colors", id: 1 , target: "Study"},
-    { name: "Fruits", id: 2 , target: "Study"},
-    { name: "Food", id: 3 , target: "Study"},
-    { name: "Animals", id: 4 , target: "Study"},
-    { name: "Family", id: 5 , target: "Study"},
+    {
+      name: "Colors",
+      id: 1,
+      target: "Study"
+    },
+    { name: "Fruits", id: 2, target: "Study" },
+    { name: "Food", id: 3, target: "Study" },
+    { name: "Animals", id: 4, target: "Study" },
+    { name: "Family", id: 5, target: "Study" },
   ];
 
   const courseListLearning = courses.map((course) => {

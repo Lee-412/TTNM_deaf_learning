@@ -1,6 +1,6 @@
 import CourseBase from "@/components/courses_base/course_base";
 
-const Courses = () => {
+const Courses = (props: any) => {
     return (
         <>
             <CourseBase />

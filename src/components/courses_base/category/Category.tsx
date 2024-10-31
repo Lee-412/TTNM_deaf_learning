@@ -12,10 +12,18 @@ interface CategoryProps {
 
 const Category = (props: CategoryProps) => {
   const router = useRouter();
-
+  const data = [
+    {
+      title: 'màu xanh',
+      urlVideo: 'hello',
+      type: 'danh từ'
+    }
+  ]
   const handleClickButton = (link: string) => {
     console.log(link);
-    router.push(`/course_base/${link}`);
+    router.push(
+      `/course_base/${link}?data=${JSON.stringify(data)}`
+    )
   };
 
   const status = props.target === "Study" ? "learning" : "revise";

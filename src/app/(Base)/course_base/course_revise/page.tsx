@@ -1,6 +1,6 @@
 import ReviewCourse from "@/components/courses_base/revise_course/ReviseCourse";
 
-const CourseRevisePage = () => {
+const CourseRevisePage = (props: any) => {
   return (
     <div>
       {/* Hiển thị trang ôn tập */}
