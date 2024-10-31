@@ -1,6 +1,6 @@
 .card {
-    height: rem(180px);
-    min-width: rem(330px);
+    height: rem(180);
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -8,6 +8,7 @@
     background-size: cover;
     background-position: center;
     background-color:rgb(247, 249, 252);
+    border: 1px solid black;
     box-shadow: 5px 5px rgba(66, 152, 244, 0.5);
   }
   
@@ -32,4 +33,9 @@
 
   .button {
     border: 1px solid black;
+  }
+
+  .button:hover {
+    background-color:#f0fbfd;
+    
   }

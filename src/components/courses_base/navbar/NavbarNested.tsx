@@ -1,5 +1,5 @@
 "use client";
-import { Group, Code, ScrollArea, rem } from "@mantine/core";
+import { Group, Code, ScrollArea, rem, Button, UnstyledButton } from "@mantine/core";
 import {
   IconNotes,
   IconCalendarStats,
@@ -8,13 +8,16 @@ import {
   IconFileAnalytics,
   IconAdjustments,
   IconLock,
+  IconMenu2,
+  IconPictureInPictureOff
 } from "@tabler/icons-react";
 import { LinksGroup } from "./NavbarLinksGroup/NavbarLinksGroup";
 import classes from "./NavbarNested.module.css";
+import { useState } from "react";
 
 
 const mockdata = [
-  { label: "Khóa học", icon: IconGauge, links: "courses" },
+  { label: "Khóa học", icon: IconPictureInPictureOff, links: "courses" },
   {
     label: "Ôn tập",
     icon: IconNotes,
@@ -34,11 +37,33 @@ export function NavbarNested() {
     <LinksGroup {...item} key={item.label} />
   ));
 
+  const [isOpened, setIsOpened] = useState(true);
+
+  const handleClickBtn = () => {
+    setIsOpened(!isOpened);
+    console.log(isOpened);
+  }
+
+  const handleOpened = () => {
+    if (isOpened) {
+      return {transform: "translateX(0)"}
+    } else {
+      return {transform: "translateX(-100%)", width: "0px"}
+    }
+  }
+
+
   return (
-    <nav className={classes.navbar}>
-      <ScrollArea className={classes.links}>
+    <div>
+      <Button className={classes.toggle} onClick={() => handleClickBtn()}>
+        <IconMenu2 style={{color: "black"}}></IconMenu2>
+      </Button>
+
+      <nav className={classes.navbar} style={handleOpened()}>
+      <ScrollArea className={classes.links} >
         <div className={classes.linksInner}>{links}</div>
       </ScrollArea>
     </nav>
+    </div>
   );
 }

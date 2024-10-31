@@ -1,10 +1,11 @@
-import CourseBase from "@/components/courses_base/course_base";
+import CourseContent from "@/components/courses_base/course_content/Course_content";
 
 const Courses = (props: any) => {
     return (
-        <>
-            <CourseBase />
-        </>
+        <div>
+            <CourseContent />
+            
+        </div>
     )
 }
 export default Courses;

@@ -3,13 +3,24 @@
     height: rem(800px);
     width: rem(300px);
     padding: var(--mantine-spacing-md);
+    padding-top: 45px;
     padding-bottom: 0;
     display: flex;
     flex-direction: column;
     border-right: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+    
+    transition: transform 0.3s;
   }
+
   
-  
+  .toggle {
+    position: absolute;
+    top:65px;
+    left: 10px;
+    background-color: white;
+    border: 1px solid black;
+    z-index: 1;
+  }
   
   .links {
     flex: 1;

@@ -1,4 +1,6 @@
+import Link from "next/link";
 import Category from "../category/Category";
+import "./ReviseCourse.css";
 
 // Đây là trang ôn tập
 
@@ -28,9 +30,28 @@ const ReviseCourse = () => {
 
   return (
     <div>
-    <div style={{ textAlign: "center", color: "white" }}>
+    <div style={{ textAlign: "center", fontFamily: "monospace", color: "#012970"}}>
       <h1> Chọn chủ đề ôn tập </h1>
     </div>
+
+    <ol
+        className="breadcrumb"
+        style={{ fontFamily: "Lora, serif", fontSize: "16px" }}
+      >
+        <li className="breadcrumb-item">
+          <Link href={"/"} style={{ textDecoration: "none", color: "#899BDD" }}>
+            Trang chủ
+          </Link>
+        </li>
+        <li className="breadcrumb-item active">
+          <Link
+            href={"/"}
+            style={{ textDecoration: "none", color: "#2D2D2DBF" }}
+          >
+            Ôn tập
+          </Link>
+        </li>
+      </ol>
 
     <div
       className="base-content"
