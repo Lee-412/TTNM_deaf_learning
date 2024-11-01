@@ -2,14 +2,14 @@
 import { Group, Code, ScrollArea, rem, Button, UnstyledButton } from "@mantine/core";
 import {
   IconNotes,
-  IconCalendarStats,
-  IconGauge,
   IconPresentationAnalytics,
   IconFileAnalytics,
   IconAdjustments,
   IconLock,
   IconMenu2,
-  IconPictureInPictureOff
+  IconPictureInPictureOff,
+  IconX,
+  IconSquareChevronRight
 } from "@tabler/icons-react";
 import { LinksGroup } from "./NavbarLinksGroup/NavbarLinksGroup";
 import classes from "./NavbarNested.module.css";
@@ -44,26 +44,34 @@ export function NavbarNested() {
     console.log(isOpened);
   }
 
-  const handleOpened = () => {
-    if (isOpened) {
-      return {transform: "translateX(0)"}
-    } else {
-      return {transform: "translateX(-100%)", width: "0px"}
-    }
-  }
+  // recommend: xử lý bằng 1 cái styles động, tức là thêm class theo điều kiện
+
+  // const handleOpened = () => {
+  //   if (isOpened) {
+  //     return {
+  //       transform: "translateX(0)",
+  //     }
+  //   } else {
+  //     return { transform: "translateX(-100%)", width: "0px" }
+  //   }
+  // }
 
 
   return (
     <div>
       <Button className={classes.toggle} onClick={() => handleClickBtn()}>
-        <IconMenu2 style={{color: "black"}}></IconMenu2>
+        <IconMenu2 style={{ color: "black" }}></IconMenu2>
       </Button>
 
-      <nav className={classes.navbar} style={handleOpened()}>
-      <ScrollArea className={classes.links} >
-        <div className={classes.linksInner}>{links}</div>
-      </ScrollArea>
-    </nav>
+      <nav className={`${classes.navbar} ${isOpened ? classes.navOuline : classes.navInline}`}
+
+      // style={handleOpened()}navInline
+      >
+
+        <ScrollArea className={classes.links} >
+          <div className={classes.linksInner}>{links}</div>
+        </ScrollArea>
+      </nav>
     </div>
   );
 }
