@@ -22,7 +22,6 @@ const HomePage = () => {
             console.log(data);
         }
         else {
-            router.push('/signin')
         }
     }, [])
 
