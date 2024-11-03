@@ -17,6 +17,7 @@ import {
 import classes from './sigin.module.css';
 import { useState } from 'react';
 import ForgotPassword from '../password/forgot.password';
+import { useRouter } from 'next/navigation';
 
 interface dataSignIn {
     email: string;
@@ -30,9 +31,12 @@ const SigninBox = () => {
         password: ''
     });
 
+    const router = useRouter()
     const handleClickSignIn = (e: any) => {
         e.preventDefault();
         console.log(formData);
+        const data = JSON.stringify(formData)
+        sessionStorage.setItem('userData', data);
 
     }
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
