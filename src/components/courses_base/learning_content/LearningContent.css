@@ -1,6 +1,7 @@
 .learning-container {
   display: block;
   width:98%;
+  padding-top: 45px;
 }
 
 .learning-title {
@@ -43,12 +44,27 @@
 
 .btn-next {
   background-color: #0d97d6;
+  width: 80px;
+  position: absolute;
+  right: 8vw;
   color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
+  padding: 7px 12px;
+  margin: 8px 8px;
+  border: 1px solid black;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  border-radius:10px;
+}
+
+.btn-prev {
+  background-color: #0d97d6;
+  width: 80px;
+  color: white;
+  padding: 7px 12px;
+  margin: 8px 7vw;
+  border: 1px solid black;
+  cursor: pointer;
+  font-size: 1.3rem;
   border-radius:10px;
 }
 

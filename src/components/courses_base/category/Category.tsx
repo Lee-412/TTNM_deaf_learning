@@ -3,26 +3,35 @@ import { Paper, Text, Title, Button } from "@mantine/core";
 import classes from "./Category.module.css";
 import { useRouter } from "next/navigation";
 
-interface CategoryProps {
-  title: string;
-  data?: number;
+interface LearningData {
+  name: string;
+  id?: number;
   target: string;
+  data: Word[];
 }
 
-const Category = (props: CategoryProps) => {
+export interface Word {
+  id: number;
+  word: string;
+  type: string;
+  urlVideo: string;
+}
+
+const Category = (props: LearningData) => {
   const router = useRouter();
-  const data = [
-    {
-      title: 'màu xanh',
-      urlVideo: 'hello',
-      type: 'danh từ'
-    }
-  ]
   const handleClickButton = (link: string) => {
-    console.log(link);
-    router.push(
-      `/course_base/${link}?data=${JSON.stringify(data)}`
-    )
+    sessionStorage.setItem(
+      "learningData",
+      JSON.stringify(props.data)
+    );
+
+    sessionStorage.setItem(
+      "learningName",
+      JSON.stringify(props.name)
+    );
+
+    console.log(props.name);
+    router.push(`/course_base/${link}?data=${JSON.stringify(props.id)}`);
   };
 
   const status = props.target === "Study" ? "learning" : "revise";
@@ -31,7 +40,7 @@ const Category = (props: CategoryProps) => {
     <Paper shadow="md" p="xl" radius="md" className={classes.card}>
       <div>
         <Title order={3} className={classes.title}>
-          {props.title}
+          {props.name}
         </Title>
       </div>
       <Button

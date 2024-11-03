@@ -73,6 +73,7 @@
    left: 10px;
    background-color: white;
    z-index: 1;
+   border: 1px solid black;
    transition: left 1s cubic-bezier(0.4, 0, 0.2, 1);
  }
 
@@ -108,8 +109,9 @@
    .navOutline {}
 
    .navInline {
-     margin-left: 0px;
-     width: rem(300px);
+     margin-left: 3px;
+     padding-top: 45px;
+     width: 100vw;
      opacity: 1;
      visibility: visible;
    }
