@@ -25,20 +25,68 @@ const LearningContent = (props: LearningContentProps) => {
   const handleNext = () => {
 
     if (wordIndex < data.length - 1) {
+      console.log('check prev data', wordIndex);
 
       setWordIndex(wordIndex + 1);
+      console.log('check  data', wordIndex);
+
       setLinkVideo(data[wordIndex].urlVideo);
-      console.log(linkVideo, data[wordIndex].word);
+      console.log('check cur data', wordIndex, linkVideo);
 
     }
 
   }
 
+  // cách 1: callback function
+
+  // const handleNext = () => {
+
+  //   if (wordIndex < data.length - 1) {
+  //     console.log('check prev data', wordIndex, linkVideo);
+
+  //     setWordIndex(prevWordIndex => {
+  //       const newIndex = prevWordIndex + 1;
+  //       setLinkVideo(data[newIndex].urlVideo);
+  //       return newIndex;
+  //     });
+
+  //   }
+
+  // }
+
+  // cách 2: useEffect
+
+
+  // const handleNext = () => {
+
+  //   if (wordIndex < data.length - 1) {
+
+  //     setWordIndex(wordIndex + 1);
+
+  //   }
+
+  // }
+  // useEffect(() => {
+  //   if (wordIndex < data.length) {
+  //     setLinkVideo(data[wordIndex].urlVideo);
+  //   }
+  // }, [wordIndex, data]);
+
+
+
+  console.log('check out data', wordIndex);
+
   const handlePrev = () => {
 
     if (wordIndex > 0) {
+      console.log('check prev data', wordIndex);
+
       setWordIndex(wordIndex => wordIndex - 1);
+      console.log('check  data', wordIndex);
+
       setLinkVideo(data[wordIndex].urlVideo);
+      console.log('check cur data', wordIndex, linkVideo);
+
     }
   }
 
@@ -74,6 +122,8 @@ const LearningContent = (props: LearningContentProps) => {
 
               {/**
                   Vấn đề rõ ràng, chỉ thay đổi 1 dòng code ở đây là fix được hết.
+                  Việc sử dụng 2 state để kiểm soát thêm data trong khi 1 state là đã đại diện cho việc thay đổi của 
+                    toàn bộ data cần thiết
             */}
 
             </video>

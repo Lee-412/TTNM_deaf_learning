@@ -15,15 +15,15 @@ const HomePage = () => {
     let data;
     const router = useRouter()
 
-    useEffect(() => {
-        let dataParse = sessionStorage.getItem('userData');
-        if (dataParse) {
-            data = JSON.parse(dataParse);
-            console.log(data);
-        }
-        else {
-        }
-    }, [])
+    // useEffect(() => {
+    //     let dataParse = sessionStorage.getItem('userData');
+    //     if (dataParse) {
+    //         data = JSON.parse(dataParse);
+    //         console.log(data);
+    //     }
+    //     else {
+    //     }
+    // }, [])
 
 
     sessionStorage.removeItem('userData')
