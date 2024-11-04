@@ -43,6 +43,9 @@ const UserProvider = ({ children }: { children: React.ReactNode }) => {
             token: '',
             account: {}
         }));
+        sessionStorage.removeItem('user');
+        window.location.reload();
+
     };
 
     const router = useRouter();
@@ -52,12 +55,11 @@ const UserProvider = ({ children }: { children: React.ReactNode }) => {
         try {
 
             const response = getUserAccount();
-            console.log('check data', response);
-            let dataUser = JSON.parse(response.data);
-            console.log('check data dataUser', dataUser);
+
 
             if (response.code === 0) {
-
+                let dataUser: ContextData = JSON.parse(response.data);
+                console.log(dataUser);
                 setUser({
                     isLoading: false,
                     isAuthenticate: true,

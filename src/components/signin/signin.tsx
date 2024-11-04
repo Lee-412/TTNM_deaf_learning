@@ -35,7 +35,7 @@ const SigninBox = () => {
             console.log('hit login true');
             console.log(user);
 
-            // router.push('/')
+            router.push('/')
 
         }
     }, [user, router]);

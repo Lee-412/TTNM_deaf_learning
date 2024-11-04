@@ -3,7 +3,7 @@ import { Container } from "@mantine/core";
 const AboutBase = () => {
     return (
         <Container>
-            <img src="" alt="" />
+            A;OP
         </Container>
     )
 }

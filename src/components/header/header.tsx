@@ -17,7 +17,7 @@ import classes from './Header.module.css';
 import { usePathname, useRouter } from 'next/navigation';
 import { UserContext } from '../useContext/userContext';
 import { useContext, useEffect, useState } from 'react';
-import { IconLogout, IconSettings, IconUser } from '@tabler/icons-react';
+import { IconLogout, IconMilitaryRank, IconSettings, IconUser } from '@tabler/icons-react';
 const navItems = [
     { label: 'Trang chủ', path: '/' },
     { label: 'Khoá học', path: '/course_base/courses' },
@@ -57,16 +57,13 @@ export function Header() {
                 isAuthenticate: user.isAuthenticate
             });
         }
-
-    }, []);
-
-
+    }, [user]);
 
     const handleClickButtonHeader = (path: string) => {
         router.push(path)
     }
     const handleClickLogout = () => {
-
+        logoutContext()
     }
     return (
         <Box>
@@ -95,39 +92,32 @@ export function Header() {
 
                         {
                             userData && userData.isAuthenticate === true ?
-                                // <>
-                                //     {console.log("có userDat")
-                                //     }
-
-                                //     <Avatar src={null} alt="no image here" />
-
-                                // </>
-
                                 <>
-                                    {console.log("có userDat")}
                                     <Menu shadow="md" width={200}>
                                         <Menu.Target>
                                             <Avatar src={null} alt="no image here" />
                                         </Menu.Target>
 
-                                        {/* <Menu.Dropdown>
-                                            <Menu.Item icon={<IconUser size={14} />}>Hồ Sơ</Menu.Item>
-                                            <Menu.Item icon={<IconSettings size={14} />}>Cài đặt</Menu.Item>
+                                        <Menu.Dropdown>
+                                            <Menu.Item leftSection={<IconUser size={14} />}>Hồ Sơ</Menu.Item>
+                                            <Menu.Item leftSection={<IconSettings size={14} />}>Bảng xếp hạng</Menu.Item>
+                                            <Menu.Item leftSection={<IconSettings size={14} />}>Thống kê</Menu.Item>
+                                            <Menu.Item leftSection={<IconSettings size={14} />}>Cài đặt</Menu.Item>
+
                                             <Menu.Divider />
                                             <Menu.Item
                                                 color="red"
-                                                icon={<IconLogout size={14} />}
+                                                leftSection={<IconLogout size={14} />}
                                                 onClick={() => { handleClickLogout() }}
                                             >
                                                 Đăng xuất
                                             </Menu.Item>
-                                        </Menu.Dropdown> */}
+                                        </Menu.Dropdown>
                                     </Menu>
                                 </>
                                 :
                                 <>
-                                    {console.log(" ko có userData")
-                                    }
+
                                     <Button variant="default" onClick={() => {
                                         handleClickLogin()
                                     }}>Log in</Button>
@@ -170,16 +160,32 @@ export function Header() {
                         {
                             userData && userData.isAuthenticate === true ?
                                 <>
-                                    {console.log("có userDat")
-                                    }
 
-                                    <Avatar src={null} alt="no image here" />
+                                    <Menu shadow="md" width={200}>
+                                        <Menu.Target>
+                                            <Avatar src={null} alt="no image here" />
+                                        </Menu.Target>
+
+                                        <Menu.Dropdown>
+                                            <Menu.Item leftSection={<IconUser size={14} />}>Hồ Sơ</Menu.Item>
+                                            <Menu.Item leftSection={<IconMilitaryRank size={14} />}>Bảng xếp hạng</Menu.Item>
+                                            <Menu.Item leftSection={<IconSettings size={14} />}>Thống kê</Menu.Item>
+                                            <Menu.Item leftSection={<IconSettings size={14} />}>Cài đặt</Menu.Item>
+                                            <Menu.Divider />
+                                            <Menu.Item
+                                                color="red"
+                                                leftSection={<IconLogout size={14} />}
+                                                onClick={() => { handleClickLogout() }}
+                                            >
+                                                Đăng xuất
+                                            </Menu.Item>
+                                        </Menu.Dropdown>
+                                    </Menu>
 
                                 </>
                                 :
                                 <>
-                                    {console.log(" ko có userData")
-                                    }
+
                                     <Button variant="default" onClick={() => {
                                         handleClickLogin()
                                     }}>Log in</Button>
