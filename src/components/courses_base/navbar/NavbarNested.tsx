@@ -23,8 +23,8 @@ const mockdata = [
     icon: IconNotes,
     links: "course_revise"
   },
-  { label: "Bảng xếp hạng", icon: IconPresentationAnalytics, links: "" },
-  { label: "Thống kê", icon: IconFileAnalytics, links: "" },
+  { label: "Bảng xếp hạng", icon: IconPresentationAnalytics, links: "rank" },
+  { label: "Thống kê", icon: IconFileAnalytics, links: "statistical" },
   { label: "Kiểm tra kí hiệu", icon: IconAdjustments, links: "camera" },
   { label: "Hồ sơ", icon: IconLock, links: "" },
   { label: "Nâng cấp", icon: IconAdjustments, links: "" },

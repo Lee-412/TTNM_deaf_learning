@@ -8,18 +8,65 @@ import {
     Drawer,
     ScrollArea,
     rem,
+    Avatar,
+    Menu,
 } from '@mantine/core';
 import { MantineLogo } from '@mantinex/mantine-logo';
 import { useDisclosure } from '@mantine/hooks';
 import classes from './Header.module.css';
-import { useRouter } from 'next/navigation';
-
-
+import { usePathname, useRouter } from 'next/navigation';
+import { UserContext } from '../useContext/userContext';
+import { useContext, useEffect, useState } from 'react';
+import { IconLogout, IconSettings, IconUser } from '@tabler/icons-react';
+const navItems = [
+    { label: 'Trang chủ', path: '/' },
+    { label: 'Khoá học', path: '/course_base/courses' },
+    { label: 'Thư viện', path: '/library' },
+    { label: 'FAQ', path: '/FAQ' },
+    { label: 'Đóng góp', path: '/contribution' },
+    { label: 'Về chúng tôi', path: '/about' },
+];
 export function Header() {
     const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
-    const route = useRouter();
+    const router = useRouter();
     const handleClickLogin = () => {
-        route.push('/Signin')
+        router.push('/Signin')
+    }
+
+    const { user, logoutContext } = useContext(UserContext);
+    const pathname = usePathname();
+    const [userData, setUserData] = useState({
+        token: '',
+        username: '',
+        email: '',
+        isAuthenticate: false
+    })
+
+    useEffect(() => {
+
+        if (user && user.isAuthenticate === false) {
+            // route.push('/login');
+            console.log("no data");
+        }
+        else {
+            console.log("check user header no content");
+            setUserData({
+                token: user.token,
+                username: user.account.username,
+                email: user.account.email,
+                isAuthenticate: user.isAuthenticate
+            });
+        }
+
+    }, []);
+
+
+
+    const handleClickButtonHeader = (path: string) => {
+        router.push(path)
+    }
+    const handleClickLogout = () => {
+
     }
     return (
         <Box>
@@ -29,33 +76,64 @@ export function Header() {
 
                     <Group h="100%" gap={0} visibleFrom="sm">
 
-                        <a href="/" className={classes.link}>
-                            Trang chủ
-                        </a>
-                        <a href="/course_base/courses" className={classes.link}>
-                            Khoá học
-                        </a>
-                        <a href="/library" className={classes.link}>
-                            Thư viện
-                        </a>
-                        <a href="/FAQ" className={classes.link}>
-                            FAQ
-                        </a>
-                        <a href="/contribution" className={classes.link}>
-                            Đóng góp
-                        </a>
-                        <a href="/about" className={classes.link}>
-                            Về chúng tôi
-                        </a>
-
+                        {navItems.map((item) => (
+                            <Button
+                                key={item.path}
+                                variant="white"
+                                color='black'
+                                onClick={() => router.push(item.path)}
+                                className={classes.buttonHeader}
+                            >
+                                {item.label}
+                            </Button>
+                        ))}
 
                     </Group>
 
                     <Group visibleFrom="sm">
-                        <Button variant="default" onClick={() => {
-                            handleClickLogin()
-                        }}>Log in</Button>
-                        <Button>Sign up</Button>
+
+
+                        {
+                            userData && userData.isAuthenticate === true ?
+                                // <>
+                                //     {console.log("có userDat")
+                                //     }
+
+                                //     <Avatar src={null} alt="no image here" />
+
+                                // </>
+
+                                <>
+                                    {console.log("có userDat")}
+                                    <Menu shadow="md" width={200}>
+                                        <Menu.Target>
+                                            <Avatar src={null} alt="no image here" />
+                                        </Menu.Target>
+
+                                        {/* <Menu.Dropdown>
+                                            <Menu.Item icon={<IconUser size={14} />}>Hồ Sơ</Menu.Item>
+                                            <Menu.Item icon={<IconSettings size={14} />}>Cài đặt</Menu.Item>
+                                            <Menu.Divider />
+                                            <Menu.Item
+                                                color="red"
+                                                icon={<IconLogout size={14} />}
+                                                onClick={() => { handleClickLogout() }}
+                                            >
+                                                Đăng xuất
+                                            </Menu.Item>
+                                        </Menu.Dropdown> */}
+                                    </Menu>
+                                </>
+                                :
+                                <>
+                                    {console.log(" ko có userData")
+                                    }
+                                    <Button variant="default" onClick={() => {
+                                        handleClickLogin()
+                                    }}>Log in</Button>
+                                    <Button>Sign up</Button>
+                                </>
+                        }
                     </Group>
 
                     <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
@@ -74,36 +152,44 @@ export function Header() {
                 <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
                     <Divider my="sm" />
 
-                    <a href="#" className={classes.link}>
-                        Trang chủ
-                    </a>
-                    <a href="#" className={classes.link}>
-                        Khoá học
-                    </a>
-                    <a href="#" className={classes.link}>
-                        Thư viện
-                    </a>
-                    <a href="#" className={classes.link}>
-                        FAQ
-                    </a>
-                    <a href="#" className={classes.link}>
-                        Đóng góp
-                    </a>
-                    <a href="#" className={classes.link}>
-                        Về chúng tôi
-                    </a>
-
+                    {navItems.map((item) => (
+                        <Button
+                            key={item.path}
+                            variant="white"
+                            color='black'
+                            onClick={() => handleClickButtonHeader(item.path)}
+                            className={classes.buttonHeader}
+                        >
+                            {item.label}
+                        </Button>
+                    ))}
 
                     <Divider my="sm" />
 
                     <Group justify="center" grow pb="xl" px="md">
-                        <Button variant="default" onClick={() => {
-                            handleClickLogin()
-                        }}>Log in</Button>
-                        <Button>Sign up</Button>
+                        {
+                            userData && userData.isAuthenticate === true ?
+                                <>
+                                    {console.log("có userDat")
+                                    }
+
+                                    <Avatar src={null} alt="no image here" />
+
+                                </>
+                                :
+                                <>
+                                    {console.log(" ko có userData")
+                                    }
+                                    <Button variant="default" onClick={() => {
+                                        handleClickLogin()
+                                    }}>Log in</Button>
+                                    <Button>Sign up</Button>
+                                </>
+                        }
                     </Group>
+
                 </ScrollArea>
             </Drawer>
-        </Box>
+        </Box >
     );
 }

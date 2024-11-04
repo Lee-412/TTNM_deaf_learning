@@ -1,57 +1,78 @@
 .revise-container {
-    display: block;
-    width:98%;
-  }
-  
-  .revise-title {
-    background: linear-gradient(#6ea6f3, #6ea6f3), rgb(110, 166, 243);
-    border-radius: 15px;
-    padding-top: 5px;
-    padding-left: 50px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    height: 63px;
-    align-items: center;
+  display: block;
+  width: 98%;
+  padding-top: 45px;
+}
 
-  }
-  
-  .revise-title span{
-    font-family: 'Alfa Slab One', serif;
-      font-size: 33px;
-      color: rgb(255, 255, 255);
-  }
-  
-  
-  .revise-question{
-    flex: 1 1 auto;
-    font-size: 1.3rem;
-    font-weight: 500;
-    color:black;
-    width: 80%;
-    background-color: white;
-    padding-left: 50px;
-    
-    align-items: center;
-  }
-  
-  .revise-video{
-    height: rem(500);
-    background-color: white;
-    width: 80%;
-    border: 1px solid #ccc;
-    
-  }
-  
-  .btn-next {
-    background-color: #0d97d6;
-    color: white;
-    padding: 16px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    border-radius:10px;
-  }
-  
-  
-  
+.revise-title {
+  background: linear-gradient(#6ea6f3, #6ea6f3), rgb(110, 166, 243);
+  border-radius: 15px;
+  padding-top: 5px;
+  padding-left: 50px;
+  font-weight: 700;
+  margin-bottom: 1px;
+  height: 63px;
+  align-items: center;
+}
+
+.revise-title span {
+  font-family: 'Alfa Slab One', serif;
+  font-size: 33px;
+  color: rgb(255, 255, 255);
+}
+
+
+.revise-question {
+
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: black;
+  width: 80%;
+  background-color: white;
+  padding-left: 50px;
+  padding-bottom: 10px;
+  align-items: center;
+}
+
+.answer-button {
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  border: 1px solid black;
+  margin-bottom: 10px;
+}
+
+.answer-button:focus {
+  background-color: red;
+}
+
+.answer-button:hover {
+  background-color: #6ea6f3;
+}
+
+.btn-next {
+  background-color: #0d97d6;
+  width: 80px;
+  position: absolute;
+  right: 8vw;
+  color: white;
+  padding: 7px 12px;
+  margin: 8px 8px;
+  border: 1px solid black;
+  cursor: pointer;
+  font-size: 1.3rem;
+  border-radius: 10px;
+}
+
+.btn-prev {
+  background-color: #0d97d6;
+  width: 80px;
+  color: white;
+  padding: 7px 12px;
+  margin: 8px 7vw;
+  border: 1px solid black;
+  cursor: pointer;
+  font-size: 1.3rem;
+  border-radius: 10px;
+}

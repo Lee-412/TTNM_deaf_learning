@@ -10,14 +10,13 @@ import {
     Container,
     Group,
     Button,
-    Center,
-    Box,
-    rem,
+
 } from '@mantine/core';
 import classes from './sigin.module.css';
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import ForgotPassword from '../password/forgot.password';
 import { useRouter } from 'next/navigation';
+import { ContextData, UserContext, } from '../useContext/userContext';
 
 interface dataSignIn {
     email: string;
@@ -25,20 +24,47 @@ interface dataSignIn {
 }
 
 const SigninBox = () => {
+    const { user } = useContext(UserContext);
+    const { loginContext } = useContext(UserContext);
+
+    const router = useRouter()
+    useEffect(() => {
+
+
+        if (user && user.isAuthenticate === true) {
+            console.log('hit login true');
+            console.log(user);
+
+            // router.push('/')
+
+        }
+    }, [user, router]);
+
     const [opened, setOpen] = useState(false);
+
     const [formData, setFormData] = useState<dataSignIn>({
         email: '',
         password: ''
     });
 
-    const router = useRouter()
     const handleClickSignIn = (e: any) => {
         e.preventDefault();
         console.log(formData);
-        const data = JSON.stringify(formData)
-        sessionStorage.setItem('userData', data);
+        let data: ContextData = {
+            token: 'token',
+            isAuthenticate: true,
+            account: {
+                email: formData.email,
+                username: '',
+            }
+        }
+        loginContext(data)
+
+        sessionStorage.setItem('user', JSON.stringify(data))
+        router.push('/');
 
     }
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData(prevState => ({
@@ -100,3 +126,4 @@ const SigninBox = () => {
     );
 }
 export default SigninBox;
+
