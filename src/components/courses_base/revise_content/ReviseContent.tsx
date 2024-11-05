@@ -23,6 +23,7 @@ const ReviseContent = (props: ReviseContentProps) => {
   const handleSubmit = () => {
     if (wordIndex === data.length - 1) {
       sessionStorage.setItem("selectedAnswer", JSON.stringify(selectedAnswer));
+      sessionStorage.setItem("numberCorrectAnswer", JSON.stringify(numberCorrectAnswer));
       router.push("/course_base/revise_result")
     } else {
       console.log("Not finish");
