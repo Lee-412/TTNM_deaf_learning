@@ -1,7 +1,7 @@
 
-import classes from './homepage3.module.css';
+import classes from './Reason.module.css';
 
-const HomePage3 = () => {
+const Reason = () => {
     return (
         <div className={classes['homepage3']}>
             <hr className={classes['homepage3-hr-1']} />
@@ -29,4 +29,4 @@ const HomePage3 = () => {
     )
 }
 
-export default HomePage3;
+export default Reason;

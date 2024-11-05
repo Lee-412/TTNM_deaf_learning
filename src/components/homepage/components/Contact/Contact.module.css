@@ -8,16 +8,15 @@
 
 }
 
-
 .homepage7-h {
     padding-top: 0px;
     text-align: center;
-    font-family: serif;
-    font-size: 50px;
+    font-size: 3vw;
     padding-top: 0px;
     margin-top: 5px;
     padding-bottom: 0px;
     margin-bottom: 0px;
+    color: #00008B;
 }
 
 .homepage7-b {
@@ -59,4 +58,31 @@
 .homepage7-b-2-text p {
     margin-top: 0px;
     padding-top: 0px;
+}
+
+@media (max-width: 768px) {
+    .homepage7-b {
+        display: block;
+    }
+
+    .homepage7-b-1 {
+        width: 80%;
+        font-size: 5vw;
+    }
+
+    .homepage7-b-2 img {
+        width: 7vw;
+        margin: 3vh;
+    }
+
+    .homepage7-h {
+        font-size: 7vw;
+
+    }
+
+    .hr {
+        width: 50vw;
+        height: 3px;
+        background-color: rgb(0, 0, 0);
+    }
 }

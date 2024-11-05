@@ -1,9 +1,15 @@
 
-import classes from './homepage2.module.css';
+import classes from './About.module.css';
 import { Button } from '@mantine/core';
+import { useRouter } from 'next/navigation';
 
-const HomePage2 = () => {
+const About = () => {
+    const router = useRouter()
+    const handleClickStart = () => {
+        router.push('/about')
+    }
     return (
+
         <div className={classes['homepage2']}>
             <div className={classes['homepage2-1']}>
                 <h1 className={classes['h1-homepage2-1']}>Về Signlearn</h1>
@@ -13,7 +19,7 @@ const HomePage2 = () => {
                         <i>"Xóa bỏ rào cản trong giao tiếp và tăng cường giáo dục giữa các cộng đồng với nhau" </i></li>
                 </ul>
                 <div className={classes['button-homepage2-1']}>
-                    <Button className={classes['button-1']} style={{ fontWeight: '700' }} variant="outline" size="md" radius="xl">Tìm hiểu thêm</Button>
+                    <Button className={classes['button-1']} style={{ fontWeight: '700' }} variant="outline" size="md" radius="xl" onClick={() => handleClickStart()}>Tìm hiểu thêm</Button>
                 </div>
             </div>
             <div className={classes['homepage2-2']}>
@@ -22,4 +28,4 @@ const HomePage2 = () => {
 
     )
 }
-export default HomePage2;
+export default About;

@@ -1,36 +1,35 @@
 .homepage3 {
 
-    min-height: 700px;
+    min-height: 75vh;
     height: fit-content;
-    /* background-color: beige; */
-    margin-top: 5%;
     padding: 2%;
+    margin-top: 10vh;
 
 }
 
 .homepage3-h1 {
     padding-top: 0px;
     text-align: center;
-    font-family: serif;
-    font-size: 50px;
+    font-size: 3vw;
     padding-top: 0px;
     margin-top: 5px;
     padding-bottom: 0px;
     margin-bottom: 0px;
+    color: #00008B;
 }
 
 .homepage3-hr-1 {
     height: 5px;
     background-color: #0000CD;
-    width: 5%;
-    margin-bottom: 0px;
+    width: 10vw;
+    margin-bottom: 1vh;
 }
 
 .homepage3-hr-2 {
     height: 5px;
     background-color: #FF4500;
-    width: 5%;
-    margin-top: 0px;
+    width: 10vw;
+    margin-top: 1vh;
 
 }
 
@@ -41,19 +40,19 @@
 .homepage3-1-1 {
     width: 30%;
     height: fit-content;
-    min-height: 450px;
+    min-height: 40vh;
     margin: 3%;
     text-align: center;
     background-color: rgb(226, 241, 247);
     padding: 20px;
     border-radius: 5cap;
-    font-size: 25px;
+    font-size: 1.3vw;
     font-weight: 400;
     transition: transform 0.3s ease;
 }
 
 .homepage3-1-1:hover {
-    border-bottom: 10px solid #FF4500;
+    border-bottom: 3px solid #FF4500;
     background-color: rgb(157, 202, 219);
     transform: scale(1.1);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -61,4 +60,22 @@
 
 .homepage3-1-1 h3 {
     color: #6495ED;
+}
+
+@media (max-width: 768px) {
+    .homepage3-1 {
+        display: block;
+        padding-left: 10vw;
+    }
+
+    .homepage3-1-1 {
+        width: 85%;
+        margin-bottom: 10vw;
+        margin-top: 10vw;
+        font-size: 3vw;
+    }
+
+    .homepage3-h1 {
+        font-size: 5vw;
+    }
 }
