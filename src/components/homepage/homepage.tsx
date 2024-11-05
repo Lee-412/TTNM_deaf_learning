@@ -1,15 +1,14 @@
 'use client'
 import { useContext, useEffect } from "react";
-import HomePage1 from "./components/homepage1/homepage1";
-import HomePage2 from "./components/homepage2/homepage2";
-import HomePage3 from "./components/homepage3/homepage3";
-import HomePage4 from "./components/homepage4/homepage4";
-import HomePage5 from "./components/homepage5/homepage5";
-import HomePage6 from "./components/homepage6/homepage6";
-import HomePage7 from "./components/homepage7/homepage7";
+import Banner from "./components/Banner/Banner";
+import About from "./components/About/About";
+import Reason from "./components/Reason/Reason";
+import Specialness from "./components/Specialness/Specialness";
+import QnA from "./components/QnA/QnA";
+import Contact from "./components/Contact/Contact";
 import { useRouter } from "next/navigation";
 import { UserContext } from "../useContext/userContext";
-
+import style from "./homepage.module.css"
 
 
 const HomePage = () => {
@@ -31,14 +30,13 @@ const HomePage = () => {
 
     // sessionStorage.removeItem('userData')
     return (
-        <div>
-            <HomePage1 />
-            <HomePage2 />
-            <HomePage3 />
-            <HomePage4 />
-            <HomePage5 />
-            <HomePage6 />
-            <HomePage7 />
+        <div className={style.container}>
+            <Banner />
+            <About />
+            <Reason />
+            <Specialness />
+            <QnA />
+            <Contact />
         </div>
     )
 }

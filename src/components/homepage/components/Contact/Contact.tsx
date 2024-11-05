@@ -1,19 +1,51 @@
 
-import classes from './homepage7.module.css';
+import classes from './Contact.module.css';
 import { Button } from '@mantine/core';
 import { TextInput } from '@mantine/core';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
-const HomePage7 = () => {
+interface userMessage {
+    name: string;
+    email: string;
+    message: string
+}
+
+const Contact = () => {
+
+    const [opened, setOpen] = useState(false);
+    const [formData, setFormData] = useState<userMessage>({
+        name: '',
+        email: '',
+        message: '',
+    });
+
+    const router = useRouter()
+    const handleClickSignIn = (e: any) => {
+        e.preventDefault();
+        console.log(formData);
+        const data = JSON.stringify(formData)
+        sessionStorage.setItem('userMessage', data);
+
+    }
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
     return (
         <div className={classes['homepage7']}>
+            <hr className={classes.hr} />
             <h1 className={classes['homepage7-h']}>Liên hệ với chúng tôi</h1>
             <div className={classes['homepage7-b']}>
                 <div className={classes['homepage7-b-1']}>
-                    <TextInput mt="sm" label="Name" placeholder="Name" />
-                    <TextInput mt="sm" label="Email" placeholder="Email" />
-                    <TextInput mt="sm" label="Message" placeholder="Message" />
+                    <TextInput mt="sm" label="Name" placeholder="Name" onChange={handleChange} value={formData.name} name='name' />
+                    <TextInput mt="sm" label="Email" placeholder="Email" onChange={handleChange} value={formData.email} name='email' />
+                    <TextInput mt="sm" label="Message" placeholder="Message" onChange={handleChange} value={formData.message} name='message' />
                     <div style={{ textAlign: 'center', marginTop: '5%' }} >
-                        <Button style={{ width: '60%', borderRadius: '10cap' }}>Send</Button>
+                        <Button style={{ width: '60%', borderRadius: '10cap' }} onClick={(e) => { handleClickSignIn(e) }}>Send</Button>
                     </div>
 
                 </div>
@@ -47,4 +79,4 @@ const HomePage7 = () => {
     )
 }
 
-export default HomePage7;
+export default Contact;

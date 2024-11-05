@@ -1,8 +1,8 @@
 .homepage6 {
-    height: 700px;
+    height: fit-content;
     /* background-color: beige; */
     margin-top: 10px;
-    min-height: fit-content;
+    min-height: 30vh;
     padding: 2%;
 
 }
@@ -10,12 +10,12 @@
 .homepage6-h {
     padding-top: 0px;
     text-align: center;
-    font-family: serif;
-    font-size: 50px;
+    font-size: 3vw;
     padding-top: 0px;
     margin-top: 5px;
     padding-bottom: 0px;
     margin-bottom: 0px;
+    color: #00008B;
 }
 
 .homepage6-b {
@@ -24,27 +24,45 @@
 
 .homepage6-b-q {
     font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 5px
+    font-size: 1vw;
+    margin-bottom: 2vh;
 }
 
 .homepage6-b-a {
     width: 90%;
     text-align: left;
-    font-size: 20px;
+    font-size: 1vw;
 }
 
 .homepage3-hr-1 {
     height: 5px;
     background-color: #0000CD;
-    width: 5%;
-    margin-bottom: 0px;
+    width: 10vw;
+    margin-bottom: 1vh;
 }
 
 .homepage3-hr-2 {
     height: 5px;
     background-color: #FF4500;
-    width: 5%;
-    margin-top: 0px;
+    width: 10vw;
+    margin-top: 1vh;
+}
 
+@media (max-width: 768px) {
+    .homepage6-h {
+        font-size: 7vw;
+
+    }
+
+    .homepage6-b-q {
+        font-weight: 700;
+        font-size: 3vw;
+        margin-bottom: 2vh;
+    }
+
+    .homepage6-b-a {
+        width: 90%;
+        text-align: left;
+        font-size: 3vw;
+    }
 }

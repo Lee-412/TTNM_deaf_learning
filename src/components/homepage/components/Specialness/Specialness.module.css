@@ -1,14 +1,12 @@
 .homepage4 {
     display: flex;
-    min-height: 700px;
+    min-height: 75h;
     height: fit-content;
-    /* background-color: beige; */
     margin-top: 10px;
 }
 
 .homepage4-1 {
     width: 35%;
-
     margin-left: 10%;
     background-image: url('./3.png');
     background-position: center;
@@ -24,8 +22,9 @@
 
 .homepage4-2-h {
     text-align: center;
-    font-size: 30px;
-    font-family: Text;
+    font-size: 1vw;
+    color: #00008B;
+
 }
 
 .homepage4-2-b {
@@ -34,21 +33,20 @@
 
 .homepage4-2-b-1 {
     text-align: center;
-    background-color: #6495ED;
+    background-color: #87CEFA;
     width: 50%;
     margin: 2%;
-    height: 350px;
+    height: 40vh;
     min-height: fit-content;
     padding: 20px;
     border-radius: 5cap;
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 1vw;
+    font-weight: 400;
     transition: transform 0.3s ease;
 }
 
 .homepage4-2-b-1:hover {
-    border-bottom: 10px solid #FF4500;
+    border-bottom: 3px solid #FF4500;
     background-color: rgb(157, 202, 219);
     transform: scale(1.1);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -65,14 +63,59 @@
 .homepage3-hr-1 {
     height: 5px;
     background-color: #0000CD;
-    width: 5%;
-    margin-bottom: 0px;
+    width: 10vw;
+    margin-bottom: 0vh;
+    display: none;
 }
 
 .homepage3-hr-2 {
     height: 5px;
     background-color: #FF4500;
-    width: 5%;
-    margin-top: 0px;
+    width: 10vw;
+    margin-top: 0vh;
+    display: none;
+
+}
+
+@media (max-width: 1400px) {
+    .homepage4-1 {
+        display: none;
+    }
+
+    .homepage4-2 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .homepage4-2 {
+        width: 100%;
+    }
+
+    .homepage4-2-b {
+        display: block;
+        margin: 0;
+        padding: 5vw;
+    }
+
+    .homepage4-2-h {
+        text-align: center;
+        font-size: 3vw;
+    }
+
+    .homepage4-2-b-1 {
+        font-size: 4vw;
+        width: 100%;
+        margin-bottom: 5vh;
+    }
+
+    .homepage3-hr-1 {
+        display: block;
+    }
+
+    .homepage3-hr-2 {
+        display: block;
+
+    }
 
 }

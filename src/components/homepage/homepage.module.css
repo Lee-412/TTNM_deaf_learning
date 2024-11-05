@@ -1,0 +1,12 @@
+.container {
+    width: 90vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100vw;
+        margin: 0;
+    }
+}

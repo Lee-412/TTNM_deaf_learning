@@ -1,6 +1,6 @@
 
-import classes from './homepage4.module.css';
-const HomePage4 = () => {
+import classes from './Specialness.module.css';
+const Specialness = () => {
 
     return (
         <div className={classes['homepage4']}>
@@ -9,7 +9,9 @@ const HomePage4 = () => {
             </div>
             <div className={classes['homepage4-2']}>
                 <div className={classes['homepage4-2-h']}>
+                    <hr className={classes['homepage3-hr-1']} />
                     <h1>Điểm đặc biệt ở Signlearn</h1>
+                    <hr className={classes['homepage3-hr-2']} />
                 </div>
                 <div className={classes['homepage4-2-b']}>
                     <div className={classes['homepage4-2-b-1']}>
@@ -29,4 +31,4 @@ const HomePage4 = () => {
     )
 }
 
-export default HomePage4;
+export default Specialness;

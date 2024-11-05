@@ -1,10 +1,10 @@
 'use client'
 import { useRouter } from 'next/navigation';
-import classes from './homepage1.module.css';
+import classes from './Banner.module.css';
 import { Button } from '@mantine/core';
 
 
-const HomePage1 = () => {
+const Banner = () => {
     const router = useRouter()
     const handleClickStart = () => {
         router.push('/course_base/courses')
@@ -24,4 +24,4 @@ const HomePage1 = () => {
     )
 }
 
-export default HomePage1;
+export default Banner;
