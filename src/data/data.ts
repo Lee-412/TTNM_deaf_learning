@@ -55,7 +55,7 @@ const LearningData_vn_example = [
 ]
 
 
-const LearningData_vn = [
+export const LearningData_vn = [
     {
         name: 'Màu sắc',
         id: 1,
@@ -147,7 +147,7 @@ const LearningData_vn = [
         ]
     }
 ]
-const ReviseData_vn = [
+export const ReviseData_vn = [
     {
         name: 'Màu sắc',
         id: 1,
@@ -1510,3 +1510,4 @@ const ReviseData_en = [
         ]
     }
 ];
+
