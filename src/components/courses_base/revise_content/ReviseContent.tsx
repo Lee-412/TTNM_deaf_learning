@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Word, WordAndQuestion } from "../category/Category";
+import { Word, WordAndQuestion, Question } from "../category/Category";
 import "./ReviseContent.css";
 import { Container } from "@mantine/core";
+import { useRouter } from "next/navigation";
 
 // Đây là nội dung của phần ôn tập
 interface ReviseContentProps {
@@ -15,7 +16,31 @@ const ReviseContent = (props: ReviseContentProps) => {
   let { data, name } = props;
   name = name.substring(1, name.length - 1);
 
+  const router = useRouter();
+
   let [wordIndex, setWordIndex] = useState(0);
+
+  const handleSubmit = () => {
+    if (wordIndex === data.length - 1) {
+      sessionStorage.setItem("selectedAnswer", JSON.stringify(selectedAnswer));
+      router.push("/course_base/revise_result")
+    } else {
+      console.log("Not finish");
+    }
+  }
+
+  let [selectedAnswer, setSelectedAnswer] = useState<string[]>([]);
+
+  const handleCheckAnswer = (answer: string) => {
+    selectedAnswer[wordIndex] = answer;
+
+    console.log(selectedAnswer);
+    if (answer === data[wordIndex].correctAnswer) {
+      setNumberCorrectAnswer(numberCorrectAnswer + 1);
+    } else {
+      console.log("Incorrect");
+    }
+  };
 
   const handleNext = () => {
     if (wordIndex < data.length - 1) {
@@ -29,13 +54,9 @@ const ReviseContent = (props: ReviseContentProps) => {
     }
   };
 
-  const handleCheckAnswer = (selectedAnswer: string) => {
-    if (selectedAnswer === data[wordIndex].correctAnswer) {
-      console.log("Correct");
-    } else {
-      console.log("Incorrect");
-    }
-  };
+
+  const [numberCorrectAnswer, setNumberCorrectAnswer] = useState(0);
+
 
   useEffect(() => {
     return () => {
@@ -64,7 +85,7 @@ const ReviseContent = (props: ReviseContentProps) => {
               className="video"
               style={{
                 width: "100%",
-                maxWidth: "1250px",
+                maxWidth: "80vw",
                 height: "auto",
                 border: "2px solid #ccc",
               }}
@@ -81,7 +102,7 @@ const ReviseContent = (props: ReviseContentProps) => {
       </div>
 
       <Container className="revise-question">
-        <p style={{ textAlign: "center" }}>
+        <p >
           {data[wordIndex].question.substring(
             0,
             data[wordIndex].question.length - 2
@@ -108,9 +129,12 @@ const ReviseContent = (props: ReviseContentProps) => {
       <button className="btn-prev" onClick={() => handlePrev()}>
         Prev{" "}
       </button>
-      <button className="btn-next" onClick={() => handleNext()}>
-        Next{" "}
-      </button>
+
+      {wordIndex === data.length - 1 ?
+        <button className="btn-submit" onClick={() => handleSubmit()}>Submit</button>
+        : <button className="btn-next" onClick={() => handleNext()}>Next{" "}</button>
+      }
+
     </div>
   );
 };
