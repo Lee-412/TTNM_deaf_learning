@@ -17,7 +17,7 @@ const ReviseResult = (props: ReviseResultProps) => {
     if (selectedAnswer[data.id - 1] === data.correctAnswer) {
       return (
         <div>
-          <span >Correct Answer</span>
+          <span className="span-correct-answer">Correct Answer</span>
           <button className="btn-answer correct-answer">
             {data.correctAnswer}
           </button>
@@ -26,7 +26,7 @@ const ReviseResult = (props: ReviseResultProps) => {
     } else {
       return (
         <div>
-          <span>Wrong Answer</span>
+          <span className="span-wrong-answer">Wrong Answer!</span>
           <div>
             <button className="btn-answer selected-answer">
               {selectedAnswer[data.id - 1]}
@@ -47,15 +47,17 @@ const ReviseResult = (props: ReviseResultProps) => {
     return (
       <Container className="revise-question" key={reviseQuestion.id}>
         <p>
-          {"Cau " +
+          {"Câu " +
             reviseQuestion.id +
-            " " +
+            ": " +
             reviseQuestion.question.substring(
               0,
               reviseQuestion.question.length - 2
             ) +
             "?"}
         </p>
+
+        {handleShowAnswer(reviseQuestion)}
 
         <div className="revise-video">
           <Container className="video-container">
@@ -75,7 +77,7 @@ const ReviseResult = (props: ReviseResultProps) => {
           </Container>
         </div>
 
-        {handleShowAnswer(reviseQuestion)}
+        
       </Container>
     );
   });

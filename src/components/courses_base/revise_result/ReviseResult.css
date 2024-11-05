@@ -41,9 +41,21 @@
 
 
 .selected-answer {
-  background-color: #f30404;
+  background-color: #ff0000;
 }
 
 .correct-answer {
   background-color: #68e8e3;
+}
+
+.span-correct-answer {
+  color:#001d7c;
+  font-size: 18px;
+  padding-bottom: 5px;
+}
+
+.span-wrong-answer {
+  color:#f30404;
+  font-size: 18px;
+  padding-bottom: 5px;
 }
