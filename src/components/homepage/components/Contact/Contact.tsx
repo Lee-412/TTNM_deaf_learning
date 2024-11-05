@@ -21,12 +21,16 @@ const Contact = () => {
     });
 
     const router = useRouter()
-    const handleClickSignIn = (e: any) => {
+    const handleClickSend = (e: any) => {
         e.preventDefault();
         console.log(formData);
         const data = JSON.stringify(formData)
         sessionStorage.setItem('userMessage', data);
-
+        setFormData({
+            name: '',
+            email: '',
+            message: ''
+        });
     }
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -34,6 +38,8 @@ const Contact = () => {
             ...prevState,
             [name]: value
         }));
+
+
     };
     return (
         <div className={classes['homepage7']}>
@@ -45,7 +51,7 @@ const Contact = () => {
                     <TextInput mt="sm" label="Email" placeholder="Email" onChange={handleChange} value={formData.email} name='email' />
                     <TextInput mt="sm" label="Message" placeholder="Message" onChange={handleChange} value={formData.message} name='message' />
                     <div style={{ textAlign: 'center', marginTop: '5%' }} >
-                        <Button style={{ width: '60%', borderRadius: '10cap' }} onClick={(e) => { handleClickSignIn(e) }}>Send</Button>
+                        <Button style={{ width: '60%', borderRadius: '10cap' }} onClick={(e) => { handleClickSend(e) }}>Send</Button>
                     </div>
 
                 </div>
