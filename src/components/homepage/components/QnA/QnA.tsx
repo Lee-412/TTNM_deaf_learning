@@ -129,7 +129,7 @@ const QnA = () => {
                 <ul>
                     {faqs.map((faq, index) => (
                         <li key={index}>
-                            <div className={classes['homepage6-b-q']} onClick={() => toggle(index)}>
+                            <div key={index} className={classes['homepage6-b-q']} onClick={() => toggle(index)}>
                                 {faq.question}
                             </div>
                             <Collapse in={openedIndex === index}>

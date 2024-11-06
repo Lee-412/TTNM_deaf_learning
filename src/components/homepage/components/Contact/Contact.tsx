@@ -24,9 +24,11 @@ const Contact = () => {
     const handleClickSignIn = (e: any) => {
         e.preventDefault();
         console.log(formData);
-        const data = JSON.stringify(formData)
-        sessionStorage.setItem('userMessage', data);
-
+        setFormData({
+            name: '',
+            email: '',
+            message: '',
+        })
     }
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
