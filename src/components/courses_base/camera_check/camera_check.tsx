@@ -91,27 +91,20 @@ const CameraView = () => {
 
     }
     return (
-        <Container className={styles.container} style={{ textAlign: 'center' }}>
+        <Container className={styles.container} style={{ textAlign: 'center', width: '100%', height: "auto"}}>
             <Text size="xl" className={styles.title}>
                 Kiểm tra ký hiệu
             </Text>
 
-            <Button variant='outline' className={styles.resultBox}
+            <div className={styles.showContainer} >
+            
+            <Container>
+            <Button variant='outline' className={styles.resultBox} style={{flex: "30%", maxWidth: "100%"}}
                 onClick={() => {
                     handleClickButtonResult(result)
                 }}>
-                <Text className={styles.resultText}>Kết quả: {result}</Text>
+                <Text className={styles.resultText}>Kết quả: Click me</Text>
             </Button>
-
-            <Container className={styles.cameraContainer} >
-                <video
-                    ref={videoRef}
-                    autoPlay
-                    playsInline
-                    className={styles.video}
-                    style={{ width: '100%', maxWidth: '1250px', height: 'auto', border: '2px solid #ccc' }}
-                />
-            </Container>
 
             {!isRecording ? (
                 <Button
@@ -134,6 +127,23 @@ const CameraView = () => {
                     Dừng ghi
                 </Button>
             )}
+            </Container>
+
+            <Container className={styles.cameraContainer} style={{flex: "50%"}} >
+                <video
+                    ref={videoRef}
+                    autoPlay
+                    playsInline
+                    className={styles.video}
+                    style={{ width: '100%', maxWidth: '1250px',height: "auto", border: '2px solid #ccc' }}
+                />
+            </Container>
+
+            
+            </div>
+            
+
+            
         </Container>
     )
 }
