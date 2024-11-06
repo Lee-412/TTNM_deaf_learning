@@ -90,15 +90,21 @@ const LearningContent = (props: LearningContentProps) => {
           <span>{name}</span>
         </div>
 
-        <div>
-          <p>
+        
+        <Container>
+        <div className="learning-status">
+          <span>
             Hiện tại: {wordIndex + 1} / {data.length}
-          </p>
+          </span>
         </div>
-
+        </Container>
+        
         <Container className="learning-definition">
-          <p style={{ textAlign: "center" }}>{data[wordIndex].word}</p>
-          <p style={{ textAlign: "center" }}>{data[wordIndex].type}</p>
+        
+          <div className="word-type">
+            {data[wordIndex].type}
+          </div>
+          <p style={{ textAlign: "center", textTransform: "capitalize" }}>{data[wordIndex].word}</p>
         </Container>
 
         <div className="learning">

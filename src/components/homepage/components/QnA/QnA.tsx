@@ -116,7 +116,7 @@ const QnA = () => {
         },
         {
             question: "Tôi có một số vấn đề muốn được giải đáp trực tiếp, vậy thì tôi phải liên hệ với các bạn qua đâu",
-            answer: "Me, no chui t kia anh em"
+            answer: ""
         }
     ];
 
