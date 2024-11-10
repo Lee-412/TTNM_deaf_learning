@@ -1,8 +1,8 @@
 'use client'
-import { Text, Container, ActionIcon, Group, rem } from '@mantine/core';
+import { Text, Container, ActionIcon, Group, rem, Avatar } from '@mantine/core';
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram, IconBrandGithub } from '@tabler/icons-react';
 import { MantineLogo } from '@mantinex/mantine-logo';
-import classes from './Footer.module.css';
+import classes from './footer.module.css';
 import { useRouter } from 'next/navigation';
 
 const data = [
@@ -62,10 +62,19 @@ const Footer = () => {
     }
 
     return (
-        <footer className={classes.footer} style={{marginTop: '0px !important'}}>
+        <footer className={classes.footer} style={{ marginTop: '0px !important' }}>
             <Container className={classes.inner}>
                 <div className={classes.logo}>
-                    <MantineLogo size={30} />
+                    <div style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                    }}>
+                        <Avatar src='/logo-removebg-preview.png' size={'xl'} />
+                        <Text style={{
+                            fontWeight: 'bolder'
+                        }}>Signlearn</Text>
+                    </div>
                     <Text size="xs" c="dimmed" className={classes.description}>
                         Ứng dụng học ký hiệu thủ ngữ cho người bị khiếm thính
                     </Text>
