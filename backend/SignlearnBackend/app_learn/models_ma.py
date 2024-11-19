@@ -1,4 +1,3 @@
-from backend.SignlearnBackend.app_learn.models import DataItem, LearningData
 from .extensions import ma
 
 class UserSchema(ma.Schema):
