@@ -38,3 +38,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#python
+backend/SignlearnBackend/app_learn/_pycache_
+backend/SignlearnBackend/app_learn/routes/_pycache_
+backend/SignlearnBackend/app_learn/services/_pycache_
