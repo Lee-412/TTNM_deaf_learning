@@ -3,7 +3,7 @@ from .extensions import ma
 
 class UserSchema(ma.Schema):
     class Meta:
-        fields = ('id', 'name', 'birth_date', 'gender', 'class_name')
+        fields = ('id', 'name','email','password', 'point')
 
 class LearningDataSchema(ma.Schema):
     class Meta:

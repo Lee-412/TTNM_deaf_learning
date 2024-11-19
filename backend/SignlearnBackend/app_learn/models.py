@@ -3,15 +3,15 @@ from .extensions import db
 class User(db.Model):
     id = db.Column(db.Integer, primary_key  = True)
     name = db.Column(db.String(100), nullable = False)
-    birth_date = db.Column(db.Date)
-    gender = db.Column(db.String(10))
-    class_name = db.Column(db.String(10))
+    email = db.Column(db.String(100), nullable = False)
+    password = db.Column(db.String(100), nullable = False)
+    point = db.Column(db.Integer)
 
-    def __init__(self, name, birth_date, gender, class_name):
+    def __init__(self, name, email, password, point):
         self.name = name
-        self.birth_date = birth_date
-        self.gender = gender
-        self.class_name = class_name
+        self.email = email
+        self.password = password
+        self.point = point
 
 
 class LearningData(db.Model):
