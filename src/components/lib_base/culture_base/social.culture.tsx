@@ -4,8 +4,6 @@ import Card_Base from "@/components/lib_base/document_card/document.card";
 
 const SocialCultureBase = (props: any) => {
 
-    console.log('check data culture', props.data);
-
     const data_social_page = props.data;
     return (
         <Container size={"lg"}>

@@ -9,7 +9,7 @@ interface data_comunity {
 }
 
 const ComunityPage = async () => {
-    console.log(`${process.env.NEXT_PUBLIC_SERVER_LINK_API_URL}librarys/comunity`);
+
 
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_LINK_API_URL}librarys/comunity`);
     const data = await res.json();
