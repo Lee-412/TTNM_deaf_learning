@@ -58,9 +58,11 @@ class ComunityData(db.Model):
 class DocumentData(db.Model):
     __tablename__ = 'document_data'
     id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100))
     content = db.Column(db.JSON)
 
-    def __init__(self, content):
+    def __init__(self,title, content):
+        self.title=title
         self.content = content
 
 class LibbaseData(db.Model):
@@ -80,7 +82,9 @@ class LibbaseData(db.Model):
 class SocialData(db.Model):
     __tablename__ = 'social_data'
     id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100))
     content = db.Column(db.JSON)
 
-    def __init__(self, content):
+    def __init__(self, title,content):
+        self.title=title
         self.content = content

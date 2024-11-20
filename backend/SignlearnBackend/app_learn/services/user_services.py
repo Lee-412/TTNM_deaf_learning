@@ -1,6 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from app_learn.models import User
 from app_learn.extensions import db
+
 def create_user(data):
     try:
         new_user = User(
@@ -17,7 +18,7 @@ def create_user(data):
 
 def get_users():
     try:
-        users = db.session.execute(db.select(User)).scalars().all()
+        users = db.session.query(User).all()
         users_list = [{"id": user.id, "name": user.name, "email": user.email} for user in users]
         return users_list
     except Exception as e:

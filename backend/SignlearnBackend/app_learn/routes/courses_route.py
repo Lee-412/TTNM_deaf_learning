@@ -5,4 +5,4 @@ courses = Blueprint('courses',__name__)
 
 @courses.route('/courses', methods=['GET'])
 def get_courses():
-    return "You in courses path"
+    return "You in courses path"        

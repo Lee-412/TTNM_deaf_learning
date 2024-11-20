@@ -6,18 +6,14 @@ import { data_comunity_base } from '@/data/lib_base/data.comunity';
 
 
 
-const ComunityBase = () => {
+const ComunityBase = (props: any) => {
 
+    const data_comunity_page = props.data;
 
-    const data_comunity_page = data_comunity_base;
     function handleClickContent(target: string) {
         console.log(target);
         window.open(target)
-
-
     }
-
-
 
     return (
         <Container size="lg" >

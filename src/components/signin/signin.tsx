@@ -47,7 +47,7 @@ const SigninBox = () => {
         password: ''
     });
 
-    const handleClickSignIn = (e: any) => {
+    const handleClickSignIn = async (e: any) => {
         e.preventDefault();
         console.log(formData);
         let data: ContextData = {
@@ -58,6 +58,21 @@ const SigninBox = () => {
                 username: '',
             }
         }
+        let data_signin = {
+            name: 'username',
+            email: formData.email,
+            password: formData.password,
+            point: 0
+        }
+        let response = await fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data_signin)
+        })
+        console.log(response);
+
         loginContext(data)
 
         sessionStorage.setItem('user', JSON.stringify(data))

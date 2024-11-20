@@ -5,9 +5,10 @@ import { useRouter } from "next/navigation";
 import { data_lib_base } from "@/data/lib_base/data.libbase";
 
 
-const LibraryBase = () => {
+const LibraryBase = (props: any) => {
+    console.log("check data libbase", props.data);
 
-    const data_lib_page = data_lib_base;
+    const data_lib_page = props.data;
     const router = useRouter()
 
     const handleClickButton = (target: string) => {
@@ -28,7 +29,7 @@ const LibraryBase = () => {
 
                 <>
 
-                    {data_lib_page.map((data, index) => (
+                    {data_lib_page.map((data: any, index: any) => (
                         <div className={`${styles.container_content} ${index % 2 !== 0 ? styles.reverse : ''}`} key={index}>
                             <div className={styles.image_wrapper}>
                                 <img src={data.imgUrl} alt="Image description" className={styles.image} />

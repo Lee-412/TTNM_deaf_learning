@@ -139,7 +139,7 @@ export function Header() {
                                     <Button variant="default" onClick={() => {
                                         handleClickLogin()
                                     }}>Log in</Button>
-                                    <Button>Sign up</Button>
+                                    <Button >Sign up</Button>
                                 </>
                         }
                     </Group>

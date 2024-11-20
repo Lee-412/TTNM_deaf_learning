@@ -19,7 +19,7 @@ class ComunityDataSchema(ma.Schema):
 
 class DocumentDataSchema(ma.Schema):
     class Meta:
-        fields = ('id','content')
+        fields = ('id','title','content')
 
 
 class LibbaseDataSchema(ma.Schema):
