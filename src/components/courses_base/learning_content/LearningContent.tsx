@@ -31,43 +31,6 @@ const LearningContent = (props: LearningContentProps) => {
       console.log(linkVideo, data[wordIndex].word);
     }
   };
-  //closure
-
-  // batching: 
-
-  // cách 1: callback function
-
-  // setWordIndex(wordIndex + 1);
-  // const handleNext = () => {
-
-  //   if (wordIndex < data.length - 1) {
-  //     console.log('check prev data', wordIndex, linkVideo);
-
-  //     setWordIndex(prevWordIndex => {
-  //       const newIndex = prevWordIndex + 1;
-  //       setLinkVideo(data[newIndex].urlVideo);
-  //       return newIndex;
-  //     });
-
-  //   }
-
-  // }
-
-  // cách 2: useEffect
-
-
-  // const handleNext = () => {
-
-  //   if (wordIndex < data.length - 1) {
-  //     setWordIndex(wordIndex + 1);
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   if (wordIndex < data.length) {
-  //     setLinkVideo(data[wordIndex].urlVideo);
-  //   }
-  // }, [wordIndex, data]);
 
 
 

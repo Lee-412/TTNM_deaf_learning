@@ -1,9 +1,7 @@
 'use client'
-import { Word } from "@/components/courses_base/category/Category";
 import LearningContent from "@/components/courses_base/learning_content/LearningContent";
-import { useEffect } from "react";
 
-const LearningCoursePage = (props: any) => {
+const LearningCoursePage = () => {
     
     let learningName = sessionStorage.getItem("learningName") || "";
     
