@@ -1,35 +1,17 @@
 import SocialCultureBase from "@/components/lib_base/culture_base/social.culture";
 
-const SocialCulturePage = () => {
+const SocialCulturePage = async () => {
 
-    const data_social_page = [
-        {
-            topic: '',
-            content: [
-                {
-                    title: '',
-                    url: '',
-                    imgUrl: '',
-                    content: '',
-                },
-                {
-                    title: '',
-                    url: '',
-                    imgUrl: '',
-                    content: '',
-                },
-                {}
 
-            ],
-        },
-        {},
-        {}
-    ];
 
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_LINK_API_URL}librarys/social-culture`);
+    const data = await res.json();
     return (
         <>
-            <SocialCultureBase />
+            <SocialCultureBase data={data} />
         </>
     )
 }
 export default SocialCulturePage;
+
+

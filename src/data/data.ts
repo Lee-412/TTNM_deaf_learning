@@ -4,7 +4,7 @@ interface LearningData {
     id?: number;
     target: string;
     data: [   // số lượng từ sẽ là data.length
-        // trong data thì mỗi object sẽ là 1 từ,           
+
         {
             id: number;
             word: string;
@@ -18,8 +18,7 @@ interface ReviseData {
     name: string;
     id?: number;
     target: string;
-    data: [   // số lượng từ sẽ là data.length
-        // trong data thì mỗi object sẽ là 1 từ,           
+    data: [
         {
             id: number;
             word: string;

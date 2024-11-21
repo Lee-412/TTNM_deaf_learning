@@ -1,20 +1,17 @@
 import { Container } from "@mantine/core";
 import styles from './social.module.css'
-import { Divider, Text } from '@mantine/core';
 import Card_Base from "@/components/lib_base/document_card/document.card";
-import { data_social_base } from "@/data/lib_base/data.social";
 
-const SocialCultureBase = () => {
+const SocialCultureBase = (props: any) => {
 
-
-    const data_social_page = data_social_base;
+    const data_social_page = props.data;
     return (
         <Container size={"lg"}>
 
             {data_social_page.map((data: any, index: any) => (
                 <div key={index} className={styles.container} >
                     <div className={styles.title}>
-                        {data.topic}
+                        {data.title}
                     </div>
                     <div className={styles.cardContainer}>
 

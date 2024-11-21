@@ -10,6 +10,7 @@ import {
     rem,
     Avatar,
     Menu,
+    Text
 } from '@mantine/core';
 import { MantineLogo } from '@mantinex/mantine-logo';
 import { useDisclosure } from '@mantine/hooks';
@@ -68,9 +69,26 @@ export function Header() {
     return (
         <Box>
             <header className={classes.header}>
-                <Group justify="space-between" h="100%">
-                    <MantineLogo size={30} />
+                <Group justify="space-between" h="100%" gap={0} style={{
+                }}
+                >
+                    {/* <MantineLogo size={30} /> */}
+                    <Group
+                        justify="center"
+                        h="100%"
 
+                        gap={0}
+                        style={{
+                            flexWrap: 'nowrap',
+                            alignItems: 'center'
+                        }}
+                        visibleFrom="sm"
+                    >
+                        <Avatar src='/logo-removebg-preview.png' size={'xl'} />
+                        <Text style={{
+                            fontWeight: 'bolder'
+                        }}>Signlearn</Text>
+                    </Group>
                     <Group h="100%" gap={0} visibleFrom="sm">
 
                         {navItems.map((item) => (
@@ -121,7 +139,7 @@ export function Header() {
                                     <Button variant="default" onClick={() => {
                                         handleClickLogin()
                                     }}>Log in</Button>
-                                    <Button>Sign up</Button>
+                                    <Button >Sign up</Button>
                                 </>
                         }
                     </Group>

@@ -36,7 +36,7 @@
     background-color: #87CEFA;
     width: 50%;
     margin: 2%;
-    height: 40vh;
+    height: inherit;
     min-height: fit-content;
     padding: 20px;
     border-radius: 5cap;
