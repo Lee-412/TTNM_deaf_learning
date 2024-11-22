@@ -1,6 +1,4 @@
 from flask import Flask
-
-from backend.SignlearnBackend.app_learn.models import ComunityData, LibbaseData, DocumentData
 from .extensions import db, ma
 import os
 from .routes.user_route import users

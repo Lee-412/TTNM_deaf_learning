@@ -74,11 +74,36 @@ export const LearningData_vn = [
         id: 2,
         target: 'Study',
         data: [
-            { id: 11, word: 'quả chuối', type: 'danh từ', urlVideo: 'https://qipedc.moet.gov.vn/videos/W02730.mp4' },
-            { id: 12, word: 'quả chanh', type: 'danh từ', urlVideo: 'https://qipedc.moet.gov.vn/videos/W02728.mp4' },
-            { id: 13, word: 'quả nho', type: 'danh từ', urlVideo: 'https://qipedc.moet.gov.vn/videos/W02749.mp4' },
-            { id: 14, word: 'quả lê', type: 'danh từ', urlVideo: 'https://qipedc.moet.gov.vn/videos/W02744.mp4' },
-            { id: 15, word: 'quả táo', type: 'danh từ', urlVideo: 'https://qipedc.moet.gov.vn/videos/W02757B.mp4' }
+            {
+                id: 11,
+                word: 'quả chuối',
+                type: 'danh từ',
+                urlVideo: 'https://qipedc.moet.gov.vn/videos/W02730.mp4'
+            },
+            {
+                id: 12,
+                word: 'quả chanh',
+                type: 'danh từ',
+                urlVideo: 'https://qipedc.moet.gov.vn/videos/W02728.mp4'
+            },
+            {
+                id: 13,
+                word: 'quả nho',
+                type: 'danh từ',
+                urlVideo: 'https://qipedc.moet.gov.vn/videos/W02749.mp4'
+            },
+            {
+                id: 14,
+                word: 'quả lê',
+                type: 'danh từ',
+                urlVideo: 'https://qipedc.moet.gov.vn/videos/W02744.mp4'
+            },
+            {
+                id: 15,
+                word: 'quả táo',
+                type: 'danh từ',
+                urlVideo: 'https://qipedc.moet.gov.vn/videos/W02757B.mp4'
+            }
         ]
     },
     {
