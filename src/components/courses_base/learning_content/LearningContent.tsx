@@ -15,6 +15,7 @@ interface LearningContentProps {
 const LearningContent = (props: LearningContentProps) => {
   let { data, name } = props;
   name = name.substring(1, name.length - 1);
+  console.log(data);
 
   const [wordIndex, setWordIndex] = useState(0);
 
@@ -24,64 +25,28 @@ const LearningContent = (props: LearningContentProps) => {
     if (wordIndex < data.length - 1) {
       console.log('check prev data', wordIndex);
       setWordIndex(wordIndex + 1);
-      console.log('check data', wordIndex);
+      console.log('check data index', wordIndex);
+
       setLinkVideo(data[wordIndex].urlVideo);
-      console.log('check data', linkVideo);
+      console.log('check data index', linkVideo);
 
       console.log(linkVideo, data[wordIndex].word);
     }
   };
-  //closure
 
-  // batching: 
-
-  // cách 1: callback function
-
-  // setWordIndex(wordIndex + 1);
-  // const handleNext = () => {
-
-  //   if (wordIndex < data.length - 1) {
-  //     console.log('check prev data', wordIndex, linkVideo);
-
-  //     setWordIndex(prevWordIndex => {
-  //       const newIndex = prevWordIndex + 1;
-  //       setLinkVideo(data[newIndex].urlVideo);
-  //       return newIndex;
-  //     });
-
-  //   }
-
-  // }
-
-  // cách 2: useEffect
-
-
-  // const handleNext = () => {
-
-  //   if (wordIndex < data.length - 1) {
-  //     setWordIndex(wordIndex + 1);
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   if (wordIndex < data.length) {
-  //     setLinkVideo(data[wordIndex].urlVideo);
-  //   }
-  // }, [wordIndex, data]);
-
-
-
-  console.log('check out data', wordIndex);
 
   const handlePrev = () => {
     if (wordIndex > 0) {
 
       setWordIndex((wordIndex) => wordIndex - 1);
+
       setLinkVideo(data[wordIndex].urlVideo);
       console.log('check cur data', wordIndex, linkVideo);
 
     }
   };
+
+  console.log('check out data', wordIndex, data[wordIndex].urlVideo);
 
   return (
     <div className="learning-container">
@@ -90,28 +55,31 @@ const LearningContent = (props: LearningContentProps) => {
           <span>{name}</span>
         </div>
 
-        
+
         <Container>
-        <div className="learning-status">
-          <span>
-            Hiện tại: {wordIndex + 1} / {data.length}
-          </span>
-        </div>
+          <div className="learning-status">
+            <span>
+              Hiện tại: {wordIndex + 1} / {data.length}
+            </span>
+          </div>
         </Container>
-        
+
         <Container className="learning-definition">
-        
+
           <div className="word-type">
             {data[wordIndex].type}
           </div>
           <p style={{ textAlign: "center", textTransform: "capitalize" }}>{data[wordIndex].word}</p>
         </Container>
-
+        {/* <p>
+          {data[wordIndex].urlVideo}----
+          -----{data[wordIndex].word}---{data[wordIndex].id}
+        </p> */}
         <div className="learning">
           <Container className="video-container">
             <video
               controls
-              key={data[wordIndex].id}
+              key={data[wordIndex].urlVideo}
               className="video"
               style={{
                 width: "100%",
@@ -121,13 +89,9 @@ const LearningContent = (props: LearningContentProps) => {
               }}
             >
               <source src={data[wordIndex].urlVideo} />
+
               {/* <source src={linkVideo} /> */}
 
-              {/**
-                  Vấn đề rõ ràng, chỉ thay đổi 1 dòng code ở đây là fix được hết.
-                  Việc sử dụng 2 state để kiểm soát thêm data trong khi 1 state là đã đại diện cho việc thay đổi của 
-                    toàn bộ data cần thiết
-            */}
             </video>
           </Container>
         </div>

@@ -1,16 +1,23 @@
-import { Divider } from "@mantine/core";
 import Category from "../category/Category";
 import "./LearningCourse.css";
 import Link from "next/link";
-import {LearningData_vn} from "@/data/data";
-
+// import {LearningData_vn} from "@/data/data";
 // Đây là trang khóa học
 
-const LearningCourse = () => {
-  
-  const lengthL = LearningData_vn.length;
+interface Courseinfo {
+  id: any;
+  name: any;
+  target: any;
+  data: any;
+}
 
-  const courseListLearning = LearningData_vn.map((course) => {
+const LearningCourse = ({ leanrningDataVN }: any) => {
+
+  console.log('check data', leanrningDataVN);
+
+  const courseListLearning = leanrningDataVN.map((course: Courseinfo) => {
+    console.log('check data course', course);
+
     return (
       <div key={course.id} className="course-category" style={{ width: "30%" }}>
         <Category
@@ -51,7 +58,9 @@ const LearningCourse = () => {
         </li>
       </ol>
 
-      <div className="base-content">{courseListLearning}</div>
+      <div className="base-content">
+        {courseListLearning}
+      </div>
     </div>
   );
 };

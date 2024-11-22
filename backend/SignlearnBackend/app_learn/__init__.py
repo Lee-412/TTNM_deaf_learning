@@ -4,7 +4,11 @@ import os
 from .routes.user_route import users
 from .routes.courses_route import courses
 from .routes.lib_route import librarys
+from .routes.revise_route import revise
 from flask_cors import CORS
+
+
+
 
 def create_db(app):
     print("Checking if database exists...")
@@ -28,11 +32,10 @@ def create_app(config_file = "config.py"):
    
     # # call
     # with app.app_context():
-    #     insert_social_data_service(data_social_base)
-    # print("Data inserted successfully.")
     app.register_blueprint(users)
     app.register_blueprint(courses)
     app.register_blueprint(librarys)
+    app.register_blueprint(revise)
 
     return app
 
