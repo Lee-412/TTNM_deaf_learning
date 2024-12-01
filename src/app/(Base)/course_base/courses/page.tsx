@@ -11,6 +11,7 @@ const Courses = async () => {
   return (
     <div>
       <LearningCourse leanrningDataVN={leanrningDataVN} />
+
     </div>
   );
 };

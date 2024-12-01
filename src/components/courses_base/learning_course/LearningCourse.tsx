@@ -18,6 +18,7 @@ const LearningCourse = ({ leanrningDataVN }: any) => {
   const courseListLearning = leanrningDataVN.map((course: Courseinfo) => {
     console.log('check data course', course);
 
+
     return (
       <div key={course.id} className="course-category" style={{ width: "30%" }}>
         <Category

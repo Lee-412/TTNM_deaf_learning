@@ -39,7 +39,17 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-#python
-backend/SignlearnBackend/app_learn/_pycache_
-backend/SignlearnBackend/app_learn/routes/_pycache_
-backend/SignlearnBackend/app_learn/services/_pycache_
+# Ignore virtual environment
+venv/
+backend/SignlearnBackend/venv/
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Specific paths to ignore cache
+backend/SignlearnBackend/app_learn/_pycache_/
+backend/SignlearnBackend/app_learn/routes/_pycache_/
+backend/SignlearnBackend/app_learn/services/_pycache_/
+backend/SignlearnBackend/app_learn/models/_pycache_/
