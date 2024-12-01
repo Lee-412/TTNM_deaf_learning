@@ -6,6 +6,9 @@
     cd <project-folder>
 
 ### Step 2: Clone the repository
+
+# Delete venv directory if it exists
+
 # Create the virtual environment
     python -m venv venv
 
@@ -20,4 +23,4 @@
 
 
 ### Step 5: Run the application
-    python app.py
+    python app.py -m flask run
