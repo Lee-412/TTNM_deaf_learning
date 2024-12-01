@@ -1,6 +1,6 @@
 "use client";
 
-import { WordAndQuestion } from "@/components/courses_base/category/Category";
+// import { WordAndQuestion } from "@/components/courses_base/category/Category";
 import ReviseResult from "@/components/courses_base/revise_result/ReviseResult";
 
 const ReviseResultPage = (props: any) => {
