@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="E:\Backup Work\project\TTNM_Deaf_Learning\deaf_learning\backend\SignlearnBackend\venv"
+VIRTUAL_ENV="D:\Workspace\HMI_Project\TTNM_deaf_learning\backend\SignlearnBackend\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

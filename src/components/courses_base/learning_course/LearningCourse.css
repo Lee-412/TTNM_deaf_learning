@@ -4,6 +4,17 @@
   padding-bottom: 20px;
 }
 
+.course-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.course-title {
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
 .base-content {
   display: flex;
   flex-wrap: wrap;
