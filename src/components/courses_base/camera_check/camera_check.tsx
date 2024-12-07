@@ -2,7 +2,6 @@
 import { useRef, useState, useEffect } from 'react'
 import { Container, Button, Text, Box, Paper } from '@mantine/core'
 import styles from './CameraView.module.css'
-
 const CameraView = () => {
     const videoRef = useRef<HTMLVideoElement | null>(null)
     const mediaRecorderRef = useRef<MediaRecorder | null>(null)
@@ -12,7 +11,22 @@ const CameraView = () => {
     const [result, setResult] = useState<React.ReactNode>('none')
     const [isRecording, setIsRecording] = useState<boolean>(false)
     const [videoUrl, setVideoUrl] = useState<string>('')
+    const convertToMP4 = async (mediaBlobUrl: string) => {
 
+        console.log(mediaBlobUrl);
+
+        const mediaBlob = await fetch(mediaBlobUrl)
+            .then(response => response.blob());
+
+        const myFile = new File(
+            [mediaBlob],
+            "demo.mp4",
+            { type: 'video/mp4' }
+        );
+
+        return myFile
+
+    }
     const startCamera = async () => {
         try {
             const streamData: MediaStream = await navigator.mediaDevices.getUserMedia({
@@ -32,36 +46,71 @@ const CameraView = () => {
                     chunksRef.current.push(event.data)
                 }
             }
-            // create url video => check result
-            mediaRecorder.onstop = () => {
+            mediaRecorder.onstop = async () => {
                 const blob = new Blob(chunksRef.current, {
                     type: 'video/webm'
                 })
                 const url = URL.createObjectURL(blob)
                 setVideoUrl(url)
+                const mp4Blob = await convertToMP4(url);
+                console.log(mp4Blob);
 
-                // fetch ở đây
-                setResult(url)
+                const formData = new FormData();
+                formData.append('video', mp4Blob, 'video.mp4');
+                const response = await fetch('http://127.0.0.1:5001/predict_video', {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                const result = await response.json();
+                console.log(result, result.label);
+
+                setResult(result.label);
             }
 
         } catch (err) {
             console.error("Something Wrong with camera:", err)
         }
     }
-    // start record
-    const startRecording = async () => {
-        setResult('Chuẩn bị ghi...')
-        await startCamera()
 
-        setTimeout(() => {
-            if (mediaRecorderRef.current) {
-                mediaRecorderRef.current.start(1000)
-                setIsRecording(true)
-                setResult('Đang ghi...')
+
+    const startRecording = async () => {
+        let countdown = 3;
+        setResult(`Sẽ ghi sau ${countdown}...`);
+
+        // Đếm ngược mỗi giây
+        const countdownInterval = setInterval(() => {
+            countdown -= 1;
+            setResult(`Sẽ ghi sau ${countdown}...`);
+
+            if (countdown === 0) {
+                clearInterval(countdownInterval);
+                setResult('Đang ghi...');
+
+
+                startCamera().then(() => {
+                    if (mediaRecorderRef.current) {
+                        mediaRecorderRef.current.start(1000);
+                        setIsRecording(true);
+                    }
+                });
             }
-        }, 3000)
-    }
-    // stop record
+        }, 1000);
+    };
+
+
+    // const startRecording = async () => {
+    //     setResult('Chuẩn bị ghi...')
+    //     await startCamera()
+
+    //     setTimeout(() => {
+    //         if (mediaRecorderRef.current) {
+    //             mediaRecorderRef.current.start(1000)
+    //             setIsRecording(true)
+    //             setResult('Đang ghi...')
+    //         }
+    //     }, 3000)
+    // }
     const stopRecording = () => {
         if (mediaRecorderRef.current && isRecording) {
             mediaRecorderRef.current.stop()
@@ -74,7 +123,6 @@ const CameraView = () => {
         }
     }
 
-    // Cleanup streams
     useEffect(() => {
         return () => {
             if (stream) {

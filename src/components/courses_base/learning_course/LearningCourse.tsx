@@ -8,12 +8,17 @@ interface Courseinfo {
   id: any;
   name: any;
   target: any;
-  data:any;
+  data: any;
 }
 
-const LearningCourse = ({leanrningDataVN}:any) => {
+const LearningCourse = ({ leanrningDataVN }: any) => {
 
-  const courseListLearning = leanrningDataVN.map((course:Courseinfo) => {
+  console.log('check data', leanrningDataVN);
+
+  const courseListLearning = leanrningDataVN.map((course: Courseinfo) => {
+    console.log('check data course', course);
+
+
     return (
       <div key={course.id} className="course-category" style={{ width: "30%" }}>
         <Category
