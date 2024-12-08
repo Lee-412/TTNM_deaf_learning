@@ -27,8 +27,6 @@ const mockdata = [
   { label: "Thống kê", icon: IconFileAnalytics, links: "statistical" },
   { label: "Kiểm tra kí hiệu", icon: IconAdjustments, links: "camera" },
   { label: "Hồ sơ", icon: IconLock, links: "" },
-  { label: "Nâng cấp", icon: IconAdjustments, links: "" },
-  { label: "Đăng nhập", icon: IconAdjustments, links: "" },
 ];
 
 export function NavbarNested() {
