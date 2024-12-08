@@ -103,40 +103,36 @@ const Statistic = () => {
         Thống kê dữ liệu học tập
       </Text>
       <Grid gutter="md" style={{ paddingLeft: "20px" }}>
-        <Grid.Col span={isSmallScreen ? 12 : 6}>
+      <Grid.Col span={isSmallScreen ? 12 : 6}>
           <Card shadow="sm" padding="lg">
             <Text fw={500} mb="sm">
-              Số giờ đã học
+              Lượng chữ đã học theo chủ đề
             </Text>
-            <Line data={lineData} />
+            <div style={{ margin: "0 auto" }}>
+              <Pie data={pieData} />
+            </div>
           </Card>
         </Grid.Col>
+        
         <Grid.Col span={isSmallScreen ? 12 : 6}>
           <Card shadow="sm" padding="lg">
             <Text fw={500} mb="sm">
               Số chữ đã học
             </Text>
+            
+            <div style={{height: "300px", width: "auto"}}>
             <Bar data={barData} />
-          </Card>
-        </Grid.Col>
-        <Grid.Col span={isSmallScreen ? 12 : 6}>
-          <Card shadow="sm" padding="lg">
-            <Text fw={500} mb="sm">
-              Lượng chữ đã học theo chủ đề
-            </Text>
-            <div style={{height: "300px", margin: "0 auto" }}>
-              <Pie data={pieData} />
             </div>
           </Card>
         </Grid.Col>
-        <Grid.Col span={isSmallScreen ? 12 : 6}>
+        
+        <Grid.Col span={isSmallScreen ? 12 : 12}>
           <Card shadow="sm" padding="lg">
             <Text fw={500} mb="sm">
-              Số lần sai ở các chủ đề
+              Số giờ đã học
             </Text>
-            <div style={{ height: "300px", margin: "0 auto" }}>
-              <Doughnut data={doughnutData} />
-            </div>
+            <Line data={lineData} />
+            
           </Card>
         </Grid.Col>
       </Grid>
