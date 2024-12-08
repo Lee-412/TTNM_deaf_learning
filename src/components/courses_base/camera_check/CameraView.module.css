@@ -1,4 +1,4 @@
-.container {
+/* .container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,5 +67,109 @@
 
     .button {
         font-size: 0.9rem;
+    }
+} */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.topRow {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.button:hover {
+    background: #0056b3;
+}
+
+.resultBox {
+    background: rgb(218, 236, 253);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 3vh;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resultText {
+    font-size: large;
+    font-weight: bolder;
+}
+
+.cameraContainer {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: #000;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the video covers the container without stretching */
+}
+
+.toggleButtonContainer {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95vw;
+    }
+
+    .topRow {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .resultBox {
+        max-width: 95%;
+        margin-top: 10px;
+    }
+
+    .button {
+        font-size: 0.9rem;
+    }
+
+    .cameraContainer {
+        height: 250px;
+        /* Smaller camera height for mobile */
     }
 }

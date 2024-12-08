@@ -57,7 +57,7 @@ const CameraView = () => {
 
                 const formData = new FormData();
                 formData.append('video', mp4Blob, 'video.mp4');
-                const response = await fetch('http://127.0.0.1:5001/predict_video', {
+                const response = await fetch('http://localhost:5000/predict_video', {
                     method: 'POST',
                     body: formData,
                 });
@@ -139,34 +139,179 @@ const CameraView = () => {
 
     }
     return (
-        <Container className={styles.container} style={{ textAlign: 'center' }}>
+        // <Container className={styles.container} style={{ textAlign: 'center' }}>
+        //     <Text size="xl" className={styles.title}>
+        //         Kiểm tra ký hiệu
+        //     </Text>
+
+        //     <Button variant='outline' className={styles.resultBox}
+        //         onClick={() => {
+        //             handleClickButtonResult(result)
+        //         }}>
+        //         <Text className={styles.resultText}>Kết quả: {result}</Text>
+        //     </Button>
+
+        //     <Container className={styles.cameraContainer} >
+        //         <video
+        //             ref={videoRef}
+        //             autoPlay
+        //             playsInline
+        //             className={styles.video}
+        //             style={{ width: '100%', maxWidth: '1250px', height: 'auto', border: '2px solid #ccc' }}
+        //         />
+        //     </Container>
+
+        //     {!isRecording ? (
+        //         <Button
+        //             onClick={startRecording}
+        //             variant="filled"
+        //             color="blue"
+        //             mt="md"
+        //             className={styles.button}
+        //         >
+        //             Bắt đầu ghi
+        //         </Button>
+        //     ) : (
+        //         <Button
+        //             onClick={stopRecording}
+        //             variant="filled"
+        //             color="red"
+        //             mt="md"
+        //             className={styles.button}
+        //         >
+        //             Dừng ghi
+        //         </Button>
+        //     )}
+        // </Container>
+        // <Container className={styles.container} style={{ textAlign: 'center' }}>
+        //     <Text size="xl" className={styles.title}>
+        //         Kiểm tra ký hiệu
+        //     </Text>
+
+        //     <div className={styles.mainContent}>
+        //         <div className={styles.toggleButtonContainer}>
+        //             {!isRecording ? (
+        //                 <Button
+        //                     onClick={startRecording}
+        //                     variant="filled"
+        //                     color="blue"
+        //                     mt="md"
+        //                     className={styles.button}
+        //                 >
+        //                     Bắt đầu ghi
+        //                 </Button>
+        //             ) : (
+        //                 <Button
+        //                     onClick={stopRecording}
+        //                     variant="filled"
+        //                     color="red"
+        //                     mt="md"
+        //                     className={styles.button}
+        //                 >
+        //                     Dừng ghi
+        //                 </Button>
+        //             )}
+        //         </div>
+        //         <div className={styles.resultSection}>
+        //             <Button
+        //                 variant='outline'
+        //                 className={styles.resultBox}
+        //                 onClick={() => { handleClickButtonResult(result) }}
+        //             >
+        //                 <Text className={styles.resultText}>Kết quả: {result}</Text>
+        //             </Button>
+        //         </div>
+
+        //         <div className={styles.cameraSection}>
+        //             <Container className={styles.cameraContainer}>
+        //                 <video
+        //                     ref={videoRef}
+        //                     autoPlay
+        //                     playsInline
+        //                     className={styles.video}
+        //                 />
+        //             </Container>
+        //         </div>
+
+        //     </div>
+
+
+        // </Container>
+        // <Container className={styles.container}>
+        //     <Text size="xl" className={styles.title}>
+        //         Kiểm tra ký hiệu
+        //     </Text>
+
+        //     <div className={styles.toggleButtonContainer}>
+        //         {!isRecording ? (
+        //             <Button
+        //                 onClick={startRecording}
+        //                 variant="filled"
+        //                 color="blue"
+        //                 className={styles.button}
+        //             >
+        //                 Bắt đầu ghi
+        //             </Button>
+        //         ) : (
+        //             <Button
+        //                 onClick={stopRecording}
+        //                 variant="filled"
+        //                 color="red"
+        //                 className={styles.button}
+        //             >
+        //                 Dừng ghi
+        //             </Button>
+        //         )}
+
+        //         <Button
+        //             variant='outline'
+        //             className={styles.resultBox}
+        //             onClick={() => { handleClickButtonResult(result) }}
+        //         >
+        //             <Text className={styles.resultText}>Kết quả: {result}</Text>
+        //         </Button>
+        //     </div>
+
+        //     <div className={styles.cameraContainer}>
+        //         <video
+        //             ref={videoRef}
+        //             autoPlay
+        //             playsInline
+        //             className={styles.video}
+        //         />
+        //     </div>
+
+
+        // </Container>
+        <Container className={styles.container}>
             <Text size="xl" className={styles.title}>
                 Kiểm tra ký hiệu
             </Text>
 
-            <Button variant='outline' className={styles.resultBox}
-                onClick={() => {
-                    handleClickButtonResult(result)
-                }}>
+
+
+
+            <Button
+                variant='outline'
+                className={styles.resultBox}
+                onClick={() => { handleClickButtonResult(result) }}
+            >
                 <Text className={styles.resultText}>Kết quả: {result}</Text>
             </Button>
 
-            <Container className={styles.cameraContainer} >
+            <div className={styles.cameraContainer}>
                 <video
                     ref={videoRef}
                     autoPlay
                     playsInline
                     className={styles.video}
-                    style={{ width: '100%', maxWidth: '1250px', height: 'auto', border: '2px solid #ccc' }}
                 />
-            </Container>
-
+            </div>
             {!isRecording ? (
                 <Button
                     onClick={startRecording}
                     variant="filled"
                     color="blue"
-                    mt="md"
                     className={styles.button}
                 >
                     Bắt đầu ghi
@@ -176,13 +321,13 @@ const CameraView = () => {
                     onClick={stopRecording}
                     variant="filled"
                     color="red"
-                    mt="md"
                     className={styles.button}
                 >
                     Dừng ghi
                 </Button>
             )}
         </Container>
+
     )
 }
 
