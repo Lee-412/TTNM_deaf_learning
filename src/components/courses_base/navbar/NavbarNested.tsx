@@ -9,11 +9,13 @@ import {
   IconMenu2,
   IconPictureInPictureOff,
   IconX,
-  IconSquareChevronRight
+  IconSquareChevronRight,
+  IconTransfer
 } from "@tabler/icons-react";
 import { LinksGroup } from "./NavbarLinksGroup/NavbarLinksGroup";
 import classes from "./NavbarNested.module.css";
 import { useState } from "react";
+import { IconBook2 } from '@tabler/icons-react';
 
 
 const mockdata = [
@@ -26,6 +28,8 @@ const mockdata = [
   { label: "Bảng xếp hạng", icon: IconPresentationAnalytics, links: "rank" },
   { label: "Thống kê", icon: IconFileAnalytics, links: "statistical" },
   { label: "Kiểm tra kí hiệu", icon: IconAdjustments, links: "camera" },
+  { label: "Phiên dịch", icon: IconTransfer, links: "translate" },
+  { label: "Từ điển", icon: IconBook2, links: "dictionary" },
   { label: "Hồ sơ", icon: IconLock, links: "" },
   { label: "Nâng cấp", icon: IconAdjustments, links: "" },
   { label: "Đăng nhập", icon: IconAdjustments, links: "" },

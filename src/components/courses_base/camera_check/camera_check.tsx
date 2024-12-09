@@ -73,7 +73,6 @@ const CameraView = () => {
         }
     }
 
-
     const startRecording = async () => {
         let countdown = 3;
         setResult(`Sẽ ghi sau ${countdown}...`);
@@ -87,7 +86,6 @@ const CameraView = () => {
                 clearInterval(countdownInterval);
                 setResult('Đang ghi...');
 
-
                 startCamera().then(() => {
                     if (mediaRecorderRef.current) {
                         mediaRecorderRef.current.start(1000);
@@ -99,18 +97,6 @@ const CameraView = () => {
     };
 
 
-    // const startRecording = async () => {
-    //     setResult('Chuẩn bị ghi...')
-    //     await startCamera()
-
-    //     setTimeout(() => {
-    //         if (mediaRecorderRef.current) {
-    //             mediaRecorderRef.current.start(1000)
-    //             setIsRecording(true)
-    //             setResult('Đang ghi...')
-    //         }
-    //     }, 3000)
-    // }
     const stopRecording = () => {
         if (mediaRecorderRef.current && isRecording) {
             mediaRecorderRef.current.stop()
@@ -139,34 +125,35 @@ const CameraView = () => {
 
     }
     return (
-        <Container className={styles.container} style={{ textAlign: 'center' }}>
+
+        <Container className={styles.container}>
             <Text size="xl" className={styles.title}>
                 Kiểm tra ký hiệu
             </Text>
 
-            <Button variant='outline' className={styles.resultBox}
-                onClick={() => {
-                    handleClickButtonResult(result)
-                }}>
+
+
+            <Button
+                variant='outline'
+                className={styles.resultBox}
+                onClick={() => { handleClickButtonResult(result) }}
+            >
                 <Text className={styles.resultText}>Kết quả: {result}</Text>
             </Button>
 
-            <Container className={styles.cameraContainer} >
+            <div className={styles.cameraContainer}>
                 <video
                     ref={videoRef}
                     autoPlay
                     playsInline
                     className={styles.video}
-                    style={{ width: '100%', maxWidth: '1250px', height: 'auto', border: '2px solid #ccc' }}
                 />
-            </Container>
-
+            </div>
             {!isRecording ? (
                 <Button
                     onClick={startRecording}
                     variant="filled"
                     color="blue"
-                    mt="md"
                     className={styles.button}
                 >
                     Bắt đầu ghi
@@ -176,13 +163,13 @@ const CameraView = () => {
                     onClick={stopRecording}
                     variant="filled"
                     color="red"
-                    mt="md"
                     className={styles.button}
                 >
                     Dừng ghi
                 </Button>
             )}
         </Container>
+
     )
 }
 

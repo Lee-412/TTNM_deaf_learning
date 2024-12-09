@@ -64,7 +64,7 @@ const SigninBox = () => {
             password: formData.password,
             point: 0
         }
-        let response = await fetch('http://localhost:5000/users', {
+        let response = await fetch('http://localhost:5002/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -19,7 +19,8 @@ def create_user(data):
 def get_users():
     try:
         users = db.session.query(User).all()
-        users_list = [{"id": user.id, "name": user.name, "email": user.email} for user in users]
+        print('hit here get users', users[0])
+        users_list = [{"id": user.id, "name": user.name, "email": user.email, "point" :user.point} for user in users]
         return users_list
     except Exception as e:
         return {"error": str(e)}, 400
@@ -28,7 +29,7 @@ def get_user_by_id(user_id):
     try:
         user = db.session.get(User, user_id)
         if user:
-            return {"id": user.id, "name": user.name, "email": user.email}
+            return {"id": user.id, "name": user.name, "email": user.email, "point" :user.point}
         else:
             return {"message": "User not found"}, 404
     except Exception as e:
@@ -40,6 +41,8 @@ def update_user(user_id, data):
         if user:
             user.name = data['name']
             user.email = data['email']
+            user.password = data['password']
+            user.point = data['point']
             db.session.commit()
             return {"message": "User updated successfully!"}
         else:

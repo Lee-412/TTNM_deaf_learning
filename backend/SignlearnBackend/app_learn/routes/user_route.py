@@ -15,6 +15,7 @@ def create_user_route():
 @users.route('/users', methods=['GET'])
 def get_users_route():
     response = get_users()
+    print(response)
     return jsonify(response)
 
 
