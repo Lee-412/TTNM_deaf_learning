@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-from app_learn.models import User
+from app_learn.models import User, Statistics
 from app_learn.extensions import db
 
 def create_user(data):
@@ -34,6 +34,29 @@ def get_user_by_id(user_id):
             return {"message": "User not found"}, 404
     except Exception as e:
         return {"error": str(e)}, 400
+
+def get_user_statistics_route_services(user_id): 
+    try:
+        user_statistics = db.session.query(Statistics).filter_by(userID=user_id).all()
+        
+        if user_statistics:
+            result = []
+            for stat in user_statistics:
+                result.append({
+                    "id": stat.id,
+                    "userID": stat.userID,
+                    "timeStudied": stat.timeStudied,
+                    "wordStudiedPerDay": stat.wordStudiedPerDay,
+                    "wordStudiedPerCategory": stat.wordStudiedPerCategory
+                })
+            return {"statistics": result}, 200  # Returning response and status code
+        else:
+            return {"message": "No statistics found for this user"}, 404  # Returning response and status code
+    except Exception as e:
+        return {"error": str(e)}, 400  # Returning response and status code
+
+
+
 
 def update_user(user_id, data):
     try:

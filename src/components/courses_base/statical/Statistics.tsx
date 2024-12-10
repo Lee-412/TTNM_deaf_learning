@@ -34,6 +34,7 @@ const Statistic = () => {
   const isSmallScreen = useMediaQuery("(max-width: 1200px)");
 
   const userDataP = userData[1];
+  console.log("check userDataP", userDataP);
 
   // Data for charts
   const lineData = {

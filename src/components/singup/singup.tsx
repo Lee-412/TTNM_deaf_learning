@@ -12,14 +12,16 @@ import {
     Button,
 
 } from '@mantine/core';
-import classes from './sigin.module.css';
+import classes from '../signin/sigin.module.css';
 import { useContext, useEffect, useState } from 'react';
 import ForgotPassword from '../password/forgot.password';
 import { useRouter } from 'next/navigation';
 import { ContextData, UserContext, } from '../useContext/userContext';
 
-interface dataSignIn {
+interface dataSignup {
     email: string;
+    username: string;
+
     password: string;
 }
 
@@ -42,8 +44,9 @@ const SignupBox = () => {
 
     const [opened, setOpen] = useState(false);
 
-    const [formData, setFormData] = useState<dataSignIn>({
+    const [formData, setFormData] = useState<dataSignup>({
         email: '',
+        username: '',
         password: ''
     });
 
@@ -59,12 +62,12 @@ const SignupBox = () => {
             }
         }
         let data_signin = {
-            name: 'username',
+            name: formData.username,
             email: formData.email,
             password: formData.password,
             point: 0
         }
-        let response = await fetch('http://localhost:5000/users', {
+        let response = await fetch('http://localhost:5002/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -107,6 +110,15 @@ const SignupBox = () => {
                     required value={formData.email}
                     onChange={handleChange}
                     name='email'
+                />
+                <TextInput
+                    label="Username"
+                    placeholder="username"
+                    mt="md"
+
+                    required value={formData.username}
+                    onChange={handleChange}
+                    name='username'
                 />
                 <PasswordInput
                     label="Password"

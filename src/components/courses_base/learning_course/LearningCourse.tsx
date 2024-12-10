@@ -36,16 +36,16 @@ const LearningCourse = ({ leanrningDataVN }: any) => {
   return (
     <div className="course-content-container">
       <div style={{ textAlign: "center" }}>
-      <Divider my="md" />
-      <div className="course-header">
-        
+        <Divider my="md" />
+        <div className="course-header">
 
-        <Text className="course-title">
-          Khóa học
-        </Text>
-        
-      </div>
-      <Divider my="md" color="blue" />
+
+          <Text className="course-title">
+            Khóa học
+          </Text>
+
+        </div>
+        <Divider my="md" color="blue" />
       </div>
 
       <ol

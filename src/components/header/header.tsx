@@ -66,10 +66,14 @@ export function Header() {
     const handleClickLogout = () => {
         logoutContext()
     }
+    const handleClickSignup = () => {
+        router.push('/Signup')
+    }
+
     return (
         <Box>
             <header className={classes.header}>
-                <Group justify="space-between" h="100%" gap={0} style={{paddingLeft: "40px"}}
+                <Group justify="space-between" h="100%" gap={0} style={{ paddingLeft: "40px" }}
                 >
                     {/* <MantineLogo size={30} /> */}
                     <Group
@@ -138,7 +142,9 @@ export function Header() {
                                     <Button variant="default" onClick={() => {
                                         handleClickLogin()
                                     }}>Log in</Button>
-                                    <Button >Sign up</Button>
+                                    <Button onClick={() => {
+                                        handleClickSignup()
+                                    }}>Sign up</Button>
                                 </>
                         }
                     </Group>
@@ -206,7 +212,9 @@ export function Header() {
                                     <Button variant="default" onClick={() => {
                                         handleClickLogin()
                                     }}>Log in</Button>
-                                    <Button>Sign up</Button>
+                                    <Button onClick={() => {
+                                        handleClickSignup()
+                                    }}>Sign up</Button>
                                 </>
                         }
                     </Group>

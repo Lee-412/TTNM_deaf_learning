@@ -1,5 +1,5 @@
 from flask import jsonify, request,Blueprint
-from app_learn.services.user_services import create_user, get_user_by_id,get_users, update_user,delete_user
+from app_learn.services.user_services import create_user, get_user_by_id,get_users, update_user,delete_user,get_user_statistics_route_services
 
 users = Blueprint('users',__name__)
 
@@ -35,4 +35,9 @@ def update_user_route(id):
 @users.route('/users/<int:id>', methods=['DELETE'])
 def delete_user_route(id):
     response, status_code = delete_user(id)
+    return jsonify(response), status_code
+
+@users.route('/users/statistic/<int:id>', methods=['GET'])
+def get_user_statistics_route(id):
+    response, status_code = get_user_statistics_route_services(id)
     return jsonify(response), status_code

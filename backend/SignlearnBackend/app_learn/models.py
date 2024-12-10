@@ -13,7 +13,6 @@ class User(db.Model):
         self.password = password
         self.point = point
 
-
 class LearningData(db.Model):
     __tablename__ = 'learningdata'
 
@@ -102,3 +101,19 @@ class Dictionary(db.Model):
         self.word = word
         self.description = description
         self.tl = tl
+
+class Statistics(db.Model):
+    __tablename__ = 'statistics_data'
+    
+    id = db.Column(db.String(100), primary_key=True)
+    userID = db.Column(db.Integer)
+    timeStudied = db.Column(db.String(100))
+    wordStudiedPerDay = db.Column(db.String(100))
+    wordStudiedPerCategory = db.Column(db.String(100))
+
+    def __init__(self, id, userID, timeStudied, wordStudiedPerDay, wordStudiedPerCategory):
+        self.id = id
+        self.userID = userID
+        self.timeStudied = timeStudied
+        self.wordStudiedPerDay = wordStudiedPerDay
+        self.wordStudiedPerCategory = wordStudiedPerCategory

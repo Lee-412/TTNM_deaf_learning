@@ -37,19 +37,19 @@ interface ReviseData {
 }
 
 interface UserStudyData {
-    userID: number; 
+    userID: number;
     name: string;
     timeStudied: number[]; // Số giờ đã học theo các ngày trong tuần (T2 -> CN)
     wordStudiedPerDay: number[]; // Số chữ đã học theo từng ngày
     wordStudiedPerCategory: number[]; // Số chữ đã học theo các danh mục
     totalWordStudied: number; // Tổng số chữ đã học
-  }
+}
 
 export const userData: UserStudyData[] = [
     {
         userID: 1,
         name: 'Khai',
-        timeStudied: [1, 3, 5, 2, 1, 4, 3],
+        timeStudied: [512, 3, 5, 2, 1, 4, 3],
         wordStudiedPerDay: [2, 4, 0, 1, 5, 5, 2],
         wordStudiedPerCategory: [7, 4, 2, 4, 6, 4, 2],
         totalWordStudied: 29,
@@ -57,60 +57,44 @@ export const userData: UserStudyData[] = [
     {
         userID: 2,
         name: "Hien",
-        timeStudied: [2, 1, 4, 3, 2, 5, 6],
+        timeStudied: [12, 1, 4, 3, 2, 5, 6],
         wordStudiedPerDay: [5, 3, 2, 4, 1, 7, 8],
         wordStudiedPerCategory: [6, 5, 3, 7, 4, 3, 5],
         totalWordStudied: 33,
-      },
-      {
+    },
+    {
         userID: 3,
         name: "Duc",
         timeStudied: [0, 2, 3, 5, 2, 1, 4],
         wordStudiedPerDay: [3, 2, 5, 6, 3, 4, 7],
         wordStudiedPerCategory: [5, 4, 6, 3, 7, 2, 1],
         totalWordStudied: 28,
-      },
-      {
+    },
+    {
         userID: 4,
         name: "Son",
         timeStudied: [3, 4, 1, 2, 5, 3, 2],
         wordStudiedPerDay: [4, 3, 6, 1, 2, 5, 4],
         wordStudiedPerCategory: [8, 6, 5, 7, 3, 2, 4],
         totalWordStudied: 35,
-      },
-      {
+    },
+    {
         userID: 5,
         name: "Suc",
         timeStudied: [3, 4, 1, 2, 5, 3, 2],
         wordStudiedPerDay: [4, 3, 6, 1, 2, 5, 4],
         wordStudiedPerCategory: [3, 6, 2, 4, 3, 2, 4],
         totalWordStudied: 24,
-      },{
+    }, {
         userID: 6,
         name: "Hai",
         timeStudied: [3, 4, 1, 2, 5, 3, 2],
         wordStudiedPerDay: [4, 3, 6, 1, 2, 5, 4],
         wordStudiedPerCategory: [3, 2, 1, 3, 4, 2, 1],
         totalWordStudied: 16,
-      },
+    },
 ]
 
-const LearningData_vn_example = [
-    {
-        name: 'Màu sắc',
-        id: 1,
-        target: 'Stude',
-        data: [
-            {
-                id: 1,
-                word: 'màu xanh da trời',
-                url: 'https://qipedc.moet.gov.vn/videos/W02142B.mp4',
-                type: 'danh từ'
-            },
-        ]
-    },
-    {}
-]
 
 
 export const LearningData_vn = [

@@ -36,4 +36,6 @@ class DictionarySchema(ma.Schema):
     class Meta:
         fields = ('_id','word', 'description', 'tl','url')
 
-
+class StatisticsSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        fields = ('id', 'userID', 'timeStudied', 'wordStudiedPerDay', 'wordStudiedPerCategory')
