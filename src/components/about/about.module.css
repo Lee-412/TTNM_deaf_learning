@@ -1,10 +1,52 @@
-.container_root {
+.banner {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    min-height: fit-content;
+    background-image: url('./img/banner.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: center;
     align-items: center;
+    max-height: 680px;
+    margin-bottom: 100px;
+}
+
+.logo {
+    font-size: 9vw;
+    color: #6495ED;
+    margin-bottom: 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .title {
-    font-size: xx-large;
-    font-weight: bolder;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    margin-top: 0px;
+    margin-bottom: 1%;
+}
+
+.project {
+    width: 100%;
+    height: 90vh;
+    min-height: fit-content;
+    background-image: url('./img/project.png');
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.team {
+    
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    min-height: fit-content;
+    background-image: url('./img/team.png');
+    background-position: center;
+    background-size: cover;
+    
 }

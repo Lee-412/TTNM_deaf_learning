@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 75vh;
+    height: 100vh;
     min-height: fit-content;
     background-image: url('./1.png');
     background-position: center;
@@ -10,11 +10,11 @@
     background-repeat: no-repeat;
     justify-content: center;
     align-items: center;
-
+    max-height: 680px;
 }
 
 .logo {
-    font-size: 5vw;
+    font-size: 9vw;
     color: #6495ED;
     margin-bottom: 0px;
     padding: 0px;
@@ -22,8 +22,9 @@
 }
 
 .p1 {
-    font-family: 'Arial', cursive;
-    font-size: 2vw;
+    font-family: 'Roboto', sans-serif;
+;
+    font-size: 25px;
     margin-top: 0px;
     margin-bottom: 1%;
 }

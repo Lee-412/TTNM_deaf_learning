@@ -133,7 +133,7 @@ const QnA = () => {
                                 {faq.question}
                             </div>
                             <Collapse in={openedIndex === index}>
-                                <Text className={classes['homepage6-b-a']}><p>{faq.answer}</p></Text>
+                                <Text className={classes['homepage6-b-a']}>{faq.answer}</Text>
                             </Collapse>
                         </li>
                     ))}

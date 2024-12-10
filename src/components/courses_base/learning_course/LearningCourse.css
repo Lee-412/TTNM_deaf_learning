@@ -20,6 +20,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-left: 2vw;
+  margin-bottom: 2vh;
   flex: 1 1 auto;
   gap: 25px;
 }
@@ -64,6 +65,7 @@
   .course-category {
     width: 45% !important;
   }
+
 }
 
 @media screen and (max-width: 830px) {

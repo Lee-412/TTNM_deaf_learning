@@ -14,7 +14,7 @@ const Banner = () => {
             <h1 className={classes['logo']}>
                 Signlearn
             </h1>
-            <div className={classes['p1']}>Học ngôn ngữ kĩ kiệu dễ dàng và hiệu quả</div>
+            <div className={classes['p1']}>Học ngôn ngữ kí hiệu dễ dàng và hiệu quả</div>
             <Button className={classes['button1']} variant="filled" size="lg" radius="xl"
                 onClick={() => { handleClickStart() }}
             >

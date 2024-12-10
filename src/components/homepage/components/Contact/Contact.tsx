@@ -57,21 +57,21 @@ const Contact = () => {
                             <img src="https://img.icons8.com/?size=100&id=J5tyvAWzAr1T&format=png&color=000000" alt="" />
                             <div className={classes['homepage7-b-2-text']}>
                                 <h5>Phone</h5>
-                                <p>2390183908123890</p>
+                                <p>1900.1058</p>
                             </div>
                         </li>
                         <li style={{ display: 'flex' }}>
                             <img src="https://img.icons8.com/?size=100&id=X0mEIh0RyDdL&format=png&color=000000" alt="" />
                             <div className={classes['homepage7-b-2-text']}>
                                 <h5>Email</h5>
-                                <p>asddfas@gmal.com</p>
+                                <p>bigfour@gmail.com</p>
                             </div>
                         </li>
                         <li style={{ display: 'flex' }}>
                             <img src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" alt="" />
                             <div className={classes['homepage7-b-2-text']}>
                                 <h5>Facebook</h5>
-                                <p>facebook.com/abcxyz</p>
+                                <p>facebook.com/bigfour</p>
                             </div>
                         </li>
                     </ul>

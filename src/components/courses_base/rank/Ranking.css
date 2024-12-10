@@ -1,0 +1,84 @@
+/* Container cho bảng */
+.table-container {
+  width: 80%;
+  margin: 20px auto;
+  height: 525px;
+  overflow-y: scroll;
+  
+  background: white;
+  border: 1px solid rgb(175, 174, 174); /* Đường viền màu xám cho bảng */
+}
+
+.ranking-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ranking-title {
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+/* Bảng */
+.table {
+  width: 100%;
+  border-collapse: collapse; /* Loại bỏ khoảng cách giữa các ô */
+  
+}
+
+/* Chỉ đường viền ngang cho các dòng */
+.thead .tr, .tbody .tr {
+  border-bottom: 1px solid rgb(175, 174, 174); /* Đường viền màu xám chỉ giữa các dòng */
+}
+
+thead th {
+  background-color: #ffffff; /* Màu nền nhạt cho thead */
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+tbody td {
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Hàng khi hover */
+tbody tr:hover {
+  background-color: #f1f1f1; /* Màu nền khi hover */
+  transform: translateY(-2px);
+ 
+  transition: all 0.3s ease;
+}
+
+/* Badge */
+.badge {
+  padding: 10px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  color: black;
+}
+
+.badge.gold {
+  width: 48px;
+  height: 48px;
+  background-image: url('../../../data/img_leaderboard/gold.png');
+}
+
+.badge.silver {
+  width: 48px;
+  height: 48px;
+  background-image: url('../../../data/img_leaderboard/silver.png');
+}
+
+.badge.bronze {
+  width: 48px;
+  height: 48px;
+  background-image: url('../../../data/img_leaderboard/bronze.png');
+}
