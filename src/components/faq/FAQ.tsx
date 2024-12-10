@@ -46,7 +46,7 @@ const FAQ = () => {
   ];
 
   return (
-    <Container>
+    
       <div className={classes["faq-container"]}>
         <Divider my="md" />
         <div className={classes["faq-heading"]}>
@@ -56,7 +56,7 @@ const FAQ = () => {
         <div className={classes["faq-q-and-a"]}>
           <ul>
             {faqs.map((faq, index) => (
-              <li key={index}>
+              <li key={index} className={classes["q-and-a"]}>
                 <div
                   key={index}
                   className={classes["faq-q"]}
@@ -74,7 +74,7 @@ const FAQ = () => {
           </ul>
         </div>
       </div>
-    </Container>
+    
   );
 };
 

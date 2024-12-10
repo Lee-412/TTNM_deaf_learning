@@ -1,10 +1,10 @@
-import AboutBase from "@/components/about/about";
+import AboutPage from "@/components/about/about";
 
 const About = () => {
     return (
         <>
             
-            <AboutBase />
+            <AboutPage />
         </>
     )
 }
