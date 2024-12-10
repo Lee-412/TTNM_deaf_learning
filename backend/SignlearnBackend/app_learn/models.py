@@ -88,3 +88,17 @@ class SocialData(db.Model):
     def __init__(self, title,content):
         self.title=title
         self.content = content
+
+class Dictionary(db.Model):
+    __tablename__ = 'dictionary'
+    _id = db.Column(db.String(100), primary_key=True)
+    word = db.Column(db.String(100))
+    description = db.Column(db.String(100))
+    tl = db.Column(db.String(100))
+    url = db.Column(db.String(100))
+
+    def __init__(self, _id, word, description, tl,url):
+        self._id=_id
+        self.word = word
+        self.description = description
+        self.tl = tl

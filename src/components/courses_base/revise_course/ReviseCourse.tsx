@@ -2,6 +2,7 @@ import Link from "next/link";
 import Category from "../category/Category";
 import "./ReviseCourse.css";
 import {ReviseData_vn} from "@/data/data";
+import { Divider, Text } from "@mantine/core";
 
 // Đây là trang ôn tập
 
@@ -25,9 +26,16 @@ const ReviseCourse = () => {
 
   return (
     <div>
-    <div style={{ textAlign: "center", fontFamily: "monospace", color: "#012970"}}>
-      <h1> Chọn chủ đề ôn tập </h1>
-    </div>
+    <Divider my="md" />
+      <div className="revise-course-header">
+        
+
+        <Text className="revise-course-title">
+          Chọn khóa học để ôn tập
+        </Text>
+        
+      </div>
+      <Divider my="md" color="blue" />
 
     <ol
         className="breadcrumb"

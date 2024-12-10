@@ -125,52 +125,59 @@ const CameraView = () => {
 
     }
     return (
+        <>
+            <Container className={styles.container}>
 
-        <Container className={styles.container}>
-            <Text size="xl" className={styles.title}>
-                Kiểm tra ký hiệu
-            </Text>
+                <Text size="xl" className={styles.title}>
+                    Kiểm tra ký hiệu
+                </Text>
 
 
 
-            <Button
-                variant='outline'
-                className={styles.resultBox}
-                onClick={() => { handleClickButtonResult(result) }}
-            >
-                <Text className={styles.resultText}>Kết quả: {result}</Text>
-            </Button>
-
-            <div className={styles.cameraContainer}>
-                <video
-                    ref={videoRef}
-                    autoPlay
-                    playsInline
-                    className={styles.video}
-                />
-            </div>
-            {!isRecording ? (
                 <Button
-                    onClick={startRecording}
-                    variant="filled"
-                    color="blue"
-                    className={styles.button}
+                    variant='outline'
+                    className={styles.resultBox}
+                    onClick={() => { handleClickButtonResult(result) }}
                 >
-                    Bắt đầu ghi
+                    <Text className={styles.resultText}>Kết quả: {result}</Text>
                 </Button>
-            ) : (
-                <Button
-                    onClick={stopRecording}
-                    variant="filled"
-                    color="red"
-                    className={styles.button}
-                >
-                    Dừng ghi
-                </Button>
-            )}
-        </Container>
+
+                <div className={styles.cameraContainer}>
+                    <video
+                        ref={videoRef}
+                        autoPlay
+                        playsInline
+                        className={styles.video}
+                    />
+                </div>
+
+                {!isRecording ? (
+                    <Button
+                        onClick={startRecording}
+                        variant="filled"
+                        color="blue"
+                        className={styles.button}
+                    >
+                        Bắt đầu ghi
+                    </Button>
+                ) : (
+                    <Button
+                        onClick={stopRecording}
+                        variant="filled"
+                        color="red"
+                        className={styles.button}
+                    >
+                        Dừng ghi
+                    </Button>
+                )}
+            </Container>
+        </>
+
+
+
 
     )
 }
 
 export default CameraView
+

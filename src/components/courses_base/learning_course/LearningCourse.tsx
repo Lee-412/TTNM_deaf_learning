@@ -1,3 +1,5 @@
+'use client'
+import { Divider, Text } from "@mantine/core";
 import Category from "../category/Category";
 import "./LearningCourse.css";
 import Link from "next/link";
@@ -34,10 +36,16 @@ const LearningCourse = ({ leanrningDataVN }: any) => {
   return (
     <div className="course-content-container">
       <div style={{ textAlign: "center" }}>
-        <h1 style={{ fontFamily: "monospace", color: "#012970" }}>
-          {" "}
-          Khóa học{" "}
-        </h1>
+      <Divider my="md" />
+      <div className="course-header">
+        
+
+        <Text className="course-title">
+          Khóa học
+        </Text>
+        
+      </div>
+      <Divider my="md" color="blue" />
       </div>
 
       <ol

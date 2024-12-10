@@ -31,4 +31,9 @@ class SocialDataSchema(ma.Schema):
     class Meta:
         fields = ('id','content')
 
+        
+class DictionarySchema(ma.Schema):
+    class Meta:
+        fields = ('_id','word', 'description', 'tl','url')
+
 

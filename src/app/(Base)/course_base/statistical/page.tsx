@@ -1,8 +1,9 @@
+import Statistics from "@/components/courses_base/statical/Statistics";
+import Statical from "@/components/courses_base/statical/Statistics";
+
 const StatisticalPage = () => {
     return (
-        <>
-            Statistical Page
-        </>
+       <Statistics />
     )
 }
 export default StatisticalPage;

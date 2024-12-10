@@ -1,4 +1,4 @@
-from app_learn.models import ComunityData, LibbaseData, DocumentData, SocialData
+from app_learn.models import ComunityData, LibbaseData, DocumentData, SocialData, Dictionary
 from app_learn.extensions import db
 import json
 
@@ -133,3 +133,20 @@ def insert_social_data_service(data):
         db.session.add(socialData)
     
     db.session.commit()
+
+def get_dictionary_data_services():
+    try:
+        print("hit get dictionary service")
+        dictionaris = db.session.query(Dictionary).all()
+        dictionary_list = [{
+            "_id": dictionary._id,
+            "word": dictionary.word,
+            "description": dictionary.description,
+            "tl": dictionary.tl,
+            "url": dictionary.url
+
+            } for dictionary in dictionaris]
+        
+        return dictionary_list
+    except Exception as e:
+        return {"error": str(e)}, 400

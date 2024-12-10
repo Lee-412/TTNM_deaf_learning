@@ -1,3 +1,14 @@
+.revise-course-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.revise-course-title {
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
 .breadcrumb {
     --bs-breadcrumb-padding-x: 0;
     --bs-breadcrumb-padding-y: 0;
@@ -30,6 +41,7 @@
     color: var(--bs-breadcrumb-item-active-color);
   }
 
+  
 
   @media screen and (max-width: 1200px) {
     .base-content {

@@ -31,8 +31,6 @@ const mockdata = [
   { label: "Phiên dịch", icon: IconTransfer, links: "translate" },
   { label: "Từ điển", icon: IconBook2, links: "dictionary" },
   { label: "Hồ sơ", icon: IconLock, links: "" },
-  { label: "Nâng cấp", icon: IconAdjustments, links: "" },
-  { label: "Đăng nhập", icon: IconAdjustments, links: "" },
 ];
 
 export function NavbarNested() {
