@@ -26,7 +26,7 @@ const mockdata = [
   { label: "Bảng xếp hạng", icon: IconPresentationAnalytics, links: "rank" },
   { label: "Thống kê", icon: IconFileAnalytics, links: "statistical" },
   { label: "Kiểm tra kí hiệu", icon: IconAdjustments, links: "camera" },
-  { label: "Hồ sơ", icon: IconLock, links: "" },
+  { label: "Hồ sơ", icon: IconLock, links: "rank" },
 ];
 
 export function NavbarNested() {

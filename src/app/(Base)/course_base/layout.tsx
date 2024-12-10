@@ -3,7 +3,7 @@ import { NavbarNested } from "@/components/courses_base/navbar/NavbarNested"
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <div style={{display: "flex", backgroundColor: "#f0fbfd"}} >
-            <div className="course-navbar">
+            <div className="course-navbar" style={{background: "white", borderRight: "1px solid rgb(227, 227, 227)"}} >
             <NavbarNested />
             </div>
         

@@ -1,8 +1,8 @@
+import Ranking from "@/components/courses_base/rank/Ranking";
+
 const RankPage = () => {
     return (
-        <>
-            Rank Page
-        </>
+        <Ranking />
     )
 }
 export default RankPage;

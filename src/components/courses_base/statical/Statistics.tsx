@@ -15,6 +15,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { userData } from "@/data/data";
 
 // Register Chart.js components
 ChartJS.register(
@@ -30,7 +31,9 @@ ChartJS.register(
 );
 
 const Statistic = () => {
-  const isSmallScreen = useMediaQuery("(max-width: 900px)");
+  const isSmallScreen = useMediaQuery("(max-width: 1200px)");
+
+  const userDataP = userData[1];
 
   // Data for charts
   const lineData = {
@@ -38,12 +41,12 @@ const Statistic = () => {
     datasets: [
       {
         label: "Số giờ đã học",
-        data: [1, 3, 5, 2, 1, 4, 3],
+        // data: [1, 3, 5, 2, 1, 4, 3],
+        data: userDataP.timeStudied,
         borderColor: "rgba(75, 192, 192, 1)",
         backgroundColor: "rgba(75, 192, 192, 0.2)",
       },
     ],
-    userID: 1,
   };
 
   const barData = {
@@ -51,45 +54,38 @@ const Statistic = () => {
     datasets: [
       {
         label: "Số chữ đã học",
-        data: [2, 4, 0, 1, 5, 5, 11],
+        // data: [2, 4, 0, 1, 5, 5, 11],
+        data: userDataP.wordStudiedPerDay,
         backgroundColor: "rgba(54, 162, 235, 0.6)",
       },
     ],
-    userID: 2,
   };
 
   const pieData = {
-    labels: ["Công việc", "Gia đình", "Trái cây", "Động vật"],
+    labels: [
+      "Màu sắc",
+      "Trái cây",
+      "Thức ăn",
+      "Công việc",
+      "Động vật",
+      "Thời gian",
+      "Gia đình",
+    ],
     datasets: [
       {
-        data: [20, 15, 25, 10],
+        // data: [7, 4, 2, 4, 6, 4, 2],
+        data: userDataP.wordStudiedPerCategory,
         backgroundColor: [
           "#36A2EB",
           "#FFCE56",
           "#FF6384",
           "#4BC0C0",
           "#9966FF",
+          "#00FF66",
+          "#FF66FF",
         ],
       },
     ],
-    userID: 3,
-  };
-
-  const doughnutData = {
-    labels: ["Công việc", "Gia đình", "Trái cây", "Động vật", "Đồ ăn"],
-    datasets: [
-      {
-        data: [5, 10, 15, 20, 25],
-        backgroundColor: [
-          "#36A2EB",
-          "#FFCE56",
-          "#FF6384",
-          "#4BC0C0",
-          "#9966FF",
-        ],
-      },
-    ],
-    userID: 4,
   };
 
   return (
@@ -103,7 +99,7 @@ const Statistic = () => {
         Thống kê dữ liệu học tập
       </Text>
       <Grid gutter="md" style={{ paddingLeft: "20px" }}>
-      <Grid.Col span={isSmallScreen ? 12 : 6}>
+        <Grid.Col span={isSmallScreen ? 11 : 6}>
           <Card shadow="sm" padding="lg">
             <Text fw={500} mb="sm">
               Lượng chữ đã học theo chủ đề
@@ -113,26 +109,25 @@ const Statistic = () => {
             </div>
           </Card>
         </Grid.Col>
-        
-        <Grid.Col span={isSmallScreen ? 12 : 6}>
+
+        <Grid.Col span={isSmallScreen ? 11 : 6}>
           <Card shadow="sm" padding="lg">
             <Text fw={500} mb="sm">
               Số chữ đã học
             </Text>
-            
-            <div style={{height: "300px", width: "auto"}}>
-            <Bar data={barData} />
+
+            <div style={{ height: "300px", width: "auto" }}>
+              <Bar data={barData} />
             </div>
           </Card>
         </Grid.Col>
-        
-        <Grid.Col span={isSmallScreen ? 12 : 12}>
+
+        <Grid.Col span={isSmallScreen ? 11 : 12}>
           <Card shadow="sm" padding="lg">
             <Text fw={500} mb="sm">
               Số giờ đã học
             </Text>
             <Line data={lineData} />
-            
           </Card>
         </Grid.Col>
       </Grid>
