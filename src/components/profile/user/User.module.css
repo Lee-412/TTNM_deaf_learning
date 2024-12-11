@@ -1,0 +1,22 @@
+.paper {
+  max-height: 400px;
+  margin-top: 70px;
+  margin-left: 5vw;
+  width: 85%;
+  
+}
+
+.btn-share {
+  background-color: white;
+  border: 1px solid rgb(0, 91, 152) !important;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .paper {
+    margin-top: 5vh;
+    margin-left: 13vw;
+    width: 70%;
+  }
+  
+}

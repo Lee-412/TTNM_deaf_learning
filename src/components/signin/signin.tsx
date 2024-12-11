@@ -73,8 +73,9 @@ const SigninBox = () => {
                 isAuthenticate: true,
                 account: {
                     email: dataServer.email,
-                    username: dataServer.username,
-                    id: dataServer.id
+                    username: dataServer.name,
+                    id: dataServer.id,
+                    point: dataServer.point
                 }
             }
             loginContext(data)
@@ -98,7 +99,7 @@ const SigninBox = () => {
     };
 
     return (
-        <Container size={420} my={40}>
+        <Container size={420} my={40} style={{ height: "81vh", paddingTop: '10vh', }}>
             <Title ta="center" className={classes.title}>
                 Welcome back!
             </Title>

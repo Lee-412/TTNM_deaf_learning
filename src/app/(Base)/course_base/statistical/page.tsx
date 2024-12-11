@@ -1,5 +1,5 @@
-import Statistics from "@/components/courses_base/statical/Statistics";
-import Statical from "@/components/courses_base/statical/Statistics";
+import Statistics from "@/components/profile/statical/Statistics";
+import Statical from "@/components/profile/statical/Statistics";
 
 const StatisticalPage = async () => {
 

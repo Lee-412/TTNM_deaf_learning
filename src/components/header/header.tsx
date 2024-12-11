@@ -34,6 +34,15 @@ export function Header() {
         router.push('/Signin')
     }
 
+    const handleClickStatistical = () => {
+        console.log("click statistical");
+        router.push('/profile')
+    }
+
+    const handleClickSignUp = () => {
+        router.push('/Signup')
+    }
+
     const { user, logoutContext } = useContext(UserContext);
     const pathname = usePathname();
     const [userData, setUserData] = useState({
@@ -64,12 +73,9 @@ export function Header() {
         router.push(path)
     }
     const handleClickLogout = () => {
+        router.push('/')
         logoutContext()
     }
-    const handleClickSignup = () => {
-        router.push('/Signup')
-    }
-
     return (
         <Box>
             <header className={classes.header}>
@@ -120,7 +126,11 @@ export function Header() {
                                         </Menu.Target>
 
                                         <Menu.Dropdown>
-                                            <Menu.Item leftSection={<IconUser size={14} />}>Hồ Sơ</Menu.Item>
+                                            <Menu.Item leftSection={<IconUser size={14} />} onClick={() => {
+                                                handleClickStatistical()
+                                            }}>
+                                                Hồ Sơ
+                                            </Menu.Item>
                                             <Menu.Item leftSection={<IconSettings size={14} />}>Bảng xếp hạng</Menu.Item>
                                             <Menu.Item leftSection={<IconSettings size={14} />}>Thống kê</Menu.Item>
                                             <Menu.Item leftSection={<IconSettings size={14} />}>Cài đặt</Menu.Item>
@@ -143,7 +153,7 @@ export function Header() {
                                         handleClickLogin()
                                     }}>Log in</Button>
                                     <Button onClick={() => {
-                                        handleClickSignup()
+                                        handleClickSignUp()
                                     }}>Sign up</Button>
                                 </>
                         }
@@ -190,7 +200,9 @@ export function Header() {
                                         </Menu.Target>
 
                                         <Menu.Dropdown>
-                                            <Menu.Item leftSection={<IconUser size={14} />}>Hồ Sơ</Menu.Item>
+                                            <Menu.Item leftSection={<IconUser size={14} />} onClick={() => {
+                                                handleClickStatistical()
+                                            }}>Hồ Sơ</Menu.Item>
                                             <Menu.Item leftSection={<IconMilitaryRank size={14} />}>Bảng xếp hạng</Menu.Item>
                                             <Menu.Item leftSection={<IconSettings size={14} />}>Thống kê</Menu.Item>
                                             <Menu.Item leftSection={<IconSettings size={14} />}>Cài đặt</Menu.Item>
@@ -213,7 +225,7 @@ export function Header() {
                                         handleClickLogin()
                                     }}>Log in</Button>
                                     <Button onClick={() => {
-                                        handleClickSignup()
+                                        handleClickSignUp()
                                     }}>Sign up</Button>
                                 </>
                         }

@@ -5,6 +5,7 @@ import { useState, useEffect, SetStateAction } from 'react';
 import { Input, Pagination, Text, Container, Group, Card, Grid, Select } from '@mantine/core';
 import './dictionary_base.css';
 import { Modal, Button } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 
 interface Vocabulary {
     word: string;
@@ -27,6 +28,8 @@ const Dictionary_Base = () => {
         return word.charAt(0).toUpperCase() + word.slice(1);
     };
 
+
+    const isSmallScreen = useMediaQuery("(max-width: 768px)");
 
     const handleCardClick = (vocabulary: Vocabulary) => {
         setSelectedVocabulary(vocabulary);
@@ -127,7 +130,7 @@ const Dictionary_Base = () => {
             {selectedVocabulary && (
                 <Modal
                     className='modal_mantine'
-                    size="50%"
+                    size= {isSmallScreen ? '100%' : '60%' }
                     style={{
 
                     }}

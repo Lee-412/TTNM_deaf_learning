@@ -21,6 +21,11 @@
 ### Step 3: Install dependencies
     pip install -r requirements.txt
 
-
+### Step 4: Install dependencies not in requirements
+    pip install moviepy
+    pip install googletrans
+    pip install requests
+    pip install opencv-python
+    pip install pytesseract
 ### Step 5: Run the application
     python app.py -m flask run
