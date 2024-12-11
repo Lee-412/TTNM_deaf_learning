@@ -10,12 +10,12 @@ import {
   IconPictureInPictureOff,
   IconX,
   IconSquareChevronRight,
+  IconBook2,
   IconTransfer
 } from "@tabler/icons-react";
 import { LinksGroup } from "./NavbarLinksGroup/NavbarLinksGroup";
 import classes from "./NavbarNested.module.css";
 import { useState } from "react";
-import { IconBook2 } from '@tabler/icons-react';
 
 
 const mockdata = [
@@ -26,11 +26,10 @@ const mockdata = [
     links: "course_revise"
   },
   { label: "Bảng xếp hạng", icon: IconPresentationAnalytics, links: "rank" },
-  { label: "Thống kê", icon: IconFileAnalytics, links: "statistical" },
   { label: "Kiểm tra kí hiệu", icon: IconAdjustments, links: "camera" },
   { label: "Phiên dịch", icon: IconTransfer, links: "translate" },
   { label: "Từ điển", icon: IconBook2, links: "dictionary" },
-  { label: "Hồ sơ", icon: IconLock, links: "rank" },
+ 
 ];
 
 export function NavbarNested() {

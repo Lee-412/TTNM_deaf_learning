@@ -1,0 +1,48 @@
+.verticalTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .verticalTable th,
+  .verticalTable td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .verticalTable th {
+    background-color: #0078d7;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .verticalTable tr:nth-child(even) {
+    background-color: #f9fbfd;
+  }
+  
+  .verticalTable tr:hover {
+    background-color: #eaf4fc;
+  }
+  
+  .verticalTable td {
+    color: #555;
+    font-size: 14px;
+  }
+  
+  .verticalTable td:first-child {
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .verticalTable th:first-child,
+  .verticalTable td:first-child {
+    text-align: center;
+  }

@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=E:\Backup Work\project\TTNM_Deaf_Learning\deaf_learning\backend\SignlearnBackend\venv
+set VIRTUAL_ENV=D:\Workspace\HMI_Project\TTNM_deaf_learning\backend\SignlearnBackend\venv
 
 if not defined PROMPT set PROMPT=$P$G
 
