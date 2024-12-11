@@ -13,7 +13,7 @@ const Profile = () => {
     const [dataStatistic, setDataStatistic] = useState(null);
     const router = useRouter()
     if (!user) {
-        // router.push('/')
+        router.push('/')
 
     }
     useEffect(() => {
@@ -24,7 +24,7 @@ const Profile = () => {
                 userData = JSON.parse(userSession);
             }
             else {
-                // router.push('/')
+                router.push('/')
             }
         }
         setData(userData);
@@ -44,7 +44,7 @@ const Profile = () => {
                         setDataStatistic(statistic);
                     }
                     else {
-                        // router.push('/')
+                        router.push('/')
                     }
 
                 } catch (error) {
@@ -52,7 +52,7 @@ const Profile = () => {
                 }
             }
             else {
-                // router.push('/')
+                router.push('/')
             }
         };
 
