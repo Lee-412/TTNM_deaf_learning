@@ -1,6 +1,7 @@
-import { Container } from "@mantine/core";
+import { Button, Container } from "@mantine/core";
 import { Word, WordAndQuestion } from "../category/Category";
 import "./ReviseResult.css";
+import { useRouter } from "next/navigation";
 
 interface ReviseResultProps {
   data: WordAndQuestion[];
@@ -10,6 +11,12 @@ interface ReviseResultProps {
 
 const ReviseResult = (props: ReviseResultProps) => {
   let { data, selectedAnswer, numberCorrectAnswer } = props;
+
+  const route = useRouter();
+
+  const handleBack = () => {
+    route.push("/course_base/course_revise")
+  }
 
   console.log("check selected answer", selectedAnswer);
 
@@ -76,7 +83,6 @@ const ReviseResult = (props: ReviseResultProps) => {
             </video>
           </Container>
         </div>
-
         
       </Container>
     );
@@ -88,6 +94,14 @@ const ReviseResult = (props: ReviseResultProps) => {
         Your Result: {numberCorrectAnswer} / {data.length}
       </div>
       {handleShowResult}
+
+      <div className="revise-result-btn">
+      <Button onClick={() => handleBack()} className="return-button">
+                Trở lại ôn tập
+      </Button>
+      </div>
+
+      
     </div>
   );
 };

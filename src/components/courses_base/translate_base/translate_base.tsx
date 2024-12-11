@@ -134,7 +134,7 @@ const Translate_Base = () => {
                                     <IconPhoto style={{ width: 52, height: 52, color: '#adb5bd' }} stroke={1.5} />
                                 </Dropzone.Idle>
 
-                                <div>
+                                <div style={{paddingBottom: "20px", marginBottom: "20px"}}>
                                     <Text size="xl" inline>
                                         {/* Drag a video here or click to select one */}
                                         Kéo một video vào đây hoặc nhấp để chọn một video

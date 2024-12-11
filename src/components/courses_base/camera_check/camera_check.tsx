@@ -163,7 +163,7 @@ const CameraView = () => {
                         variant="filled"
                         color="blue"
                         className={styles.button}
-                        style={{ marginBottom: '1vh' }}
+                        style={{ marginBottom: '2vh' }}
                     >
                         Bắt đầu ghi
                     </Button>
