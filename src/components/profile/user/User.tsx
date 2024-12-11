@@ -1,43 +1,41 @@
 'use client'
-import { Table, Container } from "@mantine/core";
-import classes from "./User.module.css";
+import { Avatar, Button, Paper, Text } from '@mantine/core';
+import classes from './User.module.css';
+
+const user = {
+  name: 'Baby Boo',
+  email: 'signlearn@gmail.com'
+}
 
 const User = () => {
-    const user1 = 
-        {
-          id: 1,
-          name: "Alice Johnson",
-          email: "alice.johnson@example.com",
-          password: "password123",
-          totalWordsStudied: 100,
-        };
-    
+  return (
+    <Paper radius="md" withBorder p="lg" bg="var(--mantine-color-body)" className={classes.paper} >
+      <Text ta="center" fz="lg" fw={500} mt="md" style={{paddingBottom:"20px"}}>
+        Personal Detail
+      </Text>
+      <Avatar
+        src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-8.png"
+        size={120}
+        
+        radius={120}
+        mx="auto"
+        
+      />
+      <Text ta="center" fz="lg" fw={500} mt="md">
+        {user.name}
+      </Text>
+      <Text ta="center" c="dimmed" fz="sm">
+        {user.email}
+      </Text>
 
-    return (
-        <Container size="sm" style={{ marginTop: "50px" }}>
-      <h1 style={{ textAlign: "center", color: "black" }}>User Information</h1>
-      <Table striped  className={classes.verticalTable}>
-        <tbody>
-          <tr>
-            <th>ID</th>
-            <td>{user1.id}</td>
-          </tr>
-          <tr>
-            <th>Name</th>
-            <td>{user1.name}</td>
-          </tr>
-          <tr>
-            <th>Email</th>
-            <td>{user1.email}</td>
-          </tr>
-          <tr>
-            <th>TotalPoint</th>
-            <td>{user1.totalWordsStudied}</td>
-          </tr>
-        </tbody>
-      </Table>
-    </Container>
-    );
+      <Button fullWidth mt="md" className='btn-share' style={{backgroundColor: "white", color: "blue", border: "1px solid blue", margin: "20px 15px", maxWidth: "90%",
+        minHeight: "50px"
+      }}>
+        
+        Share profile link
+      </Button>
+    </Paper>
+  );
 }
 
 export default User;

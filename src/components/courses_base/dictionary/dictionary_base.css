@@ -67,6 +67,7 @@
 
 .modal-description {
     font-weight: bold;
+    
 }
 
 .modal-word-type {
@@ -106,4 +107,11 @@
 
 .modal-close-btn:hover {
     background-color: #ddd;
+}
+
+@media screen and (max-width: 400px) {
+    .modal-description {
+        font-size: 14px;
+    }
+    
 }

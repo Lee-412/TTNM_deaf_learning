@@ -39,6 +39,10 @@ export function Header() {
         router.push('/profile')
     }
 
+    const handleClickSignUp = () => {
+        router.push('/Signup')
+    }
+
     const { user, logoutContext } = useContext(UserContext);
     const pathname = usePathname();
     const [userData, setUserData] = useState({
@@ -147,7 +151,9 @@ export function Header() {
                                     <Button variant="default" onClick={() => {
                                         handleClickLogin()
                                     }}>Log in</Button>
-                                    <Button >Sign up</Button>
+                                    <Button onClick={() => {
+                                        handleClickSignUp()
+                                    }}>Sign up</Button>
                                 </>
                         }
                     </Group>
@@ -217,7 +223,9 @@ export function Header() {
                                     <Button variant="default" onClick={() => {
                                         handleClickLogin()
                                     }}>Log in</Button>
-                                    <Button>Sign up</Button>
+                                    <Button onClick={() => {
+                                        handleClickSignUp()
+                                    }}>Sign up</Button>
                                 </>
                         }
                     </Group>

@@ -1,7 +1,8 @@
 
 'use client';
 import { useEffect, useState, useRef } from 'react';
-import { Dropzone } from '@mantine/dropzone';
+import {Dropzone} from '@mantine/dropzone';
+
 import { Button, TextInput, Stack, Text, Group, Loader, Alert, Modal } from '@mantine/core';
 import { IconPhoto, IconUpload, IconX, IconCheck } from '@tabler/icons-react';
 import './translate_base.css';

@@ -10,6 +10,8 @@ const Profile = () => {
         <div   style={{
             display: isSmallScreen ? "block" : "grid",
             gridTemplateColumns: "1fr 3fr",
+            backgroundColor: "#F2F5FA",
+            paddingTop: "50px"
           }}>
         <User />
         <Statistic />
