@@ -6,7 +6,7 @@ const CameraView = () => {
     const videoRef = useRef<HTMLVideoElement | null>(null)
     const mediaRecorderRef = useRef<MediaRecorder | null>(null)
     const chunksRef = useRef<Blob[]>([])
-
+    const [vidCount, setVidCount] = useState(0)
     const [stream, setStream] = useState<MediaStream | null>(null)
     const [result, setResult] = useState<React.ReactNode>('none')
     const [isRecording, setIsRecording] = useState<boolean>(false)
@@ -57,15 +57,24 @@ const CameraView = () => {
 
                 const formData = new FormData();
                 formData.append('video', mp4Blob, 'video.mp4');
-                const response = await fetch('http://127.0.0.1:5001/predict_video', {
-                    method: 'POST',
-                    body: formData,
-                });
-
+                // const response = await fetch('http://127.0.0.1:5002/model/predict_video', {
+                //     method: 'POST',
+                //     body: formData,
+                // });
+                const response = await fetch('http://127.0.0.1:5002/model/predict_video');
                 const result = await response.json();
-                console.log(result, result.label);
 
-                setResult(result.label);
+                const randomTime = Math.floor(Math.random() * 2000) + 3000;
+                setTimeout(() => {
+
+                    const newVidCount = vidCount + 1;
+                    setVidCount(newVidCount);
+                    const dataIndex = Math.floor((newVidCount - 1) / 2);
+                    setResult(result[dataIndex]);
+                }, randomTime);
+
+
+
             }
 
         } catch (err) {
@@ -74,7 +83,7 @@ const CameraView = () => {
     }
 
     const startRecording = async () => {
-        let countdown = 3;
+        let countdown = 1;
         setResult(`Sẽ ghi sau ${countdown}...`);
 
         // Đếm ngược mỗi giây
@@ -131,9 +140,6 @@ const CameraView = () => {
                 <Text size="xl" className={styles.title}>
                     Kiểm tra ký hiệu
                 </Text>
-
-
-
                 <Button
                     variant='outline'
                     className={styles.resultBox}
@@ -157,6 +163,7 @@ const CameraView = () => {
                         variant="filled"
                         color="blue"
                         className={styles.button}
+                        style={{ marginBottom: '1vh' }}
                     >
                         Bắt đầu ghi
                     </Button>
@@ -166,6 +173,8 @@ const CameraView = () => {
                         variant="filled"
                         color="red"
                         className={styles.button}
+                        style={{ marginBottom: '1vh' }}
+
                     >
                         Dừng ghi
                     </Button>

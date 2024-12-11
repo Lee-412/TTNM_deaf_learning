@@ -10,6 +10,7 @@ export interface ContextData {
     account: {
         email: string,
         username: string,
+        id: string,
     }
 }
 
@@ -65,8 +66,9 @@ const UserProvider = ({ children }: { children: React.ReactNode }) => {
                     isAuthenticate: true,
                     token: dataUser.token,
                     account: {
-                        email: dataUser.account.email,
+                        email: 'no comment',
                         username: 'no comment',
+                        id: 'no comment'
                     }
                 })
             }

@@ -1,5 +1,5 @@
 from flask import jsonify, request,Blueprint
-from app_learn.services.lib_services import get_comunity_data_service, get_libbase_data_service, delete_all_libbase_service, get_document_data_service, get_social_data_service,get_dictionary_data_services
+from app_learn.services.lib_services import get_comunity_data_service, get_libbase_data_service, delete_all_libbase_service, get_document_data_service, get_social_data_service,get_dictionary_data_services, get_predict_video_services
 
 librarys= Blueprint('librarys',__name__)
 
@@ -44,5 +44,12 @@ def get_social_data():
 def get_dictionary_data():
     print('hit get dictionary data')
     response = get_dictionary_data_services()
+    print(response)
+    return jsonify(response)
+
+@librarys.route('/model/predict_video', methods=['GET'])
+def get_predict_video():
+    print('hit get predict_video data')
+    response = get_predict_video_services()
     print(response)
     return jsonify(response)

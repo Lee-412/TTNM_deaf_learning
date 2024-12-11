@@ -150,3 +150,33 @@ def get_dictionary_data_services():
         return dictionary_list
     except Exception as e:
         return {"error": str(e)}, 400
+
+def get_dictionary_data_services():
+    try:
+        print("hit get dictionary service")
+        dictionaris = db.session.query(Dictionary).all()
+        dictionary_list = [{
+            "_id": dictionary._id,
+            "word": dictionary.word,
+            "description": dictionary.description,
+            "tl": dictionary.tl,
+            "url": dictionary.url
+
+            } for dictionary in dictionaris]
+        
+        return dictionary_list
+    except Exception as e:
+        return {"error": str(e)}, 400
+    
+
+def get_predict_video_services():
+    try:
+        print("hit get dictionary service")
+        list_data = [
+            'chúc mừng', 'xin chào','cảm ơn','hoàng sa',
+            'trường sa'
+        ]
+        
+        return list_data
+    except Exception as e:
+        return {"error": str(e)}, 400    

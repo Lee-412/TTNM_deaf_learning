@@ -13,7 +13,7 @@ const Translate_Base = () => {
     const [responseVideoUrl, setResponseVideoUrl] = useState<string[] | null>(null);
     const [uploadStatus, setUploadStatus] = useState<string | null>(null);
     const [modalOpen, setModalOpen] = useState(false);
-
+    const [word, setWord] = useState<string>("");
     const videoContainerRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
@@ -28,13 +28,13 @@ const Translate_Base = () => {
     const handleDrop = (files: File[]) => {
         if (files.length > 0) {
             setVideoFile(files[0]);
-            setUploadStatus('Video uploaded successfully.');
+            setUploadStatus('Tải lên video hoàn tất.');
         }
     };
 
     const handleSubmit = async () => {
         if (!videoFile && !textInput.trim()) {
-            setUploadStatus('Please upload a video or enter text before submitting.');
+            setUploadStatus('Vui lòng tải lên video hoặc nhập văn bản trước khi gửi.');
             return;
         }
 
@@ -51,8 +51,20 @@ const Translate_Base = () => {
         }
 
         try {
+
+
             console.log(formData.get('video'));
             console.log(formData.get('text_name'));
+            const videoName = formData.get("video");
+
+
+            const videoNameStr = videoName instanceof File
+                ? videoName.name.split('.').slice(0, -1).join('.')
+                : "";
+
+            const textName = formData.get("text_name");
+            setWord((videoNameStr as string) || (textName as string) || "");
+
 
             const response = await fetch('http://127.0.0.1:5002/process_video', {
                 method: 'POST',
@@ -63,13 +75,17 @@ const Translate_Base = () => {
             });
 
             const data = await response.json();
-            setResponseVideoUrl(data.video_urls);
-            setUploadStatus('Translation complete! Download your video below.');
-            setModalOpen(true);
+            setUploadStatus('Vui lòng chờ một lát');
+            const randomTime = Math.floor(Math.random() * 2000) + 3000;
+            setTimeout(() => {
+                setResponseVideoUrl(data.video_urls);
+                setUploadStatus('Phiên dịch hoàn tất, hãy xem và tải video ở bên dưới');
+                setModalOpen(true);
+            }, randomTime);
 
         } catch (error) {
             console.error('Error:', error);
-            setUploadStatus('Error processing your request. Please try again.');
+            setUploadStatus('Đã có lỗi xảy ra, vui lòng thử lại.');
         } finally {
             setLoading(false);
         }
@@ -93,7 +109,7 @@ const Translate_Base = () => {
     return (
         <div className="container">
             <div style={{ textAlign: 'center' }}>
-                <h1 style={{ fontFamily: 'monospace', color: '#012970' }}>Dịch thuật</h1>
+                <h1 style={{ fontFamily: 'monospace', color: '#012970' }}>Phiên Dịch</h1>
             </div>
 
             <Stack gap="md">
@@ -104,7 +120,7 @@ const Translate_Base = () => {
                             accept={['video/mp4', 'video/webm']}
                             multiple={false}
                             className="dropzone"
-                            onReject={() => setUploadStatus('File type not supported. Please upload a valid video.')}
+                            onReject={() => setUploadStatus('Loại tệp không được hỗ trợ. Vui lòng tải lên video hợp lệ.')}
                         >
                             <Group justify="center" gap="xl" style={{ pointerEvents: 'none' }}>
                                 <Dropzone.Accept>
@@ -119,10 +135,12 @@ const Translate_Base = () => {
 
                                 <div>
                                     <Text size="xl" inline>
-                                        Drag a video here or click to select one
+                                        {/* Drag a video here or click to select one */}
+                                        Kéo một video vào đây hoặc nhấp để chọn một video
                                     </Text>
                                     <Text size="sm" color="dimmed" inline mt={7}>
-                                        Only MP4 and WebM videos are supported. Max file size: 10MB.
+                                        Chỉ hỗ trợ video MP4 và WebM. Kích thước tệp tối đa: 10MB.
+                                        {/* Only MP4 and WebM videos are supported. Maximum file size: 10MB. */}
                                     </Text>
                                 </div>
                             </Group>
@@ -130,7 +148,7 @@ const Translate_Base = () => {
 
                         {videoFile && (
                             <Alert icon={<IconCheck size="1rem" />} title="Video Status" color="green">
-                                Selected file: {videoFile.name}
+                                Tập tin đã chọn:: {videoFile.name}
                             </Alert>
                         )}
 
@@ -159,11 +177,11 @@ const Translate_Base = () => {
                 {responseVideoUrl && responseVideoUrl.length > 0 && (
                     <Modal opened={modalOpen} onClose={() => handleCloseModal()}
                         size="70%"
-                        title="Translation Complete"
+                        title="Phiên dịch hoàn thành"
                         // size="lg"
                         className="custom_modal"
                     >
-                        <h3>Translation Videos:</h3>
+                        <h3>{word}</h3>
                         <div className="video-flex">
                             {responseVideoUrl.slice(0, 2).map((video, index) => {
                                 const videoUrl = `http://localhost:5002/${video}`;
@@ -171,14 +189,14 @@ const Translate_Base = () => {
                                     <div key={video} className="video-item">
                                         <video controls>
                                             <source src={videoUrl} type="video/mp4" />
-                                            Your browser does not support the video tag.
+                                            Trình duyệt của bạn không hỗ trợ thẻ video.
                                         </video>
                                     </div>
                                 );
                             })}
                         </div>
 
-                        <h3>Download Translation Videos:</h3>
+                        <h3>Tải xuống video phiên dịch:</h3>
                         <div className="download-video-flex">
                             {responseVideoUrl.slice(0, 2).map((video, index) => {
                                 const videoUrl = `http://localhost:5002/${video}`;
@@ -193,7 +211,7 @@ const Translate_Base = () => {
                         </div>
 
                         <Button onClick={handleRetry} fullWidth mt="md">
-                            Try Again
+                            Thử lại
                         </Button>
                     </Modal>
                 )}

@@ -1,5 +1,5 @@
 from flask import jsonify, request,Blueprint
-from app_learn.services.user_services import create_user, get_user_by_id,get_users, update_user,delete_user,get_user_statistics_route_services
+from app_learn.services.user_services import create_user, get_user_by_id,get_users, update_user,delete_user,get_user_statistics_route_services,Signin_User_services
 
 users = Blueprint('users',__name__)
 
@@ -8,8 +8,17 @@ def create_user_route():
     data = request.get_json() 
     print("check data",data)
     response, status_code = create_user(data)
-    print(response, status_code)
+    print(response)
     return jsonify(response), status_code
+
+@users.route('/users/signin', methods=['POST'])
+def Signin_User():
+    data = request.get_json() 
+    print("check data",data)
+    response, status_code = Signin_User_services(data)
+    print(response)
+    return jsonify(response), status_code
+
 
 
 @users.route('/users', methods=['GET'])

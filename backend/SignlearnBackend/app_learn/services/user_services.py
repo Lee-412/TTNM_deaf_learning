@@ -12,7 +12,12 @@ def create_user(data):
         print("data user", new_user)
         db.session.add(new_user)
         db.session.commit()
-        return {"message": "User created successfully!"}, 201
+        return {
+            "id": new_user.id, 
+            "name": new_user.name, 
+            "email": new_user.email, 
+            "point": new_user.point
+        }, 201
     except Exception as e:
         return {"error": str(e)}, 400
 
@@ -34,6 +39,19 @@ def get_user_by_id(user_id):
             return {"message": "User not found"}, 404
     except Exception as e:
         return {"error": str(e)}, 400
+
+def Signin_User_services(data):
+    try:
+        print(data["email"])
+        user = db.session.query(User).filter_by(email=data["email"]).first()
+        print(user)
+        if user:
+            return {"id": user.id, "name": user.name, "email": user.email, "point" :user.point},200
+        else:
+            return {"message": "User not found"}, 404
+    except Exception as e:
+        return {"error": str(e)}, 400    
+
 
 def get_user_statistics_route_services(user_id): 
     try:

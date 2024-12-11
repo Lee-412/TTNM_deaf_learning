@@ -50,33 +50,42 @@ const SigninBox = () => {
     const handleClickSignIn = async (e: any) => {
         e.preventDefault();
         console.log(formData);
-        let data: ContextData = {
-            token: 'token',
-            isAuthenticate: true,
-            account: {
-                email: formData.email,
-                username: '',
-            }
-        }
+
         let data_signin = {
             name: 'username',
             email: formData.email,
             password: formData.password,
             point: 0
         }
-        let response = await fetch('http://localhost:5002/users', {
+        let response = await fetch('http://localhost:5002/users/signin', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data_signin)
         })
-        console.log(response);
+        console.log("response", response);
+        if (response.status === 200) {
+            const dataServer = await response.json();
+            console.log("dataServer", dataServer);
+            let data: ContextData = {
+                token: 'token',
+                isAuthenticate: true,
+                account: {
+                    email: dataServer.email,
+                    username: dataServer.username,
+                    id: dataServer.id
+                }
+            }
+            loginContext(data)
 
-        loginContext(data)
+            sessionStorage.setItem('user', JSON.stringify(dataServer))
+            router.push('/');
+        }
+        else {
+            console.log("không đăng nhập được");
+        }
 
-        sessionStorage.setItem('user', JSON.stringify(data))
-        router.push('/');
 
     }
 
