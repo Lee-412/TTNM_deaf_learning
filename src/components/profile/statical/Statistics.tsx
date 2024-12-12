@@ -108,7 +108,7 @@ const Statistic = (props: any) => {
             <Text fw={500} mb="sm">
               Lượng chữ đã học theo chủ đề
             </Text>
-            <div style={{ margin: "0 auto" }} className="chart">
+            <div className="pie-chart">
               <Pie data={pieData} />
             </div>
           </Card>
@@ -120,7 +120,7 @@ const Statistic = (props: any) => {
               Số chữ đã học
             </Text>
 
-            <div style={{ height: "300px", width: "auto" }}>
+            <div className="bar-chart">
               <Bar data={barData} />
             </div>
           </Card>

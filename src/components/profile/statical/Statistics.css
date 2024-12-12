@@ -2,13 +2,40 @@
     padding-bottom: 20px;
 }
 
+.pie-chart {
+    height: 300px;
+    width: auto;
+    margin: 0px auto;
+}
+
+.bar-chart {
+    height: 300px;
+    width: auto;
+    
+}
+
+@media screen and (max-width: 800px) {
+    
+    .bar-chart{
+        height: auto;
+    }
+    
+}
+
 @media screen and (max-width: 400px) {
     .statistic-container {
         width: 100%;
     }
     
-    .chart {
+    .pie-chart {
         min-width: 100%;
+        height: 200px;
         margin: 0px !important;
+    
+    }
+
+    .bar-chart{
+        height: 150px;
+        margin: 0px;
     }
 }
