@@ -1,7 +1,7 @@
 .container {
     
     max-width: 800px;
-    height: 85vh;
+    min-height: 85vh;
     /* Lớn hơn mặc định */
     margin: 20px auto;
     padding: 20px;
