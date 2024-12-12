@@ -498,7 +498,7 @@ export const ReviseData_vn = [
     {
         name: 'Động vật',
         id: 5,
-        target: 'StuRevisedy',
+        target: 'Revise',
         data: [
             {
                 id: 26,
@@ -617,7 +617,7 @@ export const ReviseData_vn = [
     {
         name: 'Thời gian',
         id: 6,
-        target: 'Study',
+        target: 'Revise',
         data: [
             {
                 id: 34,

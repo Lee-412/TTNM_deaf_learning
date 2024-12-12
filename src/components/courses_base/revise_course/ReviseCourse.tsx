@@ -25,7 +25,7 @@ const ReviseCourse = () => {
     }); 
 
   return (
-    <div>
+    <div className="revise-content-container">
     <Divider my="md" />
       <div className="revise-course-header">
         
@@ -58,14 +58,6 @@ const ReviseCourse = () => {
 
     <div
       className="base-content"
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "flex-start",
-        marginLeft: "2vw",
-        flex: "1 1 auto",
-        gap: "25px",
-      }}
     >
       {courseListLearning}
     </div>

@@ -3,7 +3,7 @@ import { Avatar, Button, Paper, Text } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import { IconCheck, IconX } from '@tabler/icons-react';
 import classes from './User.module.css';
-import avatar from '../../about/img/Khai.jpg';
+import avatar from '../../about/img/Hien.jpg';
 
 const User = (props: any) => {
   let data = props;
