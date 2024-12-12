@@ -44,7 +44,7 @@ def Signin_User_services(data):
     try:
         print(data["email"])
         user = db.session.query(User).filter_by(email=data["email"]).first()
-        print(user)
+        print(user)     
         if user:
             return {"id": user.id, "name": user.name, "email": user.email, "point" :user.point},200
         else:

@@ -1,7 +1,7 @@
 
 'use client';
 import { useEffect, useState, useRef } from 'react';
-import {Dropzone} from '@mantine/dropzone';
+import { Dropzone } from '@mantine/dropzone';
 
 import { Button, TextInput, Stack, Text, Group, Loader, Alert, Modal } from '@mantine/core';
 import { IconPhoto, IconUpload, IconX, IconCheck } from '@tabler/icons-react';
@@ -76,7 +76,7 @@ const Translate_Base = () => {
             });
 
             const data = await response.json();
-            setUploadStatus('Vui lòng chờ một lát');
+
             const randomTime = Math.floor(Math.random() * 2000) + 3000;
             setTimeout(() => {
                 setResponseVideoUrl(data.video_urls);

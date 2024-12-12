@@ -57,14 +57,14 @@ const CameraView = () => {
 
                 const formData = new FormData();
                 formData.append('video', mp4Blob, 'video.mp4');
-                // const response = await fetch('http://127.0.0.1:5002/model/predict_video', {
+                // const response = await fetch('http://127.0.0.1:5001/predict_video', {
                 //     method: 'POST',
                 //     body: formData,
                 // });
                 const response = await fetch('http://127.0.0.1:5002/model/predict_video');
                 const result = await response.json();
 
-                const randomTime = Math.floor(Math.random() * 2000) + 3000;
+                const randomTime = Math.floor(Math.random() * 2000) + 1000;
                 setTimeout(() => {
 
                     const newVidCount = vidCount + 1;
@@ -83,7 +83,7 @@ const CameraView = () => {
     }
 
     const startRecording = async () => {
-        let countdown = 1;
+        let countdown = 2;
         setResult(`Sẽ ghi sau ${countdown}...`);
 
         // Đếm ngược mỗi giây

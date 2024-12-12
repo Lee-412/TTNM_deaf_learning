@@ -3,17 +3,12 @@ from flask import jsonify, request,Blueprint,url_for
 from app_learn.extensions import db
 from ..models import LearningData
 courses = Blueprint('courses',__name__)
-from moviepy import VideoFileClip
 from flask import current_app
 from googletrans import Translator
-import requests
-import cv2
-import io
 from flask import jsonify, request, Blueprint
 from moviepy import VideoFileClip
 import numpy as np
-import pytesseract
-import tempfile
+
 
 @courses.route('/courses', methods=['GET'])
 def get_courses():
@@ -43,12 +38,33 @@ def extract_video_name(video_path):
     video_name = os.path.splitext(video_name_with_extension)[0]
     return video_name
 
+# def translate_to_english(video_name):
+#     # translator = Translator()
+
+#     # translated = translator.translate(video_name, src='vi', dest='en')
+
+#     return "translated.text"
 def translate_to_english(video_name):
+    print("hit translate",video_name)
+
+    if not video_name or not isinstance(video_name, str):
+        print("Invalid video_name:", video_name)
+        return None
+
     translator = Translator()
 
-    translated = translator.translate(video_name, src='vi', dest='en')
+    try:
+        translated = translator.translate(video_name, src='vi', dest='en')
+        if translated and translated.text:
+            print(f"Translated '{video_name}' to '{translated.text}'")
+            return translated.text
+        else:
+            print(f"No translation result for '{video_name}'")
+            return None
+    except Exception as e:
+        print(f"Error translating video_name '{video_name}': {e}")
+        return None
 
-    return translated.text
 
 
 def get_videos_in_folder(folder_path):
@@ -77,11 +93,12 @@ def process_video():
             video_name = os.path.splitext(file.filename)[0]
         else :
             video_name = os.path.splitext(text)[0]
+
         print("video_name" , video_name)
         english_name = translate_to_english(video_name)
-
-
-        print(english_name)
+        if not english_name:
+            print("no english name")
+        print("english_name", english_name)
         folder_path = os.path.join(current_app.static_folder, english_name)
         
         os.makedirs(folder_path, exist_ok=True)

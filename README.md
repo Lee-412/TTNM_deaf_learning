@@ -17,3 +17,7 @@
     bun dev
 #### 3. Mở Ứng Dụng Trong Trình Duyệt
 Mở http://localhost:3000 trong trình duyệt của bạn để xem kết quả.
+
+### 4 . Khi commit 
+    git rm --cached -r backend/SignlearnBackend/venv/
+
