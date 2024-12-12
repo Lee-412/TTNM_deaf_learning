@@ -90,7 +90,7 @@ const Dictionary_Base = () => {
 
     return (
         <Container size="lg">
-            <Text mb="xs" style={{ textAlign: 'center', fontWeight: 'bolder' }}>
+            <Text mb="xs" style={{ textAlign: 'center', fontWeight: 'bolder', fontSize: "30px" }}>
                 Danh mục ngôn ngữ ký hiệu
             </Text>
 
@@ -126,11 +126,10 @@ const Dictionary_Base = () => {
             </Grid>
 
 
-
             {selectedVocabulary && (
                 <Modal
                     className='modal_mantine'
-                    size= {isSmallScreen ? '100%' : '60%' }
+                    size={isSmallScreen ? '100%' : '60%'}
                     style={{
 
                     }}

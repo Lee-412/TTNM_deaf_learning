@@ -23,7 +23,7 @@
 
 ### Step 4: Install dependencies not in requirements
     pip install moviepy
-    pip install googletrans
+    pip install googletrans==4.0.0rc1
     pip install requests
     pip install opencv-python
     pip install pytesseract

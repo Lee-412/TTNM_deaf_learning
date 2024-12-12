@@ -5,7 +5,7 @@ import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { Header } from '@/components/header/header';
 
 export const metadata = {
-  title: 'My Mantine app',
+  title: 'SignLearn',
   description: 'I have followed setup instructions carefully',
 };
 

@@ -57,7 +57,7 @@ const Statistic = (props: any) => {
     labels: ["T2", "T3", "T4", "T5", "T6", "T7", "CN"],
     datasets: [
       {
-        label: "Số chữ đã học",
+        label: "Số từ đã học",
         // data: [2, 4, 0, 1, 5, 5, 11],
         data: userDataP.wordStudiedPerDay,
         backgroundColor: "rgba(54, 162, 235, 0.6)",
@@ -106,7 +106,7 @@ const Statistic = (props: any) => {
         <Grid.Col span={isSmallScreen ? 11 : 6}>
           <Card shadow="sm" padding="lg">
             <Text fw={500} mb="sm">
-              Lượng chữ đã học theo chủ đề
+              Lượng từ đã học theo chủ đề
             </Text>
             <div style={{ margin: "0 auto" }}>
               <Pie data={pieData} />
@@ -117,7 +117,7 @@ const Statistic = (props: any) => {
         <Grid.Col span={isSmallScreen ? 11 : 6}>
           <Card shadow="sm" padding="lg">
             <Text fw={500} mb="sm">
-              Số chữ đã học
+              Số từ đã học
             </Text>
 
             <div style={{ height: "300px", width: "auto" }}>

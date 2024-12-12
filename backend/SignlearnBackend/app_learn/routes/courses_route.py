@@ -38,12 +38,7 @@ def extract_video_name(video_path):
     video_name = os.path.splitext(video_name_with_extension)[0]
     return video_name
 
-# def translate_to_english(video_name):
-#     # translator = Translator()
 
-#     # translated = translator.translate(video_name, src='vi', dest='en')
-
-#     return "translated.text"
 def translate_to_english(video_name):
     print("hit translate",video_name)
 

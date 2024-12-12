@@ -98,10 +98,10 @@ const LearningContent = (props: LearningContentProps) => {
       </div>
 
       <button className="btn-prev" onClick={() => handlePrev()}>
-        Prev{" "}
+        Trước{" "}
       </button>
       <button className="btn-next" onClick={() => handleNext()}>
-        Next{" "}
+        Tiếp{" "}
       </button>
     </div>
   );

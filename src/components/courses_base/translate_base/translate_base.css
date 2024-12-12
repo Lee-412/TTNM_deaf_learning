@@ -1,8 +1,11 @@
 .container {
     max-width: 800px;
+    height: 85vh;
     /* Lớn hơn mặc định */
-    margin: 0 auto;
-    padding: 20px;
+    margin: 20px auto;
+    /* padding: 20px; */
+    padding-bottom: 20px;
+    padding-top: 10px;
     transition: all 0.3s ease-in-out;
     /* Tạo hiệu ứng mượt khi thay đổi kích thước */
 }
@@ -117,8 +120,6 @@
     justify-content: center;
     align-items: center;
 }
-
-
 
 /* custom_modal.css */
 .custom_modal .mantine-Modal-modal {

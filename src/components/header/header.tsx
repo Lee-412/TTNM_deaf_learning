@@ -85,7 +85,6 @@ export function Header() {
                     <Group
                         justify="center"
                         h="100%"
-
                         gap={0}
                         style={{
                             flexWrap: 'nowrap',
@@ -151,10 +150,10 @@ export function Header() {
 
                                     <Button variant="default" onClick={() => {
                                         handleClickLogin()
-                                    }}>Log in</Button>
+                                    }}>Đăng nhập</Button>
                                     <Button onClick={() => {
                                         handleClickSignUp()
-                                    }}>Sign up</Button>
+                                    }}>Đăng ký</Button>
                                 </>
                         }
                     </Group>
@@ -223,10 +222,10 @@ export function Header() {
 
                                     <Button variant="default" onClick={() => {
                                         handleClickLogin()
-                                    }}>Log in</Button>
+                                    }}>Đăng nhập</Button>
                                     <Button onClick={() => {
                                         handleClickSignUp()
-                                    }}>Sign up</Button>
+                                    }}>Đăng ký</Button>
                                 </>
                         }
                     </Group>
