@@ -103,18 +103,18 @@ const Statistic = (props: any) => {
         Thống kê dữ liệu học tập
       </Text>
       <Grid gutter="md" style={{ paddingLeft: "20px" }}>
-        <Grid.Col span={isSmallScreen ? 11 : 6}>
+        <Grid.Col span={isSmallScreen ? 11 : 6} className="chart">
           <Card shadow="sm" padding="lg">
             <Text fw={500} mb="sm">
               Lượng chữ đã học theo chủ đề
             </Text>
-            <div style={{ margin: "0 auto" }}>
+            <div style={{ margin: "0 auto" }} className="chart">
               <Pie data={pieData} />
             </div>
           </Card>
         </Grid.Col>
 
-        <Grid.Col span={isSmallScreen ? 11 : 6}>
+        <Grid.Col span={isSmallScreen ? 11 : 6} className="chart">
           <Card shadow="sm" padding="lg">
             <Text fw={500} mb="sm">
               Số chữ đã học
@@ -126,7 +126,7 @@ const Statistic = (props: any) => {
           </Card>
         </Grid.Col>
 
-        <Grid.Col span={isSmallScreen ? 11 : 12}>
+        <Grid.Col span={isSmallScreen ? 11 : 12} className="chart">
           <Card shadow="sm" padding="lg">
             <Text fw={500} mb="sm">
               Số giờ đã học

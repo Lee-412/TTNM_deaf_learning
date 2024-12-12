@@ -2,9 +2,13 @@
     padding-bottom: 20px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
     .statistic-container {
         width: 100%;
     }
     
+    .chart {
+        min-width: 100%;
+        margin: 0px !important;
+    }
 }
