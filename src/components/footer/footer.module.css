@@ -91,3 +91,10 @@
         margin-top: var(--mantine-spacing-xs);
     }
 }
+
+
+@media screen and (max-width: 600px){
+    .logo {
+        margin-right: 50px;
+    }
+}
