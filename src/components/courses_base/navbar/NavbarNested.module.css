@@ -1,36 +1,3 @@
- /* .navbar {
-   background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6));
-   height: rem(800px);
-   width: rem(300px);
-   padding: var(--mantine-spacing-md);
-   padding-top: 45px;
-   padding-bottom: 0;
-   display: flex;
-   flex-direction: column;
-   border-right: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
-
- }
-
- .navInline {
-   transform: translateX(-100%);
-   width: 0px;
- }
-
- .navOuline {
-   transform: translateX(0);
-   opacity: 1;
- }
-
- .toggle {
-   position: absolute;
-   top: 65px;
-   left: 10px;
-   background-color: white;
-   border: 1px solid black;
-   z-index: 1;
- } */
-
-
  .navbar {
    background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6));
    height: rem(500px);
@@ -40,7 +7,7 @@
    padding-bottom: 0;
    display: flex;
    flex-direction: column;
-   
+
 
    transition:
      margin-left 0.5s cubic-bezier(0.4, 0, 0.2, 1),
@@ -104,9 +71,6 @@
        opacity 0.4s ease-in-out 0.2s,
        visibility 0.4s ease-in-out 0.3s;
    }
-
-
-   .navOutline {}
 
    .navInline {
      margin-left: 3px;

@@ -1,6 +1,5 @@
 "use client";
 
-// import { WordAndQuestion } from "@/components/courses_base/category/Category";
 import ReviseResult from "@/components/courses_base/revise_result/ReviseResult";
 
 const ReviseResultPage = (props: any) => {
@@ -10,7 +9,7 @@ const ReviseResultPage = (props: any) => {
     let numberCorrectAnswer = JSON.parse(sessionStorage.getItem("numberCorrectAnswer") || "0");
 
     return (
-        <ReviseResult data={reviseData} selectedAnswer={selectedAnswer} numberCorrectAnswer={numberCorrectAnswer}/>
+        <ReviseResult data={reviseData} selectedAnswer={selectedAnswer} numberCorrectAnswer={numberCorrectAnswer} />
     );
 }
 

@@ -53,9 +53,6 @@ const Translate_Base = () => {
 
         try {
 
-
-            console.log(formData.get('video'));
-            console.log(formData.get('text_name'));
             const videoName = formData.get("video");
 
 

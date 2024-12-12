@@ -48,8 +48,6 @@ const Dictionary_Base = () => {
                 setFilteredVocabularies([]);
             }
 
-            console.log(data);
-
         };
 
         fetchData();

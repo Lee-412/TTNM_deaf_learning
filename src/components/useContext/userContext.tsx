@@ -53,98 +53,70 @@ const UserProvider = ({ children }: { children: React.ReactNode }) => {
     const router = useRouter();
 
 
-    // const fetchUserContext = async () => {
-    //     try {
+    const fetchUserContext = async () => {
+        try {
 
-    //         const response = getUserAccount();
-
-
-    //         if (response.code === 0) {
-    //             let dataUser: ContextData = JSON.parse(response.data);
-    //             console.log(dataUser);
-    //             setUser({
-    //                 isLoading: false,
-    //                 isAuthenticate: true,
-    //                 token: dataUser.token,
-    //                 account: {
-    //                     email: 'no comment',
-    //                     username: 'no comment',
-    //                     id: 'no comment',
-    //                     number: 'no comment'
-    //                 }
-    //             })
-    //         }
-    //         else {
-    //             setUser(() => ({
-    //                 isLoading: false,
-    //                 isAuthenticate: false,
-    //                 token: '',
-    //                 account: {}
-    //             }));
-    //         }
+            const response = getUserAccount();
 
 
-
-    //         // if (response && response.data.EC === 0) {
-    //         //     console.log('User authenticated');
-    //         //     setUser({
-    //         //         isLoading: false,
-    //         //         isAuthenticate: true,
-    //         //         token: response.data.DT.access_token,
-    //         //         account: {
-    //         //             email: response.data.DT.email,
-    //         //             username: response.data.DT.username,
-    //         //             groupRoles: response.data.DT.role
-    //         //         }
-    //         //     });
-    //         // } else {
-    //         //     console.log('User not authenticated ');
-    //         //     setUser(() => ({
-    //         //         isLoading: false,
-    //         //         isAuthenticate: false,
-    //         //         token: '',
-    //         //         account: {}
-    //         //     }));
-    //         //     console.log(user);
-
-    //         // }
+            if (response.code === 0) {
+                let dataUser: ContextData = JSON.parse(response.data);
+                setUser({
+                    isLoading: false,
+                    isAuthenticate: true,
+                    token: dataUser.token,
+                    account: {
+                        email: 'no comment',
+                        username: 'no comment',
+                        id: 'no comment',
+                        number: 'no comment'
+                    }
+                })
+            }
+            else {
+                setUser(() => ({
+                    isLoading: false,
+                    isAuthenticate: false,
+                    token: '',
+                    account: {}
+                }));
+            }
 
 
-    //     } catch (error) {
-    //         console.error('Error fetching user account:', error);
-    //         setUser(() => ({
-    //             isLoading: false,
-    //             isAuthenticate: false,
-    //             token: '',
-    //             account: {}
-    //         }));
-    //     }
-    // };
+        } catch (error) {
+            console.error('Error fetching user account:', error);
+            setUser(() => ({
+                isLoading: false,
+                isAuthenticate: false,
+                token: '',
+                account: {}
+            }));
+        }
+    };
 
 
     useEffect(() => {
 
-        // console.log(pathname);
 
-        // if (pathname === '/') {
+        if (pathname === '/') {
 
-        //     fetchUserContext();
+            // fetchUserContext();
 
-        // }
-        // else if (pathname !== '/login') {
+        }
+        else if (pathname !== '/login') {
 
-        //     fetchUserContext();
-        // }
-        // else {
+            // fetchUserContext();
+        }
+        else {
 
 
-        //     setUser(() => ({
-        //         isLoading: false,
-        //         isAuthenticate: false,
-        //         token: '',
-        //         account: {}
-        //     }));
-        // }
+            // setUser(() => ({
+            //     isLoading: false,
+            //     isAuthenticate: false,
+            //     token: '',
+            //     account: {}
+            // }));
+        }
     }, [pathname]);
 
     return (

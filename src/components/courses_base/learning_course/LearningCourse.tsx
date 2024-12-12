@@ -15,10 +15,8 @@ interface Courseinfo {
 
 const LearningCourse = ({ leanrningDataVN }: any) => {
 
-  console.log('check data', leanrningDataVN);
 
   const courseListLearning = leanrningDataVN.map((course: Courseinfo) => {
-    console.log('check data course', course);
 
 
     return (

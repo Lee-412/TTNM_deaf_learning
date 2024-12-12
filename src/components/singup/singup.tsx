@@ -28,7 +28,6 @@ const SignupBox = () => {
   const router = useRouter();
   useEffect(() => {
     if (user && user.isAuthenticate === true) {
-      console.log("hit login true");
       router.push("/");
     }
   }, [user, router]);
@@ -41,24 +40,23 @@ const SignupBox = () => {
     password: "",
   });
 
-  const [rePassword, setRePassword] = useState<string>(""); // State cho re-password
-  const [errorPassword, setErrorPassword] = useState<string>(""); // State cho thông báo lỗi
-  const [errorEmail, setErrorEmail] = useState<string>(""); // State cho thông báo lỗi
-  const [errorUsername, setErrorUsername] = useState<string>(""); // State cho thông báo lỗi
+  const [rePassword, setRePassword] = useState<string>("");
+  const [errorPassword, setErrorPassword] = useState<string>("");
+  const [errorEmail, setErrorEmail] = useState<string>("");
+  const [errorUsername, setErrorUsername] = useState<string>("");
 
   const validateInput = () => {
-    setErrorEmail(""); // Xóa lỗi nếu không có lỗi
-    // Kiểm tra email
+    setErrorEmail("");
     const emailRegex = /^[^\s@]+@gmail\.com$/;
     if (!formData.email) {
-        setErrorEmail("Không được để trống");
+      setErrorEmail("Không được để trống");
     } else if (!emailRegex.test(formData.email)) {
-        setErrorEmail("Không đúng định dạng");
+      setErrorEmail("Không đúng định dạng");
     }
 
-    
-    return errorEmail; // Trả về true nếu không có lỗi
-};
+
+    return errorEmail;
+  };
 
   const handleClickSignUp = async (e: any) => {
     e.preventDefault();
@@ -69,16 +67,14 @@ const SignupBox = () => {
       rePassword != ""
     ) {
 
-        validateInput();
-        
-      // Kiểm tra mật khẩu
+      validateInput();
       if (formData.password !== rePassword) {
         setErrorPassword("Mật khẩu không trùng!");
         return;
       }
-      setErrorPassword(""); // Xóa lỗi nếu mật khẩu trùng
+      setErrorPassword("");
 
-      
+
 
       let data_signin = {
         name: formData.username,
@@ -95,9 +91,7 @@ const SignupBox = () => {
         body: JSON.stringify(data_signin),
       });
 
-      console.log(response);
       const dataServer = await response.json();
-      console.log("data Server signup", dataServer);
 
       let data: ContextData = {
         token: "token",
@@ -196,7 +190,7 @@ const SignupBox = () => {
         {/* Hiển thị lỗi */}
 
         <Button fullWidth mt="xl" onClick={handleClickSignUp}>
-          Đăng ký 
+          Đăng ký
         </Button>
         <Text
           c="dimmed"

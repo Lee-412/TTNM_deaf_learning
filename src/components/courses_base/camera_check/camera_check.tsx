@@ -13,7 +13,6 @@ const CameraView = () => {
     const [videoUrl, setVideoUrl] = useState<string>('')
     const convertToMP4 = async (mediaBlobUrl: string) => {
 
-        console.log(mediaBlobUrl);
 
         const mediaBlob = await fetch(mediaBlobUrl)
             .then(response => response.blob());
@@ -53,15 +52,14 @@ const CameraView = () => {
                 const url = URL.createObjectURL(blob)
                 setVideoUrl(url)
                 const mp4Blob = await convertToMP4(url);
-                console.log(mp4Blob);
 
                 const formData = new FormData();
                 formData.append('video', mp4Blob, 'video.mp4');
-                // const response = await fetch('http://127.0.0.1:5001/predict_video', {
-                //     method: 'POST',
-                //     body: formData,
-                // });
-                const response = await fetch('http://127.0.0.1:5002/model/predict_video');
+                const response = await fetch('http://127.0.0.1:5001/predict_video', {
+                    method: 'POST',
+                    body: formData,
+                });
+                // const response = await fetch('http://127.0.0.1:5002/model/predict_video');
                 const result = await response.json();
 
                 const randomTime = Math.floor(Math.random() * 2000) + 1000;
@@ -129,7 +127,6 @@ const CameraView = () => {
         }
     }, [stream, videoUrl])
     const handleClickButtonResult = (result: any) => {
-        console.log(result);
         window.open(result)
 
     }

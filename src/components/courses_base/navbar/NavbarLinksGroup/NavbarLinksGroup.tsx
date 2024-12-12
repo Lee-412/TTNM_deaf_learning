@@ -16,7 +16,7 @@ interface LinksGroupProps {
   icon: React.FC<any>;
   label: string;
   initiallyOpened?: boolean;
-  links: string; 
+  links: string;
 }
 
 export function LinksGroup({
@@ -29,10 +29,9 @@ export function LinksGroup({
 
   const router = useRouter();
 
-    const handleClickButton = (link: string) => {
-        console.log(link);
-        router.push(`/course_base/${link}`);
-    }
+  const handleClickButton = (link: string) => {
+    router.push(`/course_base/${link}`);
+  }
 
   return (
     <>
@@ -47,10 +46,10 @@ export function LinksGroup({
             </ThemeIcon>
             <Box ml="md">{label}</Box>
           </Box>
-          
+
         </Group>
       </UnstyledButton>
-      
+
     </>
   );
 }

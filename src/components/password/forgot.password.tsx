@@ -35,7 +35,6 @@ const ForgotPassword = (props: PropForgot) => {
     }
 
     const handleClickResetPassword = () => {
-        console.log(emailForgot);
 
     }
     const handleCloseModal = () => {

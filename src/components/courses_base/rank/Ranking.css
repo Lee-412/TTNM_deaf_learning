@@ -4,9 +4,9 @@
   margin: 20px auto;
   height: 525px;
   overflow-y: scroll;
-  
+
   background: white;
-  border: 1px solid rgb(175, 174, 174); /* Đường viền màu xám cho bảng */
+  border: 1px solid rgb(175, 174, 174);
 }
 
 .ranking-heading {
@@ -23,17 +23,17 @@
 /* Bảng */
 .table {
   width: 100%;
-  border-collapse: collapse; /* Loại bỏ khoảng cách giữa các ô */
-  
+  border-collapse: collapse;
+
 }
 
-/* Chỉ đường viền ngang cho các dòng */
-.thead .tr, .tbody .tr {
-  border-bottom: 1px solid rgb(175, 174, 174); /* Đường viền màu xám chỉ giữa các dòng */
+.thead .tr,
+.tbody .tr {
+  border-bottom: 1px solid rgb(175, 174, 174);
 }
 
 thead th {
-  background-color: #ffffff; /* Màu nền nhạt cho thead */
+  background-color: #ffffff;
   padding: 15px;
   font-size: 16px;
   font-weight: bold;
@@ -47,11 +47,10 @@ tbody td {
   color: #555;
 }
 
-/* Hàng khi hover */
 tbody tr:hover {
-  background-color: #f1f1f1; /* Màu nền khi hover */
+  background-color: #f1f1f1;
   transform: translateY(-2px);
- 
+
   transition: all 0.3s ease;
 }
 

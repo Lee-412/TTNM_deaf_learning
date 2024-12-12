@@ -33,13 +33,10 @@ const Profile = () => {
             if (userData) {
                 try {
 
-                    console.log("userData fetch", userData);
 
                     const res = await fetch(`http://127.0.0.1:5002/users/statistic/${userData.account.id}`);
-                    console.log('response statistic', res);
                     if (res.status === 200) {
                         const statistic = await res.json();
-                        console.log('statistic', statistic);
 
                         setDataStatistic(statistic);
                     }
@@ -70,7 +67,6 @@ const Profile = () => {
             backgroundColor: "#F2F5FA",
             paddingTop: "50px"
         }}>
-            {/* Chỉ render User và Statistic khi dữ liệu đầy đủ */}
             {data && <User data={data} />}
             {dataStatistic && <Statistic dataStatistic={dataStatistic} />}
         </div>

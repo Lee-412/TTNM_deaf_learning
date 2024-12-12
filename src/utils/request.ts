@@ -1,6 +1,5 @@
 const getUserAccount = () => {
     let data = sessionStorage.getItem('user');
-    console.log('data sesionStorage', data);
     if (data) {
         return {
             data: data,

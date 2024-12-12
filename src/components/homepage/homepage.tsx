@@ -15,20 +15,16 @@ const HomePage = () => {
     const router = useRouter()
     const { user, loginContext } = useContext(UserContext);
     useEffect(() => {
-        console.log('check user homepage', user);
 
         if (user && user.isAuthenticate === true) {
-            console.log('hit  user');
 
         }
         else {
-            console.log('hit no user');
 
         }
     }, [user])
 
 
-    // sessionStorage.removeItem('userData')
     return (
         <div className={style.container}>
             <Banner />

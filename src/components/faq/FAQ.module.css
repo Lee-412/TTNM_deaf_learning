@@ -1,8 +1,6 @@
 .faq-container {
     min-height: 100vh;
-    /* background-color: beige; */
-    
-     min-height: 30vh;
+    min-height: 30vh;
     padding-top: 50px;
     padding-bottom: 30px;
 
@@ -34,7 +32,7 @@
 .faq-q {
     font-weight: bold;
     font-size: 1.4vw;
-    
+
 }
 
 .faq-a {
@@ -45,7 +43,7 @@
 }
 
 @media (max-width: 1024px) {
-    
+
 
     .faq-q {
         font-weight: 500;
@@ -61,7 +59,7 @@
 }
 
 @media (max-width: 768px) {
-    
+
 
     .faq-q {
         font-weight: 500;

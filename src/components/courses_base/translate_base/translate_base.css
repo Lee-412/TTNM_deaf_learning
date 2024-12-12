@@ -1,19 +1,15 @@
 .container {
     max-width: 800px;
     height: 85vh;
-    /* Lớn hơn mặc định */
     margin: 20px auto;
-    /* padding: 20px; */
     padding-bottom: 20px;
     padding-top: 10px;
     transition: all 0.3s ease-in-out;
-    /* Tạo hiệu ứng mượt khi thay đổi kích thước */
 }
 
 @media (max-width: 768px) {
     .container {
         max-width: 95%;
-        /* Co lại ở màn hình nhỏ */
         padding: 15px;
     }
 }
@@ -29,7 +25,6 @@
 @media (max-width: 768px) {
     .dropzone {
         padding: 1rem;
-        /* Giảm padding khi màn hình nhỏ */
     }
 }
 
@@ -42,35 +37,27 @@
 @media (max-width: 768px) {
     .button-group {
         flex-direction: column;
-        /* Các nút xếp chồng lên nhau */
         gap: 10px;
     }
 }
 
-
-/* translate_base.css */
-
-/* Đảm bảo phần chứa video được căn chỉnh hợp lý */
 .video-container {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 50px;
 }
 
-/* Tiêu đề của video */
 .video-container h3 {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
 
-/* Flexbox cho các video */
 .video-flex {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-/* Video item */
 .video-item {
     flex: 1;
     max-width: 45%;
@@ -78,41 +65,33 @@
     justify-content: center;
     align-items: center;
     height: 300px;
-    /* Chiều cao cố định cho video */
     background-color: #f0f0f0;
-    /* Màu nền cho video */
     border-radius: 8px;
     overflow: hidden;
 }
 
-/* Style cho video */
 .video-item video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Đảm bảo video không bị biến dạng */
 }
 
-/* Đảm bảo phần chứa link tải video được căn chỉnh hợp lý */
 .download-video-container {
     text-align: center;
     margin-top: 20px;
 }
 
-/* Tiêu đề của các link tải */
 .download-video-container h3 {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
 
-/* Flexbox cho các link tải */
 .download-video-flex {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-/* Link tải video */
 .download-video-item {
     flex: 1;
     max-width: 45%;
@@ -121,7 +100,6 @@
     align-items: center;
 }
 
-/* custom_modal.css */
 .custom_modal .mantine-Modal-modal {
     max-width: 90%;
     width: 80%;

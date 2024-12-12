@@ -6,13 +6,11 @@ import { data_lib_base } from "@/data/lib_base/data.libbase";
 
 
 const LibraryBase = (props: any) => {
-    console.log("check data libbase", props.data);
 
     const data_lib_page = props.data;
     const router = useRouter()
 
     const handleClickButton = (target: string) => {
-        console.log(target);
         router.push(`/lib_base/${target}`);
     }
 

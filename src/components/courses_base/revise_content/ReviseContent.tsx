@@ -6,7 +6,6 @@ import "./ReviseContent.css";
 import { Container } from "@mantine/core";
 import { useRouter } from "next/navigation";
 
-// Đây là nội dung của phần ôn tập
 interface ReviseContentProps {
   data: WordAndQuestion[];
   name: string;
@@ -26,7 +25,6 @@ const ReviseContent = (props: ReviseContentProps) => {
       sessionStorage.setItem("numberCorrectAnswer", JSON.stringify(numberCorrectAnswer));
       router.push("/course_base/revise_result")
     } else {
-      console.log("Not finish");
     }
   }
 
@@ -35,11 +33,9 @@ const ReviseContent = (props: ReviseContentProps) => {
   const handleCheckAnswer = (answer: string) => {
     selectedAnswer[wordIndex] = answer;
 
-    console.log(selectedAnswer);
     if (answer === data[wordIndex].correctAnswer) {
       setNumberCorrectAnswer(numberCorrectAnswer + 1);
     } else {
-      console.log("Incorrect");
     }
   };
 
@@ -58,12 +54,6 @@ const ReviseContent = (props: ReviseContentProps) => {
 
   const [numberCorrectAnswer, setNumberCorrectAnswer] = useState(0);
 
-
-  useEffect(() => {
-    return () => {
-      console.log(wordIndex);
-    };
-  }, [wordIndex]);
 
   return (
     <div className="revise-container">
@@ -92,11 +82,7 @@ const ReviseContent = (props: ReviseContentProps) => {
               }}
             >
               <source src={data[wordIndex].urlVideo} />
-              {/* <source src={linkVideo} /> */}
 
-              {/**
-                  Vấn đề rõ ràng, chỉ thay đổi 1 dòng code ở đây là fix được hết.
-            */}
             </video>
           </Container>
         </div>

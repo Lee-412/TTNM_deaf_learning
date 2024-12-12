@@ -18,8 +18,6 @@ const ReviseResult = (props: ReviseResultProps) => {
     route.push("/course_base/course_revise")
   }
 
-  console.log("check selected answer", selectedAnswer);
-
   const handleShowAnswer = (data: WordAndQuestion) => {
     if (selectedAnswer[data.id - 1] === data.correctAnswer) {
       return (
@@ -83,7 +81,7 @@ const ReviseResult = (props: ReviseResultProps) => {
             </video>
           </Container>
         </div>
-        
+
       </Container>
     );
   });
@@ -96,12 +94,12 @@ const ReviseResult = (props: ReviseResultProps) => {
       {handleShowResult}
 
       <div className="revise-result-btn">
-      <Button onClick={() => handleBack()} className="return-button">
-                Trở lại ôn tập
-      </Button>
+        <Button onClick={() => handleBack()} className="return-button">
+          Trở lại ôn tập
+        </Button>
       </div>
 
-      
+
     </div>
   );
 };

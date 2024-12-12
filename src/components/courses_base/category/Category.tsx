@@ -61,14 +61,12 @@ const Category = (props: LearningData | ReviseData) => {
 
       sessionStorage.setItem("learningName", JSON.stringify(props.name));
 
-      console.log(props.name);
       router.push(`/course_base/${link}?data=${JSON.stringify(props.id)}`);
     } else if (props.target === "Revise") {
       sessionStorage.setItem("reviseData", JSON.stringify(props.data));
 
       sessionStorage.setItem("reviseName", JSON.stringify(props.name));
 
-      console.log(props.name);
       router.push(`/course_base/${link}?data=${JSON.stringify(props.id)}`);
     }
   };

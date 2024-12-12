@@ -29,8 +29,7 @@ const SigninBox = () => {
   const router = useRouter();
   useEffect(() => {
     if (user && user.isAuthenticate === true) {
-      console.log("hit login true");
-      console.log(user);
+
 
       router.push("/");
     }
@@ -46,10 +45,9 @@ const SigninBox = () => {
 
   const handleClickSignIn = async (e: any) => {
     e.preventDefault();
-    console.log(formData);
 
     if (formData.email != "" && formData.password != "") {
-        setError("");
+      setError("");
       let data_signin = {
         name: "username",
         email: formData.email,
@@ -63,10 +61,8 @@ const SigninBox = () => {
         },
         body: JSON.stringify(data_signin),
       });
-      console.log("response", response);
       if (response.status === 200) {
         const dataServer = await response.json();
-        console.log("dataServer", dataServer);
         let data: ContextData = {
           token: "token",
           isAuthenticate: true,
@@ -82,7 +78,6 @@ const SigninBox = () => {
         sessionStorage.setItem("user", JSON.stringify(dataServer));
         router.push("/");
       } else {
-        console.log("không đăng nhập được");
         setError("Tài khoản hoặc mật khẩu không đúng");
       }
     } else {

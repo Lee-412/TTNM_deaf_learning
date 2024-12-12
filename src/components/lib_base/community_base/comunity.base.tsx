@@ -11,7 +11,6 @@ const ComunityBase = (props: any) => {
     const data_comunity_page = props.data;
 
     function handleClickContent(target: string) {
-        console.log(target);
         window.open(target)
     }
 

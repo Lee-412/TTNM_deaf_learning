@@ -17,7 +17,6 @@ import {
 } from "chart.js";
 import { userData } from "@/data/data";
 
-// Register Chart.js components
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -33,19 +32,15 @@ ChartJS.register(
 const Statistic = (props: any) => {
   let data = props;
   let userDataP = data.dataStatistic.statistics[0];
-  console.log('userDataP', userDataP);
 
   const isSmallScreen = useMediaQuery("(max-width: 1200px)");
 
-  console.log("check userDataP", userDataP);
 
-  // Data for charts
   const lineData = {
     labels: ["T2", "T3", "T4", "T5", "T6", "T7", "CN"],
     datasets: [
       {
         label: "Số giờ đã học",
-        // data: [1, 3, 5, 2, 1, 4, 3],
         data: userDataP.timeStudied,
         borderColor: "rgba(75, 192, 192, 1)",
         backgroundColor: "rgba(75, 192, 192, 0.2)",
@@ -58,7 +53,6 @@ const Statistic = (props: any) => {
     datasets: [
       {
         label: "Số từ đã học",
-        // data: [2, 4, 0, 1, 5, 5, 11],
         data: userDataP.wordStudiedPerDay,
         backgroundColor: "rgba(54, 162, 235, 0.6)",
       },
@@ -77,7 +71,6 @@ const Statistic = (props: any) => {
     ],
     datasets: [
       {
-        // data: [7, 4, 2, 4, 6, 4, 2],
         data: userDataP.wordStudiedPerCategory,
         backgroundColor: [
           "#36A2EB",

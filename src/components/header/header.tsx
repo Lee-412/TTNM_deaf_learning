@@ -56,7 +56,6 @@ export function Header() {
 
         if (user && user.isAuthenticate === false) {
             // route.push('/login');
-            console.log("no data");
         }
         else {
             console.log("check user header no content");
@@ -81,7 +80,6 @@ export function Header() {
             <header className={classes.header}>
                 <Group justify="space-between" h="100%" gap={0} style={{ paddingLeft: "40px" }}
                 >
-                    {/* <MantineLogo size={30} /> */}
                     <Group
                         justify="center"
                         h="100%"

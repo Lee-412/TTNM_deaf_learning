@@ -23,7 +23,6 @@ const Contact = () => {
     const router = useRouter()
     const handleClickSignIn = (e: any) => {
         e.preventDefault();
-        console.log(formData);
         setFormData({
             name: '',
             email: '',

@@ -29,7 +29,7 @@ const mockdata = [
   { label: "Kiểm tra kí hiệu", icon: IconAdjustments, links: "camera" },
   { label: "Phiên dịch", icon: IconTransfer, links: "translate" },
   { label: "Từ điển", icon: IconBook2, links: "dictionary" },
- 
+
 ];
 
 export function NavbarNested() {
@@ -42,20 +42,7 @@ export function NavbarNested() {
 
   const handleClickBtn = () => {
     setIsOpened(!isOpened);
-    console.log(isOpened);
   }
-
-  // recommend: xử lý bằng 1 cái styles động, tức là thêm class theo điều kiện
-
-  // const handleOpened = () => {
-  //   if (isOpened) {
-  //     return {
-  //       transform: "translateX(0)",
-  //     }
-  //   } else {
-  //     return { transform: "translateX(-100%)", width: "0px" }
-  //   }
-  // }
 
 
   return (
@@ -65,8 +52,6 @@ export function NavbarNested() {
       </Button>
 
       <nav className={`${classes.navbar} ${isOpened ? classes.navOuline : classes.navInline}`}
-
-      // style={handleOpened()}navInline
       >
 
         <ScrollArea className={classes.links} >

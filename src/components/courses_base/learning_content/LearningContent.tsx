@@ -15,7 +15,6 @@ interface LearningContentProps {
 const LearningContent = (props: LearningContentProps) => {
   let { data, name } = props;
   name = name.substring(1, name.length - 1);
-  console.log(data);
 
   const [wordIndex, setWordIndex] = useState(0);
 
@@ -23,14 +22,8 @@ const LearningContent = (props: LearningContentProps) => {
 
   const handleNext = () => {
     if (wordIndex < data.length - 1) {
-      console.log('check prev data', wordIndex);
       setWordIndex(wordIndex + 1);
-      console.log('check data index', wordIndex);
-
       setLinkVideo(data[wordIndex].urlVideo);
-      console.log('check data index', linkVideo);
-
-      console.log(linkVideo, data[wordIndex].word);
     }
   };
 
@@ -41,12 +34,10 @@ const LearningContent = (props: LearningContentProps) => {
       setWordIndex((wordIndex) => wordIndex - 1);
 
       setLinkVideo(data[wordIndex].urlVideo);
-      console.log('check cur data', wordIndex, linkVideo);
 
     }
   };
 
-  console.log('check out data', wordIndex, data[wordIndex].urlVideo);
 
   return (
     <div className="learning-container">
